@@ -1,5 +1,5 @@
-import * as React from "react";
-/**
+import * as React from 'react';
+/** 
  * ***************************************************************************
  * ***************************************************************************
  *
@@ -16,8 +16,8 @@ type WindowSize = {
 
 export const useWindowSize = () => {
   const [windowSize, updateSize] = React.useState<WindowSize>({
-    width: typeof window !== "undefined" ? window.innerWidth : 0,
-    height: typeof window !== "undefined" ? window.innerHeight : 0,
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
   });
 
   const handleResize = React.useCallback(() => {
@@ -28,9 +28,9 @@ export const useWindowSize = () => {
   }, []);
 
   React.useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-    return () => window.addEventListener("resize", handleResize);
+    return () => window.addEventListener('resize', handleResize);
   }, [handleResize]);
 
   return { windowSize };

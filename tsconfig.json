@@ -5,23 +5,34 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@shared-components/*": ["shared/components/*"],
+      "@shared-constants/*": ["shared/constant/*"],
+      "@pages/*": ["pages/*"],
+      "@lib/*": ["lib/*"],
+      "@themes": ["shared/constant/theme/index"],
+      "@assets": ["assets/*"],
+      "@features": ["features/*"],
+      "@services": ["services/*"],
+      "@types/*": ["@types/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/features/Terminals/components/TerminalConfiguration.Itemstsx"
+  ],
   "exclude": ["node_modules"]
 }
