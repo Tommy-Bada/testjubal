@@ -24,6 +24,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "react-day-picker/dist/style.css";
 import "@/styles/globals.css";
 import { ToastContainer } from "react-toastify";
+import { Inter } from "@next/font/google";
 
 import dynamic from "next/dynamic";
 // import AppThemeProvider from "@/lib/providers/AppThemeProvider";
@@ -37,7 +38,7 @@ import dynamic from "next/dynamic";
 // const PrivateRoute = dynamic(() => import('../lib/route-protection'), {
 //   ssr: false,
 // });
-
+const inter = Inter({ subsets: ["latin"] });
 export default function App({ Component, pageProps }: AppProps) {
   // const displayComponent = () => {
   //   if (['/', '/login', '/forgot-password'].includes(appProps.router.pathname))
