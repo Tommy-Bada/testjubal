@@ -12,11 +12,11 @@ export default function Login() {
     <div>
       <Header />
       <div
-        style={{ background: "url(/heroBg2.png)" }}
+        style={{ background: "url(/loginHero.png)" }}
         className="p-[2rem] sm:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <LoginLeft />
-        <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-0 lg:p-[3rem]">
+        <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-0 lg:p-[3rem] lg:w-[40%]">
           <h2 className="text-[2rem]">Welcome Back!</h2>
           <form className="mt-[2rem]">
             <div className="mb-[2rem]">
