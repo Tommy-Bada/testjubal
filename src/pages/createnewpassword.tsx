@@ -5,8 +5,14 @@ import Footer from "@/shared/components/Footer";
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import LoginLeft from "@/shared/components/LoginLeft";
+import PasswordResetSuccessModal from "@/shared/components/PasswordResetSuccessModal";
+import { useState } from "react";
 
 export default function CreateNewPassword() {
+  const [showModal, setShowModal] = useState(false);
+  const handleCreateNewPassword = () => {
+    setShowModal(true);
+  };
   return (
     <div>
       <Header />
@@ -39,6 +45,7 @@ export default function CreateNewPassword() {
             <Button
               variant="filled"
               className=" bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1rem]"
+              onClick={handleCreateNewPassword}
             >
               Submit
             </Button>
@@ -55,6 +62,10 @@ export default function CreateNewPassword() {
       <Divisor />
       <Subscribe />
       <Footer />
+      <PasswordResetSuccessModal
+        isVisible={showModal}
+        handleRemoveModal={() => setShowModal(false)}
+      />
     </div>
   );
 }
