@@ -6,8 +6,14 @@ import Footer from "@/shared/components/Footer";
 import SignupLeft from "@/shared/components/SignupLeft";
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
+import EmailVerificationModal from "@/shared/components/EmailVerificationModal";
+import { useState } from "react";
 
 export default function Signin() {
+  const [showModal, setShowModal] = useState(false);
+  const handleSignUp = () => {
+    setShowModal(true);
+  };
   return (
     <div>
       <Head>
@@ -75,6 +81,7 @@ export default function Signin() {
             <Button
               variant="filled"
               className=" bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1rem]"
+              onClick={handleSignUp}
             >
               Sign Up
             </Button>
@@ -111,6 +118,10 @@ export default function Signin() {
         </div>
       </div>
       <Divisor />
+      <EmailVerificationModal
+        isVisible={showModal}
+        handleRemoveModal={() => setShowModal(false)}
+      />
       <Subscribe />
       <Footer />
     </div>
