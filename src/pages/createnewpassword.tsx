@@ -65,6 +65,8 @@ export default function CreateNewPassword() {
       <PasswordResetSuccessModal
         isVisible={showModal}
         handleRemoveModal={() => setShowModal(false)}
+        text="Your password has been reset successfully"
+        buttonText="Proceed"
       />
     </div>
   );
