@@ -5,7 +5,7 @@ import Footer from "@/shared/components/Footer";
 import { Button } from "@material-tailwind/react";
 import LoginLeft from "@/shared/components/LoginLeft";
 
-export default function ForgotPassword() {
+export default function PasswordVerification() {
   return (
     <div>
       <Header />
@@ -15,15 +15,18 @@ export default function ForgotPassword() {
       >
         <LoginLeft />
         <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-0 lg:p-[3rem] lg:w-[40%]">
-          <h2 className="text-[2rem]">Forgot Password</h2>
+          <h2 className="text-[2rem]">Enter Verification Code</h2>
           <form className="mt-[2rem]">
             <div className="mb-[2rem]">
-              <label className="text-[1.6rem]">Email</label>
+              <label className="text-[1.6rem]">
+                A six-digit verification code was sent to the email you
+                registered with Jubal.
+              </label>
               <input
                 name="email"
-                type="email"
+                type="number"
                 className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-                placeholder="example@thejubal.com"
+                placeholder="please enter code here"
               />
             </div>
             <Button
