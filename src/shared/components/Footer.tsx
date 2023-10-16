@@ -69,7 +69,7 @@ export default function Footer() {
       </div>
       <div className="sm:flex flex-wrap justify-between lg:mb-[2rem] w-[100%] ">
         <div className="my-[2rem] lg:my-0">
-          <h3 className="text-[1.8rem] font-bold lg:text-[1.8rem]">Jubal</h3>
+          <h3 className="text-[1.6rem] font-bold lg:text-[1.8rem]">Jubal</h3>
           <ul>
             <li className="sm:my-[1rem] text-[1.4rem] lg:text-[1.6rem]">
               Why Jubal
