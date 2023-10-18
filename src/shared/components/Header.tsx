@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
-
+import Link from "next/link";
 function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const handleMobileMenu = () => {
@@ -27,18 +27,22 @@ function Header() {
           <li className="text-[1.8rem]">Find Music Pros</li>
         </ul>
         <div className="hidden lg:flex">
-          <Button
-            variant="outlined"
-            className="mr-[2rem] border-jubalDark text-jubalDark text-[1.6rem] normal-case"
-          >
-            Login
-          </Button>
-          <Button
-            variant="filled"
-            className="bg-jubalDark text-[1.6rem] normal-case"
-          >
-            Sign Up
-          </Button>
+          <Link href="/login">
+            <Button
+              variant="outlined"
+              className="mr-[2rem] border-jubalDark text-jubalDark text-[1.6rem] normal-case"
+            >
+              Login
+            </Button>
+          </Link>
+          <Link href="/signin">
+            <Button
+              variant="filled"
+              className="bg-jubalDark text-[1.6rem] normal-case"
+            >
+              Sign Up
+            </Button>
+          </Link>
         </div>
         <div className="lg:hidden block" onClick={handleMobileMenu}>
           <div className="w-[3rem] h-[2px] bg-jubalDark mb-[0.6rem]"></div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import LoginLeft from "@/shared/components/LoginLeft";
 import { Switch } from "@material-tailwind/react";
+import Link from "next/link";
 
 export default function Login() {
   return (
@@ -52,7 +53,9 @@ export default function Login() {
               />
               Remember Me
             </p>
-            <p className="text-[1.4rem]">Forgot Password?</p>
+            <Link href="/forgotpassword">
+              <p className="text-[1.4rem]">Forgot Password?</p>
+            </Link>
           </div>
           <div className="flex justify-between items-center my-[2rem]">
             <div className="w-[35%] h-[2px] bg-jubalFormBorder"></div>
@@ -81,7 +84,12 @@ export default function Login() {
           </div>
           <p className="text-center my-[2rem] text-[1.6rem]">
             If you don&apos;t have an account{" "}
-            <span className="text-jubalViolet ml-2 text-[1.6rem]">Sign Up</span>
+            <Link href="/signin">
+              {" "}
+              <span className="text-jubalViolet ml-2 text-[1.6rem]">
+                Sign Up
+              </span>
+            </Link>
           </p>
         </div>
       </div>

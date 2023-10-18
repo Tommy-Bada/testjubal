@@ -4,6 +4,7 @@ import Subscribe from "@/shared/components/Subscribe";
 import Footer from "@/shared/components/Footer";
 import { Button } from "@material-tailwind/react";
 import LoginLeft from "@/shared/components/LoginLeft";
+import Link from "next/link";
 
 export default function ForgotPassword() {
   return (
@@ -26,12 +27,14 @@ export default function ForgotPassword() {
                 placeholder="example@thejubal.com"
               />
             </div>
-            <Button
-              variant="filled"
-              className=" bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1rem]"
-            >
-              Submit
-            </Button>
+            <Link href="/passwordverification">
+              <Button
+                variant="filled"
+                className=" bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1rem]"
+              >
+                Submit
+              </Button>
+            </Link>
           </form>
           <p className="text-center my-[2rem] text-[1.6rem]">
             Didn&apos;t receive the mail?{" "}

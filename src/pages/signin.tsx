@@ -8,6 +8,7 @@ import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import EmailVerificationModal from "@/shared/components/EmailVerificationModal";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Signin() {
   const [showModal, setShowModal] = useState(false);
@@ -113,7 +114,9 @@ export default function Signin() {
           </div>
           <p className="text-center my-[2rem] text-[1.6rem]">
             If you already have an account{" "}
-            <span className="text-jubalViolet ml-2 text-[1.6rem]">Login</span>
+            <Link href="/login">
+              <span className="text-jubalViolet ml-2 text-[1.6rem]">Login</span>
+            </Link>
           </p>
         </div>
       </div>
