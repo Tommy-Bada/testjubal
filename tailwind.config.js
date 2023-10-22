@@ -101,6 +101,7 @@ module.exports = withMT({
         jubalFormText: "#4E4E4E",
         jubalFormBorder: "#DFE2E7",
         jubalPreSignUp: "#98A2B3",
+        jubalFooterText: "#98a2b3",
       },
     },
   },
