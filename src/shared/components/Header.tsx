@@ -10,7 +10,7 @@ function Header() {
 
   return (
     <>
-      <header className="flex justify-between items-center py-[2rem] sm:p-[3rem] lg:px-[5rem] px-[2rem] relative z-10 bg-white ">
+      <header className="flex justify-between items-center py-[2rem] sm:p-[3rem] lg:px-[5rem] px-[2rem] relative  bg-white z-20 ">
         <div>
           <Image
             src="/Logo.png"
@@ -59,7 +59,7 @@ function Header() {
         </div>
       </header>
       <header
-        className={`text-center h-[100vh] w-[100%] p-[5rem] absolute bg-white  lg:hidden z-0 transition-all duration-300 ease-out ${
+        className={`text-center h-[100vh] w-[100%] p-[5rem] absolute bg-white  lg:hidden z-10 transition-all duration-300 ease-out  ${
           isMobileOpen
             ? "translate-y-0 opacity-100"
             : "translate-y-[-100vh] opacity-0"
