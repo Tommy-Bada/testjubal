@@ -19,6 +19,7 @@ export default function Home() {
         <Link href="/new-password">
           <h1 className="text-[2rem] my-4">Create New Password Page</h1>
         </Link>
+        <h1>Test</h1>
       </div>
     </div>
   );
