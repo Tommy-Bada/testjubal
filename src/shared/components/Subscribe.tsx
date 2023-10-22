@@ -12,7 +12,7 @@ export default function Subscribe() {
           className="w-[100%] p-[1rem] bg-transparent border-2 border-white my-[2rem] mb-[1rem] sm:w-[70%] sm:mr-[2rem]  text-[1.6rem]"
         />
         <br className=" sm:hidden" />
-        <Button className="bg-jubalYellow text-[1.6rem] normal-case">
+        <Button className="bg-jubalYellow text-[1.6rem] normal-case p-[1rem] border-2 border-jubalYellow">
           Subscribe
         </Button>
       </form>
