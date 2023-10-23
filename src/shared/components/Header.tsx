@@ -35,7 +35,7 @@ function Header() {
               Login
             </Button>
           </Link>
-          <Link href="/signin">
+          <Link href="/signup">
             <Button
               variant="filled"
               className="bg-jubalDark text-[1.6rem] normal-case"
@@ -72,19 +72,23 @@ function Header() {
           <li className="mb-[2rem] text-[1.8rem]">Find Music Pros</li>
         </ul>
         <div className="mx-[auto]">
-          <Button
-            variant="outlined"
-            className="mb-[2rem] border-jubalDark text-jubalDark w-[60%] text-[1.6rem] normal-case"
-          >
-            Login
-          </Button>
+          <Link href="/login">
+            <Button
+              variant="outlined"
+              className="mb-[2rem] border-jubalDark text-jubalDark w-[60%] text-[1.6rem] normal-case"
+            >
+              Login
+            </Button>
+          </Link>
           <br />
-          <Button
-            variant="filled"
-            className="bg-jubalDark  w-[60%] text-[1.6rem] normal-case"
-          >
-            Sign Up
-          </Button>
+          <Link href="/signup">
+            <Button
+              variant="filled"
+              className="bg-jubalDark  w-[60%] text-[1.6rem] normal-case"
+            >
+              Sign Up
+            </Button>
+          </Link>
         </div>
       </header>
     </>

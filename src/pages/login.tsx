@@ -85,7 +85,7 @@ export default function Login() {
             </div>
             <p className="text-center my-[2rem] text-[1.6rem]">
               If you don&apos;t have an account{" "}
-              <Link href="/signin">
+              <Link href="/signup">
                 {" "}
                 <span className="text-jubalViolet ml-2 text-[1.6rem]">
                   Sign Up
