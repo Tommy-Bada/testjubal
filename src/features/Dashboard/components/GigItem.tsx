@@ -18,42 +18,51 @@ export default function GigItem({
   location,
 }: GigItemProps) {
   return (
-    <div>
-      <div>
-        <div>
+    <div className="bg-white p-[2rem] rounded-[3rem] my-[1.5rem]">
+      <div className="flex justify-between items-start ">
+        <div className="flex items-center">
           <Image
             src={`/${profileImage}`}
             alt={`${profileImage} icon`}
             width="40"
             height="40"
           />
-          <div>
-            <p>{title}</p>
-            <p>{name}</p>
+          <div className="ml-[1rem]">
+            <p className="text-[1.8rem] font-[700] text-jubalNav">{title}</p>
+            <p className="text-[1.4rem] mt-[1rem]">{name}</p>
           </div>
         </div>
         <div>
-          <Image src="like-icon.png" alt="Like Icon" width="20" height="20" />
+          <Image
+            src="dashboard/heart.svg"
+            alt="Like Icon"
+            width="36"
+            height="36"
+          />
         </div>
       </div>
-      <div>
+      <hr className="my-[1rem]" />
+      <div className="flex mb-[1.5rem] ">
         <Image
-          src="currency-icon.png"
+          src="dashboard/pay.svg"
           alt="Currency Icon"
-          width="20"
-          height="20"
+          width="22"
+          height="16"
         />
-        <p>{`${startPrice} - ${endPrice} / monthly`}</p>
+        <p className="text-[1.4rem] text-jubalNav ml-[1rem]">
+          {`$${startPrice} - $${endPrice} `}
+          <span className="text-[1.4rem] text-jubalFooterText"> / monthly</span>
+        </p>
       </div>
-      <div>
-        <div>
+      <div className="flex justify-between">
+        <div className="flex items-center">
           <Image
-            src="location-icon.png"
+            src="dashboard/location.svg"
             alt="Location Icon"
-            width="20"
+            width="14"
             height="20"
           />
-          <p>{location}</p>
+          <p className="text-[1.4rem] text-jubalNav ml-[1rem]">{location}</p>
         </div>
         <Button
           variant="filled"

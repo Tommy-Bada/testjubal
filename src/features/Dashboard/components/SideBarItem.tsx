@@ -7,12 +7,10 @@ interface SideBarItemProps {
 }
 export default function SideBarItem({ image, text, link }: SideBarItemProps) {
   return (
-    <div>
-      <div>
-        <Image src={`/${image}`} alt={`${image} icon`} width="40" height="40" />
-      </div>
+    <div className="flex items-center my-[1.6rem]">
+      <Image src={`/${image}`} alt={`${image} icon`} width="36" height="36" />
       <Link href={link}>
-        <p>{text}</p>
+        <p className="text-[1.8rem] text-jubalViolet ml-[1.2rem]">{text}</p>
       </Link>
     </div>
   );

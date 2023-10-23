@@ -11,13 +11,13 @@ export default function NotificationItem({
   action,
 }: NotificationItemProps) {
   return (
-    <div>
-      <p>{name}</p>
-      <div>
-        <p>{type}</p>
+    <div className="py-[1rem] ">
+      <p className="text-[1.6rem] text-jubalFooterText">{name}</p>
+      <div className="flex justify-between items-end">
+        <p className="text-[1.8rem] font-[700] text-jubalNav">{type}</p>
         <Button
-          variant="filled"
-          className=" bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1rem]"
+          variant="outlined"
+          className=" border-jubalViolet w-[max-content] normal-case text-[1.4rem] py-[1rem] text-jubalViolet px-[2rem] rounded-[1rem]"
         >
           {action}
         </Button>
