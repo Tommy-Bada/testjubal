@@ -102,15 +102,27 @@ export default function LoginForm() {
           </Button>
         </form>
         <div className="flex justify-between my-[2rem]">
-          <p className="text-[1.4rem]">
+          <div className="flex">
             <Switch
               crossOrigin={undefined}
-              className="bg-jubalViolet mr-[1rem]"
+              label="Remember Me"
+              ripple={true}
+              id="custom-switch-component"
+              className="h-full w-full checked:bg-jubalViolet"
+              labelProps={{
+                className:
+                  "text-[1.6rem] ml-[1rem] text-jubalFormText font-[400]",
+              }}
+              containerProps={{
+                className: "w-12 h-6",
+              }}
+              circleProps={{
+                className: "before:hidden left-0.5 border-none",
+              }}
             />
-            Remember Me
-          </p>
+          </div>
           <Link href="/forgot-password">
-            <p className="text-[1.4rem]">Forgot Password?</p>
+            <p className="text-[1.6rem]">Forgot Password?</p>
           </Link>
         </div>
         <FormSeperator />
