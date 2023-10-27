@@ -51,19 +51,24 @@ export default function PasswordVerificationForm() {
             />
           ))}
         </div>
-        <Link href="/new-password">
+        {inputs.every((input) => input !== "") ? (
+          <Link href="/new-password">
+            <Button
+              className=" bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+              type="submit"
+            >
+              Submit
+            </Button>
+          </Link>
+        ) : (
           <Button
-            className={`${
-              inputs.every((input) => input !== "")
-                ? "bg-jubalViolet"
-                : "bg-jubalPreSignUp"
-            } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
+            className="bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
             type="submit"
-            // disabled={inputs.every((input) => input !== "")}
+            disabled
           >
             Submit
           </Button>
-        </Link>
+        )}
       </form>
       <p className="text-center my-[2rem] text-[1.6rem]">
         Didn&apos;t receive the mail?{" "}

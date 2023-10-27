@@ -4,6 +4,7 @@ import { Button } from "@material-tailwind/react";
 import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Link from "next/link";
 
 export default function NewPasswordForm() {
   useEffect(() => {
@@ -98,15 +99,24 @@ export default function NewPasswordForm() {
               </div>
             ) : null}
           </div>
-          <Button
-            className={`${
-              formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
-            } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
-            type="submit"
-            disabled={!formik.isValid}
-          >
-            Login
-          </Button>
+          {formik.isValid ? (
+            <Link href="/login">
+              <Button
+                className="bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+                type="submit"
+              >
+                Login
+              </Button>
+            </Link>
+          ) : (
+            <Button
+              className=" bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+              type="submit"
+              disabled
+            >
+              Login
+            </Button>
+          )}
         </form>
       </div>
     </div>
