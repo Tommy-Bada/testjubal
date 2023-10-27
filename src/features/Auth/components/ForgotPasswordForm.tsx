@@ -46,18 +46,26 @@ export default function ForgotPasswordForm() {
             </div>
           ) : null}
         </div>
-        <Link href="/password-verification">
+        {formik.isValid ? (
+          <Link href="/password-verification">
+            <Button
+              variant="filled"
+              className="bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+              type="submit"
+            >
+              Submit
+            </Button>
+          </Link>
+        ) : (
           <Button
             variant="filled"
-            className={`${
-              formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
-            } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
+            className="bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
             type="submit"
-            disabled={!formik.isValid}
+            disabled
           >
             Submit
           </Button>
-        </Link>
+        )}
       </form>
       <p className="text-center my-[2rem] text-[1.6rem]">
         Didn&apos;t receive the mail?{" "}
