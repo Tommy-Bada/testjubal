@@ -16,7 +16,7 @@ export default function Signin() {
   return (
     <div>
       <Head>
-        <title>Signup</title>
+        <title>Sign Up</title>
       </Head>
       <Header />
       <div
