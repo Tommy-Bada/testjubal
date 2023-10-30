@@ -13,7 +13,7 @@ export default function TopDataItem({
   background,
 }: TopDataItemProps) {
   return (
-    <div className="w-[32%] bg-white p-[3rem]">
+    <div className="w-[32%] bg-white p-[3rem] mr-[2rem]">
       <div
         style={{ backgroundColor: background }}
         className="w-[5rem] h-[5rem] rounded-[50%] flex justify-center items-center p-[1.2rem]"

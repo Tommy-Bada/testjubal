@@ -1,5 +1,5 @@
 import TopDataItem from "./TopDataItem";
-export default function TopData() {
+export default function DashboardTopData() {
   return (
     <div className="flex bg-jubalDashboardBackground justify-between p-[3rem] mt-[2rem] mb-[3rem] rounded-[2rem] ">
       <TopDataItem

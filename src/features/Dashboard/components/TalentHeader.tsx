@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function DashboardHeader() {
+export default function TalentHeader() {
   return (
     <>
       <header className="flex justify-between items-center w-[100%] bg-jubalDashboardBackground h-[6.4rem] p-[2rem] rounded-[12px] ">
