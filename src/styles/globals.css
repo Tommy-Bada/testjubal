@@ -15,7 +15,8 @@
 .ReactFlagsSelect-module_selectFlag__2q5gC > svg > g > path {
   width: 100px;
 } */
-#country {
+#country,
+#city {
   /* className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]" */
   border-color: #dfe2e7;
   border-width: 2px;
