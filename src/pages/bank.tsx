@@ -1,6 +1,5 @@
 import SideBar from "@/features/Dashboard/components/SideBar";
 import TalentHeader from "@/features/Dashboard/components/TalentHeader";
-import ToDoList from "@/features/Dashboard/components/ToDoList";
 import Wallet from "@/features/Dashboard/components/Wallet";
 import FinancialStat from "@/features/Dashboard/components/FinancialStat";
 import TransactionHistory from "@/features/Dashboard/components/TransactionHistory";
