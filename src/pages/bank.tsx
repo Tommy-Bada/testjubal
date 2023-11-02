@@ -6,9 +6,9 @@ import TransactionHistory from "@/features/Dashboard/components/TransactionHisto
 
 export default function Bank() {
   return (
-    <div className="flex lg:bg-gradient-to-r from-[#3F288339] to-[#2DA5A439] lg:py-[3rem] lg:px-[5rem] bg-white">
+    <div className="flex bg-gradient-to-r from-[#3F288339] to-[#2DA5A439] py-[2rem] px-[3rem] h-[100%]">
       <SideBar />
-      <div className=" w-[100%] lg:w-[76%] bg-white p-[2rem] lg:p-[2.5rem] ml-0 lg:ml-[24%] rounded-[2rem] ">
+      <div className="  bg-white p-[2rem] ml-[30rem] rounded-[2rem] w-[100%]">
         <TalentHeader />
         <div className="flex justify-between w-[100%] ">
           <div className="w-[50%] bg-jubalDashboardBackground p-[2rem] rounded-[2rem] mt-[2rem]">

@@ -13,24 +13,24 @@ export default function SettingsBox() {
   return (
     <div className="bg-white rounded-[2rem] p-[2rem]">
       <div className="flex">
-        <p className="text-[1.6rem] text-white bg-jubalViolet py-[0.8rem] px-[1.2rem] mr-[1.3rem] rounded-[.6rem] font-[600]">
+        <p className="text-[1.4rem] text-white bg-jubalViolet py-[0.8rem] px-[1.2rem] mr-[1.3rem] rounded-[.6rem] font-[600]">
           Help & Support
         </p>
-        <p className="text-[1.6rem] text-jubalViolet py-[0.8rem] px-[1.2rem] mr-[1.3rem] rounded-[.6rem] font-[600]">
+        <p className="text-[1.4rem] text-jubalViolet py-[0.8rem] px-[1.2rem] mr-[1.3rem] rounded-[.6rem] font-[600]">
           Platform Settings
         </p>
-        <p className="text-[1.6rem] text-jubalViolet py-[0.8rem] px-[1.2rem] mr-[1.3rem] rounded-[.6rem] font-[600]">
+        <p className="text-[1.4rem] text-jubalViolet py-[0.8rem] px-[1.2rem] mr-[1.3rem] rounded-[.6rem] font-[600]">
           Bank Account
         </p>
-        <p className="text-[1.6rem] text-jubalViolet py-[0.8rem] px-[1.2rem] rounded-[.6rem] font-[600]">
+        <p className="text-[1.4rem] text-jubalViolet py-[0.8rem] px-[1.2rem] rounded-[.6rem] font-[600]">
           Logout
         </p>
       </div>
 
-      <h1 className=" text-[2.4rem] text-jubalFormText font-[700] mt-[3rem] mb-[2rem]">
+      <h1 className=" text-[2rem] text-jubalFormText font-[700] mt-[3rem] mb-[2rem]">
         Let&apos;s stay connected
       </h1>
-      <p className="text-[1.8rem] text-[#727A86] w-[50%]">
+      <p className="text-[1.4rem] text-[#727A86] w-[50%]">
         It&apos;s never been easier to get in touch with Flex. Call us, or send
         an email and we&apos;ll get back to you as soon as possible!
       </p>
@@ -52,7 +52,7 @@ export default function SettingsBox() {
         />
       </div>
 
-      <h1 className=" text-[2.4rem] text-jubalFormText font-[700] mt-[3rem] mb-[2rem]">
+      <h1 className=" text-[2rem] text-jubalFormText font-[700] mt-[3rem] mb-[2rem]">
         FAQs
       </h1>
       <div>

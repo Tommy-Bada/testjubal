@@ -9,11 +9,11 @@ interface ContactProps {
 export default function Contact({ image, title, text }: ContactProps) {
   return (
     <div className="w-[30%]">
-      <Image src={image} alt="icon" width="36" height="36" />
-      <h1 className="my-[2rem] text-[2.4rem] text-jubalFormText font-[700]">
+      <Image src={image} alt="icon" width="30" height="30" />
+      <h1 className="my-[2rem] text-[2rem] text-jubalFormText font-[700]">
         {title}
       </h1>
-      <p className="text-[2rem] text-jubalFooterText ">{text}</p>
+      <p className="text-[1.6rem] text-jubalFooterText ">{text}</p>
     </div>
   );
 }

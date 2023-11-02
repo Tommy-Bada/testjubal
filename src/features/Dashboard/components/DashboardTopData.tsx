@@ -1,7 +1,7 @@
 import TopDataItem from "./TopDataItem";
 export default function DashboardTopData() {
   return (
-    <div className="flex bg-jubalDashboardBackground justify-between p-[3rem] mt-[2rem] mb-[3rem] rounded-[2rem] ">
+    <div className="flex bg-jubalDashboardBackground justify-between p-[2rem] mt-[2rem] mb-[3rem] rounded-[2rem] ">
       <TopDataItem
         image="dashboard/cash-multiple.svg"
         text="Total Earnings"

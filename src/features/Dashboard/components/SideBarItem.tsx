@@ -20,16 +20,16 @@ export default function SideBarItem({
       <div
         className={`flex items-center my-[1.6rem] bg-${
           active ? "jubalViolet" : "jubalDashboardBackground"
-        } px-[2rem] py-[1rem] rounded-[0.8rem]`}
+        } px-[1.5rem] py-[1rem] rounded-[0.8rem]`}
       >
         <Image
           src={`/${active ? activeImage : image}`}
           alt={`${image} icon`}
-          width="36"
-          height="36"
+          width="30"
+          height="30"
         />
         <p
-          className={`text-[1.8rem] text-${
+          className={`text-[1.6rem] text-${
             active ? "white" : "jubalViolet"
           }  ml-[1.2rem]`}
         >

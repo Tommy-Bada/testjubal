@@ -34,8 +34,8 @@ export default function ManageGigItem({
           height="40"
         />
         <div className="ml-[1rem]">
-          <p className="text-[1.8rem] font-[700] text-jubalNav">{title}</p>
-          <p className="text-[1.4rem] mt-[1rem]">{name}</p>
+          <p className="text-[1.6rem] font-[700] text-jubalNav">{title}</p>
+          <p className="text-[1.2rem] mt-[1rem]">{name}</p>
         </div>
       </div>
 
@@ -47,9 +47,9 @@ export default function ManageGigItem({
             width="22"
             height="16"
           />
-          <p className="text-[1.4rem] text-jubalNav ml-[1rem]">
+          <p className="text-[1.2rem] text-jubalNav ml-[.5rem]">
             {`$${startPrice} - $${endPrice} `}
-            <span className="text-[1.4rem] text-jubalFooterText">
+            <span className="text-[1.2rem] text-jubalFooterText">
               {" "}
               / monthly
             </span>
@@ -62,13 +62,13 @@ export default function ManageGigItem({
             width="14"
             height="20"
           />
-          <p className="text-[1.4rem] text-jubalNav ml-[1rem]">{location}</p>
+          <p className="text-[1.4rem] text-jubalNav ml-[.5rem]">{location}</p>
         </div>
       </div>
       <div className="flex justify-between">
         <Button
           variant="filled"
-          className={` text-[1.6rem] normal-case text-white`}
+          className={` text-[1.4rem] normal-case text-white`}
           style={buttonStyle}
         >
           {action}

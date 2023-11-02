@@ -7,15 +7,15 @@ export default function Wallet() {
           <Image
             src="/dashboard/bank-money.svg"
             alt="Money"
-            width="22"
-            height="16"
+            width="18"
+            height="12"
           />
         </div>
         <div className="flex items-center">
-          <p className="text-white text-[1.6rem] mr-[1rem] font-[600]">
+          <p className="text-white text-[1.4rem] mr-[1rem] font-[600]">
             Wallet Balance
           </p>
-          <p className="text-white text-[1.8rem] font-[700]">Create Wallet</p>
+          <p className="text-white text-[1.6rem] font-[700]">Create Wallet</p>
         </div>
       </div>
       <div className="flex justify-center flex-wrap">
@@ -26,7 +26,7 @@ export default function Wallet() {
             height="14"
             width="20"
           />
-          <p className="text-white text-[1.6rem] font-[600] ml-[1rem]">
+          <p className="text-white text-[1.4rem] font-[600] ml-[1rem]">
             Add Funds
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function Wallet() {
             height="14"
             width="20"
           />
-          <p className="text-white text-[1.6rem] font-[600] ml-[1rem]">
+          <p className="text-white text-[1.4rem] font-[600] ml-[1rem]">
             Transfer Funds
           </p>
         </div>
@@ -48,7 +48,7 @@ export default function Wallet() {
             height="14"
             width="20"
           />
-          <p className="text-white text-[1.6rem] font-[600] ml-[1rem]">
+          <p className="text-white text-[1.4rem] font-[600] ml-[1rem]">
             Generate Invoice
           </p>
         </div>

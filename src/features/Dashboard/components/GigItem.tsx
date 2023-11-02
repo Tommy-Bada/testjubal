@@ -28,28 +28,28 @@ export default function GigItem({
             height="40"
           />
           <div className="ml-[1rem]">
-            <p className="text-[1.8rem] font-[700] text-jubalNav">{title}</p>
-            <p className="text-[1.4rem] mt-[1rem]">{name}</p>
+            <p className="text-[1.6rem] font-[700] text-jubalNav">{title}</p>
+            <p className="text-[1.3rem] mt-[1rem]">{name}</p>
           </div>
         </div>
         <div>
           <Image
             src="dashboard/heart.svg"
             alt="Like Icon"
-            width="36"
-            height="36"
+            width="30"
+            height="30"
           />
         </div>
       </div>
       <hr className="my-[1rem]" />
-      <div className="flex mb-[1.5rem] ">
+      <div className="flex mb-[1rem] ">
         <Image
           src="dashboard/pay.svg"
           alt="Currency Icon"
           width="22"
           height="16"
         />
-        <p className="text-[1.4rem] text-jubalNav ml-[1rem]">
+        <p className="text-[1.4rem] text-jubalNav ml-[.5rem]">
           {`$${startPrice} - $${endPrice} `}
           <span className="text-[1.4rem] text-jubalFooterText"> / monthly</span>
         </p>
@@ -62,11 +62,11 @@ export default function GigItem({
             width="14"
             height="20"
           />
-          <p className="text-[1.4rem] text-jubalNav ml-[1rem]">{location}</p>
+          <p className="text-[1.4rem] text-jubalNav ml-[.5rem]">{location}</p>
         </div>
         <Button
           variant="filled"
-          className="bg-jubalDark text-[1.6rem] normal-case"
+          className="bg-jubalDark text-[1.4rem] normal-case"
         >
           Apply
         </Button>

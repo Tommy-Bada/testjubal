@@ -5,11 +5,11 @@ import { useRouter } from "next/router";
 export default function SideBar() {
   const router = useRouter();
   return (
-    <div className="w-[20%] bg-white h-[92vh] px-[2rem] py-[3rem] fixed rounded-[2rem] hidden lg:block">
+    <div className="w-[max-content] bg-white h-[94%] px-[2rem] py-[2rem] fixed  rounded-[2rem] mr-[2rem]">
       <div className="w-[10rem] mx-[auto] my-[2rem]">
         <Image src="Logo.png" alt="Jubal Logo" width="100" height="50" />
       </div>
-      <div className="py-[3rem] px-[2rem]  bg-jubalDashboardBackground rounded-[2rem] h-[85%] flex flex-col justify-between">
+      <div className="py-[2rem] px-[3rem]  bg-jubalDashboardBackground rounded-[2rem] h-[86%] flex flex-col justify-between">
         <div>
           <SideBarItem
             image="dashboard/dashboard.svg"

@@ -13,15 +13,15 @@ export default function TopDataItem({
   background,
 }: TopDataItemProps) {
   return (
-    <div className="w-[32%] bg-white p-[3rem] mr-[2rem]">
+    <div className="w-[32%] bg-white p-[2rem] mr-[2rem] rounded-[1rem]">
       <div
         style={{ backgroundColor: background }}
-        className="w-[5rem] h-[5rem] rounded-[50%] flex justify-center items-center p-[1.2rem]"
+        className="w-[4rem] h-[4rem] rounded-[50%] flex justify-center items-center p-[1.2rem]"
       >
         <Image src={`/${image}`} alt={`${image} icon`} width="30" height="30" />
       </div>
-      <p className="text-[1.8rem] font-[700] my-[2rem] text-jubalNav">{text}</p>
-      <p className="text-[1.6rem] text-jubalFooterText">{number}</p>
+      <p className="text-[1.6rem] font-[700] my-[2rem] text-jubalNav">{text}</p>
+      <p className="text-[1.4rem] text-jubalFooterText">{number}</p>
     </div>
   );
 }

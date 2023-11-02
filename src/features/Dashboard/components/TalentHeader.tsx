@@ -9,18 +9,18 @@ export default function TalentHeader() {
           <div className="w-[1.2rem] bg-white h-[2px] my-[2px]"></div>
           <div className="w-[1.2rem] bg-white h-[2px]"></div>
         </div>
-        <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1rem] py-[0.5rem] hidden ">
+        <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] py-[1rem] hidden ">
           <Image
             src="dashboard/swap-horizontal.svg"
             alt="Switch Icon"
             width="20"
             height="20"
           />
-          <p className="text-white text-[1.8rem] ml-[0.5rem]">
+          <p className="text-white text-[1.6rem] ml-[0.5rem]">
             Switch to Client
           </p>
         </div>
-        <div className=" hidden lg:flex justify-between bg-white p-[1rem] rounded-[0.8rem] w-[50%] ">
+        <div className=" hidden lg:flex justify-between bg-white p-[1rem] rounded-[0.8rem] w-[40%] ">
           <input
             type="text"
             placeholder="Search"
@@ -34,12 +34,12 @@ export default function TalentHeader() {
           />
         </div>
         <div className="flex items-center justify-en">
-          <div className="flex justify-center items-center  ">
+          <div className="flex justify-center items-center mr-[2rem] ">
             <Image
-              src="dashboard/profile.png"
+              src="dashboard/profile-new.svg"
               alt="User Icon"
-              width="150"
-              height="150"
+              width="44"
+              height="44"
               className="w-[100%] h-[100%]"
             />
           </div>
