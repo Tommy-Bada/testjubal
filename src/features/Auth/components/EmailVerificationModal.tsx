@@ -11,7 +11,7 @@ export default function EmailVerificationModal({
 }: EmailVerificationModalProps & { handleRemoveModal: MouseEventHandler }) {
   if (!isVisible) return null;
   return (
-    <div className="bg-white fixed inset-0 bg-opacity-50 flex justify-center items-center">
+    <div className="bg-[#D9D9D9] fixed inset-0 bg-opacity-70 flex justify-center items-center">
       <div className="bg-white w-[80%] sm:w-[60%] lg:w-[60rem] p-[2rem] rounded-[2rem] lg:p-[3rem] ">
         <div className="flex justify-end" onClick={handleRemoveModal}>
           <Image

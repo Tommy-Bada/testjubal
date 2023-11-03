@@ -1,23 +1,26 @@
 import Image from "next/image";
 import { MouseEventHandler } from "react";
 import { Button } from "@material-tailwind/react";
+import Link from "next/link";
 
-interface PasswordResetSuccessModalProps {
+interface SuccessModalProps {
   isVisible: boolean;
   buttonText: string;
   text: string;
+  link?: string;
   handleRemoveModal: MouseEventHandler;
 }
 
-export default function PasswordResetSuccessModal({
+export default function SuccessModal({
   isVisible,
   handleRemoveModal,
   text,
+  link,
   buttonText,
-}: PasswordResetSuccessModalProps) {
+}: SuccessModalProps) {
   if (!isVisible) return null;
   return (
-    <div className="bg-white fixed inset-0 bg-opacity-50 flex justify-center items-center">
+    <div className="bg-[#D9D9D9] fixed inset-0 bg-opacity-70 flex justify-center items-center">
       <div className="bg-white w-[80%] sm:w-[60%] lg:w-[60rem] p-[2rem] rounded-[2rem] lg:p-[3rem] ">
         <div className="flex justify-center items-center">
           <Image
@@ -32,13 +35,15 @@ export default function PasswordResetSuccessModal({
           {text}
         </p>
         <div className="flex justify-center mt-[3rem] lg:mt-[5rem]">
-          <Button
-            variant="filled"
-            className="bg-jubalDark text-[1.6rem] normal-case"
-            onClick={handleRemoveModal}
-          >
-            {buttonText}
-          </Button>
+          <Link href={`${link}`}>
+            <Button
+              variant="filled"
+              className="bg-jubalDark text-[1.6rem] normal-case"
+              onClick={handleRemoveModal}
+            >
+              {buttonText}
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

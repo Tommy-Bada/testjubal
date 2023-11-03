@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
+import { useState } from "react";
 interface GigItemProps {
   profileImage: string;
   title: string;
@@ -7,6 +8,8 @@ interface GigItemProps {
   startPrice: string;
   endPrice: string;
   location: string;
+  isLiked: boolean;
+  handleLike: () => void;
 }
 
 export default function GigItem({
@@ -16,6 +19,8 @@ export default function GigItem({
   startPrice,
   endPrice,
   location,
+  isLiked,
+  handleLike,
 }: GigItemProps) {
   return (
     <div className="bg-white p-[2rem] rounded-[3rem] my-[1.5rem]">
@@ -32,9 +37,11 @@ export default function GigItem({
             <p className="text-[1.3rem] mt-[1rem]">{name}</p>
           </div>
         </div>
-        <div>
+        <div onClick={handleLike}>
           <Image
-            src="dashboard/heart.svg"
+            src={`${
+              isLiked ? "dashboard/heart-liked.svg" : "dashboard/heart.svg"
+            }`}
             alt="Like Icon"
             width="30"
             height="30"

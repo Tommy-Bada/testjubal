@@ -11,7 +11,8 @@ export default function PasswordVerification() {
       <Header />
       <div
         style={{ background: "url(/loginHero.png)" }}
-        className="p-[2rem] sm:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
+        // className="p-[2rem] sm:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
+        className="pl-[2rem] pr-[4rem] py-[2rem] lg:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <LoginLeft />
         <PasswordVerificationForm />

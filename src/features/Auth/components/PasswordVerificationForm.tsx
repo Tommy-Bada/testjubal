@@ -29,51 +29,58 @@ export default function PasswordVerificationForm() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-0 lg:p-[3rem] lg:w-[40%]">
-      <h2 className="text-[2.4rem] font-[700]">Enter Verification Code</h2>
-      <form className="mt-[2rem]">
-        <label className="text-[1.6rem]">
-          A six-digit verification code was sent to the email you registered
-          with Jubal.
-        </label>
-        <div className="flex justify-between space-x- my-[2rem]">
-          {inputs.map((input, index) => (
-            <input
-              key={index}
-              type="text"
-              className="text-center py-[1rem]  text-[1.4rem] w-[4rem] sm:text-[1.6rem] sm:[5.5rem] border-[2px] border-jubalFormBorder  rounded focus:border-[1px] "
-              pattern="\d"
-              maxLength={1}
-              value={input}
-              onChange={(e) => handleInputChange(e, index)}
-              onKeyDown={(e) => handleBackspace(e, index)}
-              ref={(ref) => (inputRefs[index] = ref)}
-            />
-          ))}
-        </div>
-        {inputs.every((input) => input !== "") ? (
-          <Link href="/new-password">
+    <div
+      className="bg-gradient-to-r from-[#3F2883] to-[#2DA5A4] rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]"
+      suppressHydrationWarning
+    >
+      <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
+        <h2 className="text-[2.4rem] font-[700]">Enter Verification Code</h2>
+        <form className="mt-[2rem]">
+          <label className="text-[1.6rem]">
+            A six-digit verification code was sent to the email you registered
+            with Jubal.
+          </label>
+          <div className="flex justify-between space-x- my-[2rem]">
+            {inputs.map((input, index) => (
+              <input
+                key={index}
+                type="text"
+                className="text-center py-[1rem]  text-[1.4rem] w-[4rem] sm:text-[1.6rem] sm:[5.5rem] border-[2px] border-jubalFormBorder  rounded focus:border-[1px] "
+                pattern="\d"
+                maxLength={1}
+                value={input}
+                onChange={(e) => handleInputChange(e, index)}
+                onKeyDown={(e) => handleBackspace(e, index)}
+                ref={(ref) => (inputRefs[index] = ref)}
+              />
+            ))}
+          </div>
+          {inputs.every((input) => input !== "") ? (
+            <Link href="/new-password">
+              <Button
+                className=" bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </Link>
+          ) : (
             <Button
-              className=" bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+              className="bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
               type="submit"
+              disabled
             >
               Submit
             </Button>
-          </Link>
-        ) : (
-          <Button
-            className="bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
-            type="submit"
-            disabled
-          >
-            Submit
-          </Button>
-        )}
-      </form>
-      <p className="text-center my-[2rem] text-[1.6rem]">
-        Didn&apos;t receive the mail?{" "}
-        <span className="text-jubalViolet ml-2 text-[1.6rem]">Resend mail</span>
-      </p>
+          )}
+        </form>
+        <p className="text-center my-[2rem] text-[1.6rem]">
+          Didn&apos;t receive the mail?{" "}
+          <span className="text-jubalViolet ml-2 text-[1.6rem]">
+            Resend mail
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

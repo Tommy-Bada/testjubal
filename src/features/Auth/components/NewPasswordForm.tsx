@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Link from "next/link";
 
-export default function NewPasswordForm() {
+export default function NewPasswordForm({ handleSubmit }: any) {
   useEffect(() => {
     // Trigger an initial validation check when the component mounts
     formik.validateForm();
@@ -100,14 +100,13 @@ export default function NewPasswordForm() {
             ) : null}
           </div>
           {formik.isValid ? (
-            <Link href="/login">
-              <Button
-                className="bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
-                type="submit"
-              >
-                Login
-              </Button>
-            </Link>
+            <Button
+              className="bg-jubalViolet w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Login
+            </Button>
           ) : (
             <Button
               className=" bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1.2rem]"

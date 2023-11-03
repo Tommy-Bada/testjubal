@@ -1,7 +1,11 @@
 import ToDoListItem from "./ToDoListItem";
 import Image from "next/image";
 
-export default function ToDoList() {
+type ToDoListProps = {
+  handleAddNewTask: () => void;
+};
+
+export default function ToDoList({ handleAddNewTask }: ToDoListProps) {
   return (
     <div className="bg-white rounded-[2rem] w-[48%] p-[2rem]">
       <div className="flex justify-between items-center">
@@ -18,7 +22,9 @@ export default function ToDoList() {
             To do List
           </p>
         </div>
-        <p className="text-[1.4rem]">Add New Task</p>
+        <p className="text-[1.4rem] cursor-pointer" onClick={handleAddNewTask}>
+          Add New Task
+        </p>
       </div>
       <div className="bg-jubalDashboardBackground px-[2rem] py-[3rem] rounded-[1rem] mt-[2rem]">
         <ToDoListItem
