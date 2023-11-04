@@ -26,3 +26,14 @@
   font-size: 1.6rem;
   margin-top: 1rem;
 }
+.custom-gradient {
+  background: linear-gradient(90deg, #3F2883 0%, #2DA5A4 93.29%);
+}
+
+.post-gig-btn{
+  width: fit-content;
+  position: absolute;
+  bottom: 36px;
+  right: 50px;
+}
+

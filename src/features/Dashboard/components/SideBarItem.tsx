@@ -23,7 +23,7 @@ export default function SideBarItem({
         } px-[1.5rem] py-[1rem] rounded-[0.8rem]`}
       >
         <Image
-          src={`/${active ? activeImage : image}`}
+          src={`${process.env.NEXT_PUBLIC_SITE_BASE_URL}/${active ? activeImage : image}`}
           alt={`${image} icon`}
           width="30"
           height="30"

@@ -3,7 +3,7 @@ import ManagerGigItem from "./ManagerGigItem";
 export default function ManagerGigBox() {
   return (
     <div className="bg-white w-[62%] p-[2.4rem] rounded-[2rem]">
-      <div className=" flex justify-between">
+      <div className="flex justify-between ">
         <div className="flex">
           <p className="text-[1.6rem] text-jubalViolet p-[1rem]">
             Available Gigs

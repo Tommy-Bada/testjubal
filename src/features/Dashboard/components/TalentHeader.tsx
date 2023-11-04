@@ -1,6 +1,11 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function TalentHeader() {
+  const router = useRouter();
+  function switchUser() {
+    router.push(process.env.NEXT_PUBLIC_SITE_BASE_URL+"/client/dashboard/");
+  }
   return (
     <>
       <header className="flex justify-between items-center w-[100%] bg-jubalDashboardBackground h-[6.4rem] p-[2rem] rounded-[12px] ">
@@ -9,14 +14,17 @@ export default function TalentHeader() {
           <div className="w-[1.2rem] bg-white h-[2px] my-[2px]"></div>
           <div className="w-[1.2rem] bg-white h-[2px]"></div>
         </div>
-        <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] py-[1rem] hidden ">
+        <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] cursor-pointer py-[1rem]  hidden ">
           <Image
-            src="dashboard/swap-horizontal.svg"
+            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/swap-horizontal.svg"}
             alt="Switch Icon"
             width="20"
             height="20"
           />
-          <p className="text-white text-[1.6rem] ml-[0.5rem]">
+          <p
+            onClick={switchUser}
+            className="text-white text-[1.6rem] ml-[0.5rem]"
+          >
             Switch to Client
           </p>
         </div>
@@ -27,7 +35,7 @@ export default function TalentHeader() {
             className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none"
           />
           <Image
-            src="dashboard/search.svg"
+            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/search.svg"}
             alt="Search Icon"
             width="20"
             height="20"
@@ -36,7 +44,7 @@ export default function TalentHeader() {
         <div className="flex items-center justify-en">
           <div className="flex justify-center items-center mr-[2rem] ">
             <Image
-              src="dashboard/profile-new.svg"
+              src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/profile-new.svg"}
               alt="User Icon"
               width="44"
               height="44"
@@ -45,7 +53,7 @@ export default function TalentHeader() {
           </div>
           <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center">
             <Image
-              src="dashboard/notification.svg"
+              src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/notification.svg"}
               alt="Notification Icon"
               width="20"
               height="20"

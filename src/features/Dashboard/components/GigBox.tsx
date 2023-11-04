@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function GigBox() {
   const [gigs, setGigs] = useState([
     {
-      profileImage: "dashboard/placeholder.svg",
+      profileImage: "../dashboard/placeholder.svg",
       title: "Lead Sound Designer",
       name: "Hexagon Music",
       startPrice: "5000",

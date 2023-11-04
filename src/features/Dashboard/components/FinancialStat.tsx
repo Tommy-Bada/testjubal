@@ -15,7 +15,7 @@ export default function FinancialStat() {
       </div>
       <div className="flex justify-center items-center mb-[2rem] mt-[3rem]">
         <Image
-          src="/dashboard/no-transactions.svg"
+          src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/no-transactions.svg"}
           alt="Financial Status"
           height="150"
           width="150"

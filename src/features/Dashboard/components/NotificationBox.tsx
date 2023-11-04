@@ -7,7 +7,7 @@ export default function NotificationBox() {
       <div className="flex items-center ">
         <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center ">
           <Image
-            src="dashboard/notification.svg"
+            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/notification.svg"}
             alt="Notification Icon"
             width="20"
             height="20"

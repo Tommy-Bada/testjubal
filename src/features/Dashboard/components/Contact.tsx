@@ -9,7 +9,7 @@ interface ContactProps {
 export default function Contact({ image, title, text }: ContactProps) {
   return (
     <div className="w-[30%]">
-      <Image src={image} alt="icon" width="30" height="30" />
+      <Image src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/"+image} alt="icon" width="30" height="30" />
       <h1 className="my-[2rem] text-[2rem] text-jubalFormText font-[700]">
         {title}
       </h1>

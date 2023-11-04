@@ -8,7 +8,7 @@ export default function TransactionHistory() {
         <div className="bg-white rounded-[1rem] flex p-[1rem]">
           <p className="mr-[1rem] text-[1.4rem]">Newest</p>
           <Image
-            src="/dashboard/drop-down.svg"
+            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/drop-down.svg"}
             alt="drop down"
             width="20"
             height="20"

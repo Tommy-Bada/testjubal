@@ -19,7 +19,7 @@ export default function Transaction({
   return (
     <div className="bg-white p-[2rem] justify-between flex rounded-[2rem] mb-[1.5rem]">
       <div className="flex">
-        <Image src={profileImage} alt="" width="36" height="36" />
+        <Image src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/"+profileImage} alt="" width="36" height="36" />
         <div className="ml-[1rem]">
           <p className="text-[1.6rem] font-[700] text-jubalNav">{title}</p>
           <p className="text-[1.2rem] text-jubalFormText my-[1rem]">{type}</p>
@@ -29,7 +29,7 @@ export default function Transaction({
       <div>
         <div className="flex mb-[2rem]">
           <Image
-            src="dashboard/pay.svg"
+            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/pay.svg"}
             alt="Currency Icon"
             width="22"
             height="16"

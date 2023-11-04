@@ -6,13 +6,34 @@ import Footer from "@/shared/components/Footer";
 import SignupLeft from "@/features/Auth/components/SignupLeft";
 import SignUpForm from "@/features/Auth/components/SignUpForm";
 import EmailVerificationModal from "@/features/Auth/components/EmailVerificationModal";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "@/context/app.context";
+import { useSignup } from "@/hooks/auth.hooks";
+import { useRouter } from "next/router";
 
-export default function Signin() {
+export interface IFormValues {
+  email: string;
+  password: string;
+  serviceType: string;
+  name: string;
+  contact: string;
+  country: string;
+}
+export default function Signup() {
+  const router = useRouter();
+
+  function clearModal() {
+    setShowModal(false);
+    router.push("talent/dashboard");
+  }
+
   const [showModal, setShowModal] = useState(false);
-  const handleSignUp = () => {
-    setShowModal(true);
-  };
+  console.log("working!");
+  const [, dispatch] = useContext<any>(AppContext);
+  console.log({ dispatch });
+  const { mutate: signup, isLoading, error } = useSignup();
+  console.log("Error2: ", error?.response?.data);
+
   return (
     <div>
       <Head>
@@ -24,12 +45,12 @@ export default function Signin() {
         className="p-[2rem] lg:flex lg:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <SignupLeft />
-        <SignUpForm handleSignUp={handleSignUp} />
+        <SignUpForm setShowModal={setShowModal} />
       </div>
       <Divisor />
       <EmailVerificationModal
         isVisible={showModal}
-        handleRemoveModal={() => setShowModal(false)}
+        handleRemoveModal={clearModal}
       />
       <Subscribe />
       <Footer />

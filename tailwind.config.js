@@ -103,6 +103,10 @@ module.exports = withMT({
         jubalPreSignUp: "#98A2B3",
         jubalFooterText: "#98a2b3",
         jubalDashboardBackground: "#F5F6F7",
+        jubalGrey: "#F5F6F7",
+        jubalGreen: "#0F973D",
+        jubalRed: "#D42620",
+        gradient: '#3F2883'
       },
     },
   },

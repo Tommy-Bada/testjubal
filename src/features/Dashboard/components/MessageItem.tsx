@@ -18,7 +18,7 @@ export default function MessageItem({
   return (
     <div className="flex justify-between items-center p-[1rem]">
       <div className="flex items-center">
-        <Image src={profileImage} alt="profile image" width="50" height="50" />
+        <Image src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/"+profileImage} alt="profile image" width="50" height="50" />
         <div className="ml-[1rem]">
           <p className="font-[600] text-[1.6rem] text-jubalFormText">{name}</p>
           <p className="text-[1.2rem]">{textOrTyping}</p>

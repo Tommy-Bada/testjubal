@@ -39,7 +39,7 @@ import dynamic from "next/dynamic";
 //   ssr: false,
 // });
 const inter = Inter({ subsets: ["latin"] });
-export default function App({ Component, pageProps }: AppProps) {
+// export default function App({ Component, pageProps }: AppProps) {
   // const displayComponent = () => {
   //   if (['/', '/login', '/forgot-password'].includes(appProps.router.pathname))
   //     return (
@@ -65,9 +65,52 @@ export default function App({ Component, pageProps }: AppProps) {
   //     </AppQueryProvider>
   //   </AuthProvider>
   // );
+//   return (
+//     <div>
+//       <Component {...pageProps} />
+//     </div>
+//   );
+// }
+
+import React from "react";
+// import type { AppProps } from "next/app";
+import { NextComponentType } from "next";
+import { ThemeProvider } from "@mui/material/styles";
+import { QueryClientProvider, Hydrate, QueryClient } from "react-query";
+
+// import theme from "../theme";
+// import "../styles/globals.css";
+// import Layout from "../components/Layout";
+import AppProvider from "@/context/app.context";
+// import Protected from "../components/Protected/Protected";
+
+type CustomAppProps = AppProps & {
+  Component: NextComponentType & { auth?: boolean };
+};
+
+function MyApp({ Component, pageProps }: CustomAppProps) {
+  const [queryClient] = React.useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 1000 * 20,
+          },
+        },
+      })
+  );
+
   return (
-    <div>
-      <Component {...pageProps} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      {/* <ThemeProvider theme={theme}> */}
+        <AppProvider>
+          {/* <Layout> */}
+            <Component {...pageProps} />
+          {/* </Layout> */}
+        </AppProvider>
+      {/* </ThemeProvider> */}
+    </QueryClientProvider>
   );
 }
+
+export default MyApp;

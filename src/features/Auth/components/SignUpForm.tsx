@@ -1,16 +1,31 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@material-tailwind/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
 import ReactFlagsSelect from "react-flags-select";
 import { CountryDropdown } from "react-country-region-selector";
+import { useRouter } from "next/router";
+import { AppContext } from "@/context/app.context";
+import { useSignup } from "@/hooks/auth.hooks";
+import { IFormValues } from "@/pages/signup";
+export default function SignUpForm({ setShowModal }: any) {
+  const router = useRouter();
+  const [, dispatch] = useContext<any>(AppContext);
+  // console.log({dispatch});
 
-export default function SignUpForm({ handleSignUp }: any) {
+  const { mutate: signup, isLoading, error } = useSignup();
+  console.log("Error2: ", error?.response?.data);
+
+  const handleSubmit = (values: IFormValues) => {
+    // console.log({values});
+    signup(values);
+    setShowModal(true);
+  };
+
   useEffect(() => {
     // Trigger an initial validation check when the component mounts
     formik.validateForm();
@@ -26,7 +41,7 @@ export default function SignUpForm({ handleSignUp }: any) {
       serviceType: "",
       name: "",
       email: "",
-      phone: "",
+      contact: "",
       country: "",
       password: "",
       confirmPassword: "",
@@ -51,14 +66,17 @@ export default function SignUpForm({ handleSignUp }: any) {
         .required("Confirm password is required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      // return;
+      handleSubmit(values);
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 
   return (
     <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-0 sm:p-[3rem] sm:mt-[3rem]">
       <h2 className="text-[2.4rem] font-[700]">Sign Up with Jubal</h2>
-      <form onSubmit={formik.handleSubmit} className="mt-[3rem]">
+      <form className="mt-[3rem]">
         <div className="mb-[2rem] ">
           <label className="text-[1.6rem]">Select Your Service</label>
           <select
@@ -133,11 +151,11 @@ export default function SignUpForm({ handleSignUp }: any) {
             placeholder="909123456"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            value={formik.values.phone}
+            value={formik.values.contact}
           />
-          {formik.touched.phone && formik.errors.phone ? (
+          {formik.touched.contact && formik.errors.contact ? (
             <div className="text-[1.3rem] text-red-700">
-              {formik.errors.phone}
+              {formik.errors.contact}
             </div>
           ) : null}
         </div>
@@ -229,8 +247,7 @@ export default function SignUpForm({ handleSignUp }: any) {
           className={`${
             formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
           } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
-          onClick={formik.isValid ? handleSignUp : null}
-          type="submit"
+          onClick={() => formik.handleSubmit()}
           disabled={!formik.isValid}
         >
           Sign Up
@@ -241,11 +258,13 @@ export default function SignUpForm({ handleSignUp }: any) {
         iconSrc="/siwFacebook.svg"
         alt="facebook icon"
         buttonText="Sign Up with Facebook"
+        onClick={() => router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/google")}
       />
       <FacebookGoogleBtn
         iconSrc="/siwGoogle.svg"
         alt="google icon"
         buttonText="Sign Up with Google"
+        onClick={() => router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/google")}
       />
       <p className="text-center my-[2rem] text-[1.6rem]">
         If you already have an account{" "}

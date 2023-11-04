@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { Button } from "@material-tailwind/react";
 import Image from "next/image";
@@ -8,17 +7,38 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
+import { useRouter } from "next/router";
+import { useCheckLogin } from "@/hooks/app.hooks";
+import { useLogin } from "@/hooks/auth.hooks";
 
+interface IFormValues {
+  email: string;
+  password: string;
+}
 export default function LoginForm() {
+  const router = useRouter();
+  const isLogged = useCheckLogin();
+  const [showPassword, setShowPassword] = useState(false);
+
   useEffect(() => {
-    // Trigger an initial validation check when the component mounts
+    if (isLogged) {
+      console.log("Logged in!");
+      router.push("/client/dashboard");
+    }
     formik.validateForm();
   }, []);
-  const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const { mutate: login, isLoading, error } = useLogin();
+
+  const handleSubmit = (values: IFormValues) => {
+    console.log(values);
+    login({ email: values.email, password: values.password });
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -31,7 +51,8 @@ export default function LoginForm() {
       password: Yup.string().required("Password is required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
     },
   });
 
@@ -92,8 +113,8 @@ export default function LoginForm() {
             className={`${
               formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
             } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
-            type="submit"
             disabled={!formik.isValid}
+            onClick={() => formik.handleSubmit()}
           >
             Login
           </Button>
@@ -105,7 +126,7 @@ export default function LoginForm() {
               label="Remember Me"
               ripple={true}
               id="custom-switch-component"
-              className="h-full w-full checked:bg-jubalViolet"
+              className="w-full h-full checked:bg-jubalViolet"
               labelProps={{
                 className:
                   "text-[1.6rem] ml-[1rem] text-jubalFormText font-[400]",
@@ -127,11 +148,17 @@ export default function LoginForm() {
           iconSrc="/siwFacebook.svg"
           alt="facebook icon"
           buttonText="Log in with Facebook"
+          onClick={() =>
+            router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/facebook")
+          }
         />
         <FacebookGoogleBtn
           iconSrc="/siwGoogle.svg"
           alt="google icon"
           buttonText="Log in with Google"
+          onClick={() =>
+            router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/google")
+          }
         />
         <p className="text-center my-[2rem] text-[1.6rem]">
           If you don&apos;t have an account{" "}

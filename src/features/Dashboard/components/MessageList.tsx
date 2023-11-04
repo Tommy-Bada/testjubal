@@ -11,7 +11,7 @@ export default function MessageList() {
           className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none bg-jubalDashboardBackground"
         />
         <Image
-          src="dashboard/search.svg"
+          src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/search.svg"}
           alt="Search Icon"
           width="20"
           height="20"
