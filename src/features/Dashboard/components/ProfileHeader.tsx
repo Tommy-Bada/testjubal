@@ -20,10 +20,10 @@ export default function ProfileHeader() {
         />
       </div>
       <div className="ml-[5rem]">
-        <p className="text-[1.8rem] text-jubalFormText font-[700] mb-[1rem]">
+        <p className="text-[1.8rem] text-jubalGrey font-[700] mb-[1rem]">
           Complete Your profile
         </p>
-        <p className="text-[1.8rem] text-jubalFormText font-[400]">
+        <p className="text-[1.8rem] text-jubalGrey font-[400]">
           Adding all necessary information including portfolios can improve your
           chances to be considered by Clients
         </p>

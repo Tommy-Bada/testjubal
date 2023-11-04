@@ -1,8 +1,17 @@
 import GigItem from "./GigItem";
 import { useState } from "react";
 
+type Gigs = {
+  profileImage: string;
+  title: string;
+  name: string;
+  startPrice: string;
+  endPrice: string;
+  location: string;
+  isLiked: boolean;
+};
 export default function GigBox() {
-  const [gigs, setGigs] = useState([
+  const [gigs, setGigs] = useState<Gigs[]>([
     {
       profileImage: "dashboard/placeholder.svg",
       title: "Lead Sound Designer",
@@ -52,9 +61,7 @@ export default function GigBox() {
 
   const recommendedGigs = gigs;
   const recentGigs = gigs;
-  const likedGigs = gigs.filter((gig) => gig.isLiked === true);
-
-  // console.log(recommendedGigs, likedGigs);
+  const likedGigs: Gigs[] = gigs.filter((gig) => gig.isLiked === true);
 
   const [isRecommendedGigsSelected, setIsRecommendedGigsSelected] =
     useState(true);

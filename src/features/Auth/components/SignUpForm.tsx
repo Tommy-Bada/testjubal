@@ -56,7 +56,7 @@ export default function SignUpForm({ handleSignUp }: any) {
   });
 
   return (
-    <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-0 sm:p-[3rem] sm:mt-[3rem]">
+    <div className="bg-white rounded-2xl p-[2rem] text-jubalGrey my-[3rem] sm:my-0 sm:p-[3rem] sm:mt-[3rem]">
       <h2 className="text-[2.4rem] font-[700]">Sign Up with Jubal</h2>
       <form onSubmit={formik.handleSubmit} className="mt-[3rem]">
         <div className="mb-[2rem] ">
@@ -227,7 +227,7 @@ export default function SignUpForm({ handleSignUp }: any) {
         <Button
           variant="filled"
           className={`${
-            formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
+            formik.isValid ? "bg-jubalViolet" : "bg-jubalFooterGrey"
           } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
           onClick={formik.isValid ? handleSignUp : null}
           type="submit"

@@ -55,13 +55,13 @@ export default function AddNewTaskModal({
         </div>
         <div className="flex justify-center">
           <form onSubmit={formik.handleSubmit} className="mt-[3rem] w-[50%]">
-            <h2 className="text-[2.2rem] font-[700] text-jubalFormText text-center">
+            <h2 className="text-[2.2rem] font-[700] text-jubalGrey text-center">
               Add New Task
             </h2>
 
             <div className="mb-[2rem] w-[100%]">
               <label
-                className="text-[1.6rem] font-[600] text-jubalFormText"
+                className="text-[1.6rem] font-[600] text-jubalGrey"
                 htmlFor="taskName"
               >
                 Task Name
@@ -85,7 +85,7 @@ export default function AddNewTaskModal({
 
             <div className="w-[100%] mb-[2rem]">
               <label
-                className="text-[1.6rem] font-[600] text-jubalFormText"
+                className="text-[1.6rem] font-[600] text-jubalGrey"
                 htmlFor="taskDetails"
               >
                 Task Details
@@ -104,7 +104,7 @@ export default function AddNewTaskModal({
 
             <div className="mb-[2rem] w-[100%]">
               <label
-                className="text-[1.6rem] font-[600] text-jubalFormText"
+                className="text-[1.6rem] font-[600] text-jubalGrey"
                 htmlFor="startTime"
               >
                 Select Time to Start Task
@@ -128,7 +128,7 @@ export default function AddNewTaskModal({
 
             <div className="mb-[2rem] w-[100%]">
               <label
-                className="text-[1.6rem] font-[600] text-jubalFormText"
+                className="text-[1.6rem] font-[600] text-jubalGrey"
                 htmlFor="endTime"
               >
                 Select Time to End Task
@@ -152,7 +152,7 @@ export default function AddNewTaskModal({
 
             <div className="mb-[2rem] w-[100%]">
               <label
-                className="text-[1.6rem] font-[600] text-jubalFormText"
+                className="text-[1.6rem] font-[600] text-jubalGrey"
                 htmlFor="date"
               >
                 Select Date
@@ -176,7 +176,7 @@ export default function AddNewTaskModal({
             <div className="text-center">
               <Button
                 className={`${
-                  formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
+                  formik.isValid ? "bg-jubalViolet" : "bg-jubalFooterGrey"
                 } w-[max-content] normal-case text-[1.6rem] py-[1.2rem]`}
                 type="submit"
                 disabled={!formik.isValid}

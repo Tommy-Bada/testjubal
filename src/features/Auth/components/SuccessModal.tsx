@@ -20,7 +20,7 @@ export default function SuccessModal({
 }: SuccessModalProps) {
   if (!isVisible) return null;
   return (
-    <div className="bg-[#D9D9D9] fixed inset-0 bg-opacity-70 flex justify-center items-center">
+    <div className="bg-jubalModalBackgroundColor fixed inset-0 bg-opacity-70 flex justify-center items-center">
       <div className="bg-white w-[80%] sm:w-[60%] lg:w-[60rem] p-[2rem] rounded-[2rem] lg:p-[3rem] ">
         <div className="flex justify-center items-center">
           <Image

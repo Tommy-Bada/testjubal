@@ -36,8 +36,8 @@ export default function LoginForm() {
   });
 
   return (
-    <div className="bg-gradient-to-r from-[#3F2883] to-[#2DA5A4] rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]">
-      <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
+    <div className="bg-gradient-to-r from-jubalGradientBlue to-jubalGradientGreen rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]">
+      <div className="bg-white rounded-2xl p-[2rem] text-jubalGrey my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
         <h2 className="text-[2.4rem] font-[700]">Welcome Back!</h2>
         <form className="mt-[2rem]">
           <div className="mb-[2rem] ">
@@ -90,7 +90,7 @@ export default function LoginForm() {
           </div>
           <Button
             className={`${
-              formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
+              formik.isValid ? "bg-jubalViolet" : "bg-jubalFooterGrey"
             } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
             type="submit"
             disabled={!formik.isValid}
@@ -107,8 +107,7 @@ export default function LoginForm() {
               id="custom-switch-component"
               className="h-full w-full checked:bg-jubalViolet"
               labelProps={{
-                className:
-                  "text-[1.6rem] ml-[1rem] text-jubalFormText font-[400]",
+                className: "text-[1.6rem] ml-[1rem] text-jubalGrey font-[400]",
               }}
               containerProps={{
                 className: "w-12 h-6",

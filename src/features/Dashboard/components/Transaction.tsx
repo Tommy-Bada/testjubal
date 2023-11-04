@@ -22,7 +22,7 @@ export default function Transaction({
         <Image src={profileImage} alt="" width="36" height="36" />
         <div className="ml-[1rem]">
           <p className="text-[1.6rem] font-[700] text-jubalNav">{title}</p>
-          <p className="text-[1.2rem] text-jubalFormText my-[1rem]">{type}</p>
+          <p className="text-[1.2rem] text-jubalGrey my-[1rem]">{type}</p>
           <p className="text-[1.2rem] text-jubalViolet">See Details</p>
         </div>
       </div>

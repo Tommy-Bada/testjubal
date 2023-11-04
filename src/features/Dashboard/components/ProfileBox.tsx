@@ -35,7 +35,7 @@ export default function ProfileBox() {
       >
         <div className="mb-[2rem] w-[46%]">
           <label
-            className="text-[1.6rem] font-[600] text-jubalFormText"
+            className="text-[1.6rem] font-[600] text-jubalGrey"
             htmlFor="name"
           >
             Name
@@ -58,7 +58,7 @@ export default function ProfileBox() {
         </div>
         <div className="mb-[2rem] w-[46%]">
           <label
-            className="text-[1.6rem] font-[600] text-jubalFormText"
+            className="text-[1.6rem] font-[600] text-jubalGrey"
             htmlFor="name"
           >
             Username{" "}
@@ -82,7 +82,7 @@ export default function ProfileBox() {
         </div>
         <div className="mb-[2rem] w-[46%] ">
           <label
-            className="text-[1.6rem] font-[600] text-jubalFormText"
+            className="text-[1.6rem] font-[600] text-jubalGrey"
             htmlFor="country"
           >
             City
@@ -103,7 +103,7 @@ export default function ProfileBox() {
         </div>
         <div className="mb-[2rem] w-[46%] ">
           <label
-            className="text-[1.6rem] font-[600] text-jubalFormText"
+            className="text-[1.6rem] font-[600] text-jubalGrey"
             htmlFor="country"
           >
             Country
@@ -147,7 +147,7 @@ export default function ProfileBox() {
         </div>
         <div className="mb-[2rem] w-[46%]">
           <label
-            className="text-[1.6rem] font-[600] text-jubalFormText"
+            className="text-[1.6rem] font-[600] text-jubalGrey"
             htmlFor="name"
           >
             Rate{" "}

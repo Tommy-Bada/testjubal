@@ -4,7 +4,7 @@ export default function TransactionHistory() {
   return (
     <div className=" bg-jubalDashboardBackground w-[50%] p-[3rem] m-[2rem] rounded-[2rem]">
       <div className="flex justify-between items-center mb-[2rem]">
-        <p className="text-jubalFormText text-[1.6rem]">Transaction History</p>
+        <p className="text-jubalGrey text-[1.6rem]">Transaction History</p>
         <div className="bg-white rounded-[1rem] flex p-[1rem]">
           <p className="mr-[1rem] text-[1.4rem]">Newest</p>
           <Image
