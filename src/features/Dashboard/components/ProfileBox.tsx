@@ -163,7 +163,7 @@ export default function ProfileBox() {
               onBlur={formik.handleBlur}
               value={formik.values.rate}
             />
-            <p className="text-[1.6rem] text-[#727A86]">$/hr</p>
+            <p className="text-[1.6rem] text-jubalFAQGrey">$/hr</p>
           </div>
           {formik.touched.rate && formik.errors.rate ? (
             <div className="text-[1.3rem] text-red-700">

@@ -6,11 +6,11 @@ export default function FinancialStat() {
         <p className="text-[1.6rem] text-jubalGrey">Financial Statistics</p>
         <div className="flex items-center">
           <p className="text-[1.2rem] mr-[1rem] text-jubalGrey">Deposit</p>
-          <div className="bg-[#0F973D] w-[2.5rem] h-[4px]"></div>
+          <div className="bg-jubalDashboardGreen w-[2.5rem] h-[4px]"></div>
         </div>
         <div className="flex items-center">
           <p className="text-[1.2rem] mr-[1rem] text-jubalGrey">Transfer</p>
-          <div className="bg-[#D42620] w-[2.5rem] h-[4px]"></div>
+          <div className="bg-jubalDashboardRed w-[2.5rem] h-[4px]"></div>
         </div>
       </div>
       <div className="flex justify-center items-center mb-[2rem] mt-[3rem]">

@@ -9,7 +9,7 @@ export default function ProfileHeader() {
           alt=""
           width="114"
           height="114"
-          className="object-cover rounded-[50%] w-[20.4rem] h-[16rem] border-[0.3rem] border-[#2DA5A4]"
+          className="object-cover rounded-[50%] w-[20.4rem] h-[16rem] border-[0.3rem] border-jubalViolet"
         />
         <Image
           src="/dashboard/camera.svg"

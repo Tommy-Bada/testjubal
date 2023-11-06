@@ -16,7 +16,7 @@ export default function ToDoListItem({
     <div className="p-[2rem] bg-white rounded-[20px] mb-[2rem]">
       <div className="flex justify-between mb-[1rem]">
         <p className="text-[1.4rem] text-jubalFooterText">{name}</p>
-        <p className="text-[1.6rem] text-[#727A86]">{day}</p>
+        <p className="text-[1.6rem] text-jubalFAQGrey">{day}</p>
       </div>
 
       <div className="flex justify-between items-end">
