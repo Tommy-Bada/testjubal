@@ -20,7 +20,7 @@ export default function MessageItem({
       <div className="flex items-center">
         <Image src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/"+profileImage} alt="profile image" width="50" height="50" />
         <div className="ml-[1rem]">
-          <p className="font-[600] text-[1.6rem] text-jubalFormText">{name}</p>
+          <p className="font-[600] text-[1.6rem] text-jubalGrey">{name}</p>
           <p className="text-[1.2rem]">{textOrTyping}</p>
         </div>
       </div>

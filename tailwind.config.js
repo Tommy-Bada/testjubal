@@ -89,11 +89,45 @@ module.exports = withMT({
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // theme: {
+  //   extend: {
+  //     colors: {
+  //       jubalViolet: "#262262",
+  //       jubalYellow: "#F3A218",
+  //       jubalBlue: "#00798F",
+  //       jubalDark: "#0D0C22",
+  //       jubalNav: "#4E4E4E",
+  //       jubalLightBlue: "#B0D5DC",
+  //       jubalGrey: "#4E4E4E",
+  //       jubalFormBorder: "#DFE2E7",
+  //       jubalFooterGrey: "#98a2b3",
+  //       jubalDashboardBackground: "#F5F6F7",
+  //       jubalGrey: "#F5F6F7",
+  //       jubalGreen: "#0F973D",
+  //       jubalRed: "#D42620",
+  //       gradient: '#3F2883',
+  //       jubalModalBackgroundColor: "#D9D9D9",
+  //       jubalGradientBlue: "#3F2883",
+  //       jubalGradientGreen: "#2DA5A4",
+  //       jubalGradientBlueFaded: "#3F288339",
+  //       jubalGradientGreenFaded: "#2DA5A439",
+  //     },
+  //   },
+  // },
   theme: {
     extend: {
+      gradientColorStops: {
+        customgradient: {
+          '0': '#3F2883',
+          '100': '#2DA5A4',
+        },
+      },
       colors: {
         jubalViolet: "#262262",
         jubalYellow: "#F3A218",
+        jubalGrey: "#F5F6F7",
+        jubalGreen: "#0F973D",
+        jubalRed: "#D42620",
         jubalBlue: "#00798F",
         jubalDark: "#0D0C22",
         jubalNav: "#4E4E4E",
@@ -103,9 +137,6 @@ module.exports = withMT({
         jubalPreSignUp: "#98A2B3",
         jubalFooterText: "#98a2b3",
         jubalDashboardBackground: "#F5F6F7",
-        jubalGrey: "#F5F6F7",
-        jubalGreen: "#0F973D",
-        jubalRed: "#D42620",
         gradient: '#3F2883'
       },
     },

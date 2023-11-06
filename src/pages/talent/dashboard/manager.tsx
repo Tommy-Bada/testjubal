@@ -12,8 +12,8 @@ export default function Manager() {
   };
 
   return (
-    <div className="flex bg-gradient-to-r from-[#3F288339] to-[#2DA5A439] py-[2rem] px-[3rem] h-[100%]">
-      <SideBar/>
+    <div className="flex bg-gradient-to-r from-jubalGradientBlueFaded to-jubalGradientGreenFaded py-[2rem] px-[3rem] h-[100%]">
+      <SideBar />
       <div className="  bg-white p-[2rem] ml-[30rem] rounded-[2rem] w-[100%]">
         <TalentHeader />
         <ManagerTopData />

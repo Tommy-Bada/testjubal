@@ -71,16 +71,16 @@ export default function Footer() {
         <div className="my-[2rem] lg:my-0">
           <h3 className=" font-bold text-[1.8rem]">Jubal</h3>
           <ul>
-            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Why Jubal
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Post a job
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Find a job
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Job Alert
             </li>
           </ul>
@@ -90,22 +90,22 @@ export default function Footer() {
             Resources
           </h3>
           <ul>
-            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white ">
+            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white ">
               Privacy
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Help Center
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Browse Music Pros
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Guides
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Partner
             </li>
-            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Directories
             </li>
           </ul>
@@ -113,23 +113,23 @@ export default function Footer() {
         <div className="my-[2rem] lg:my-0">
           <h3 className="text-[1.6rem] font-bold lg:text-[1.8rem]">Company</h3>
           <ul>
-            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               About Us
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Contact Us
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Products
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               {" "}
               Login
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Sign Up
             </li>
-            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               FAQ
             </li>
           </ul>
@@ -147,7 +147,7 @@ export default function Footer() {
                 height="30"
                 className="w-[2rem] mr-[1rem]"
               />
-              <span className="text-[1.4rem] text-jubalFooterText hover:text-white">
+              <span className="text-[1.4rem] text-jubalFooterGrey hover:text-white">
                 832 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </span>
             </li>
@@ -159,7 +159,7 @@ export default function Footer() {
                 height="30"
                 className="w-[2rem] mr-[1rem]"
               />
-              <span className="text-[1.4rem] text-jubalFooterText hover:text-white">
+              <span className="text-[1.4rem] text-jubalFooterGrey hover:text-white">
                 +234 345 123 5566
               </span>
             </li>
@@ -171,7 +171,7 @@ export default function Footer() {
                 height="30"
                 className="w-[2rem] mr-[1rem]"
               />
-              <span className="text-[1.4rem] text-jubalFooterText hover:text-white">
+              <span className="text-[1.4rem] text-jubalFooterGrey hover:text-white">
                 support@thejubal.com
               </span>
             </li>

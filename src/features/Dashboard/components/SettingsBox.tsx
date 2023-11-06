@@ -27,7 +27,7 @@ export default function SettingsBox() {
         </p>
       </div>
 
-      <h1 className=" text-[2rem] text-jubalFormText font-[700] mt-[3rem] mb-[2rem]">
+      <h1 className=" text-[2rem] text-jubalGrey font-[700] mt-[3rem] mb-[2rem]">
         Let&apos;s stay connected
       </h1>
       <p className="text-[1.4rem] text-[#727A86] w-[50%]">
@@ -52,7 +52,7 @@ export default function SettingsBox() {
         />
       </div>
 
-      <h1 className=" text-[2rem] text-jubalFormText font-[700] mt-[3rem] mb-[2rem]">
+      <h1 className=" text-[2rem] text-jubalGrey font-[700] mt-[3rem] mb-[2rem]">
         FAQs
       </h1>
       <div>

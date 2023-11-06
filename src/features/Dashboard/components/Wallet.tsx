@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function Wallet() {
   return (
     <div className="bg-white rounded-[0.8rem] w-[100%] px-[2rem] py-[3rem]">
-      <div className="bg-gradient-to-r from-[#3F2883] to-[#2DA5A4] rounded-[1rem] w-[100%] px-[2rem] py-[3rem]">
+      <div className="bg-gradient-to-r from-jubalGradientBlue to-jubalGradientGreen rounded-[1rem] w-[100%] px-[2rem] py-[3rem]">
         <div className="bg-white rounded-[50%] h-[4.4rem] w-[4.4rem] flex justify-center items-center mb-[1rem]">
           <Image
             src="/dashboard/bank-money.svg"

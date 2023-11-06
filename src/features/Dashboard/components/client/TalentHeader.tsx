@@ -1,27 +1,29 @@
 import Image from "next/image";
 import { UserSwitchProps } from "@/pages/client/dashboard";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 
 export default function DashboardHeader({ user, setUser }: UserSwitchProps) {
   const router = useRouter();
-  function switchUser(user: string) {
-    // setUser(user);
-    router.push(process.env.NEXT_PUBLIC_SITE_BASE_URL+"/talent/dashboard/");
+  function switchUser() {
+    router.push(process.env.NEXT_PUBLIC_SITE_BASE_URL + "/talent/dashboard/");
   }
   return (
     <div className="flex justify-between items-center w-[100%] bg-jubalDashboardBackground h-[6.4rem] p-[2rem] rounded-[12px] ">
-      <div className="flex w-72 bg-jubalViolet rounded-[1rem] px-[1rem] py-[0.5rem]">
+      <div className="flex w-60 bg-jubalViolet rounded-[1rem] px-[1rem] py-[0.5rem]">
         <Image
-          src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/swap-horizontal.svg"}
+          src={
+            process.env.NEXT_PUBLIC_SITE_BASE_URL +
+            "/dashboard/swap-horizontal.svg"
+          }
           alt="Switch Icon"
           width="20"
           height="20"
         />
         <p
-          onClick={() => switchUser(user === "talent" ? "client" : "talent")}
+          onClick={switchUser}
           className="text-white cursor-pointer text-[1.8rem] ml-[0.5rem]"
         >
-          {user === "talent" ? "Switch to Client" : "Switch to Pro"}
+          Switch to Pro
         </p>
       </div>
       <div className="flex justify-between bg-white p-[1rem] rounded-[0.8rem] w-[50%]">

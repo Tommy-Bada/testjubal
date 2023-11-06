@@ -8,7 +8,7 @@ export const loginRequest = async ({
   password: string;
 }) => {
   try {
-    const response = await axios.post("http://localhost:4000/api/v1/auth/signin", {
+    const response = await axios.post((process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/signin"), {
       email,
       password,
     });
@@ -45,7 +45,7 @@ export const signupRequest = async ({
     const lastName = name && name.split(" ")[1]
     const role = serviceType === "Looking for Talents" ? "talent" : "client";
 
-    const response = await axios.post("http://localhost:4000/api/v1/auth/signup", {
+    const response = await axios.post((process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/signup"), {
       email,
       password,
       username,

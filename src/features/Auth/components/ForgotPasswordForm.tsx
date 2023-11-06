@@ -26,10 +26,10 @@ export default function ForgotPasswordForm() {
   });
   return (
     <div
-      className="bg-gradient-to-r from-[#3F2883] to-[#2DA5A4] rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]"
+      className="bg-gradient-to-r from-jubalGradientBlue to-jubalGradientGreen rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]"
       suppressHydrationWarning
     >
-      <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
+      <div className="bg-white rounded-2xl p-[2rem] text-jubalGrey my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
         <h2 className="text-[2.4rem] font-[700]">Forgot Password</h2>
         <form onSubmit={formik.handleSubmit} className="mt-[3rem]">
           <div className="mb-[2rem]">
@@ -63,7 +63,7 @@ export default function ForgotPasswordForm() {
           ) : (
             <Button
               variant="filled"
-              className="bg-jubalPreSignUp w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
+              className="bg-jubalFooterGrey w-[100%] normal-case text-[1.6rem] py-[1.2rem]"
               type="submit"
               disabled
             >

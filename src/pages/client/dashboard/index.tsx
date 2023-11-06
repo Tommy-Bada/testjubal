@@ -1,5 +1,5 @@
 import SideBar from "@/features/Dashboard/components/client/SideBar";
-import DashboardHeader from "@/features/Dashboard/components/client/DashboardHeader";
+import DashboardHeader from "@/features/Dashboard/components/client/TalentHeader";
 import TopData from "@/features/Dashboard/components/client/TopData";
 import NotificationBox from "@/features/Dashboard/components/client/NotificationBox";
 import GigBox from "@/features/Dashboard/components/client/GigBox";
