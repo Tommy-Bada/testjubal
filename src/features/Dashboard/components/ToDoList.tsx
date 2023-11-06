@@ -1,3 +1,4 @@
+import { config } from "@/config";
 import ToDoListItem from "./ToDoListItem";
 import Image from "next/image";
 
@@ -12,7 +13,7 @@ export default function ToDoList({ handleAddNewTask }: ToDoListProps) {
         <div className="flex items-center ">
           <div className=" rounded-[50%] bg-jubalDashboardBackground w-[5rem] h-[5rem] flex justify-center items-center ">
             <Image
-              src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/todolist.svg"}
+              src={config.siteBaseUrl+"/dashboard/todolist.svg"}
               alt="Notification Icon"
               width="100"
               height="100"

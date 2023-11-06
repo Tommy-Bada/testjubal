@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
+import { config } from "@/config";
 interface GigItemProps {
   profileImage: string;
   title: string;
@@ -27,7 +28,7 @@ export default function GigItem({
       <div className="flex items-start justify-between ">
         <div className="flex items-center">
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/"+profileImage}
+            src={config.siteBaseUrl+"/"+profileImage}
             alt={`${profileImage} icon`}
             width="40"
             height="40"
@@ -40,7 +41,7 @@ export default function GigItem({
         <div onClick={handleLike}>
           <Image
             src={`${
-              isLiked ? process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/heart-liked.svg" : "../dashboard/heart.svg"
+              isLiked ? config.siteBaseUrl+"/dashboard/heart-liked.svg" : "../dashboard/heart.svg"
             }`}
             alt="Like Icon"
             width="30"
@@ -51,7 +52,7 @@ export default function GigItem({
       <hr className="my-[1rem]" />
       <div className="flex mb-[1rem] ">
         <Image
-          src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/pay.svg"}
+          src={config.siteBaseUrl+"/dashboard/pay.svg"}
           alt="Currency Icon"
           width="22"
           height="16"
@@ -64,7 +65,7 @@ export default function GigItem({
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/location.svg"}
+            src={config.siteBaseUrl+"/dashboard/location.svg"}
             alt="Location Icon"
             width="14"
             height="20"

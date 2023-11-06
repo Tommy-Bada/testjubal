@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Transaction from "./Transaction";
+import { config } from "@/config";
 export default function TransactionHistory() {
   return (
     <div className=" bg-jubalDashboardBackground w-[50%] p-[3rem] m-[2rem] rounded-[2rem]">
@@ -8,7 +9,7 @@ export default function TransactionHistory() {
         <div className="bg-white rounded-[1rem] flex p-[1rem]">
           <p className="mr-[1rem] text-[1.4rem]">Newest</p>
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/drop-down.svg"}
+            src={config.siteBaseUrl+"/dashboard/drop-down.svg"}
             alt="drop down"
             width="20"
             height="20"

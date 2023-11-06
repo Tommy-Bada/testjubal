@@ -1,3 +1,4 @@
+import { config } from "@/config";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -23,7 +24,7 @@ export default function SideBarItem({
         } px-[1.5rem] py-[1rem] rounded-[0.8rem]`}
       >
         <Image
-          src={`${process.env.NEXT_PUBLIC_SITE_BASE_URL}/${active ? activeImage : image}`}
+          src={`${config.siteBaseUrl}/${active ? activeImage : image}`}
           alt={`${image} icon`}
           width="30"
           height="30"

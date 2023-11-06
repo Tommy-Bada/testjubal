@@ -1,3 +1,4 @@
+import { config } from "@/config";
 import Image from "next/image";
 export default function TopData() {
   return (
@@ -29,7 +30,7 @@ export default function TopData() {
   
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalGreen">
                 <Image
-                  src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/cash.svg"}
+                  src={config.siteBaseUrl+"/dashboard/cash.svg"}
                   alt="Jubal Logo"
                   width="16"
                   height="16"
@@ -46,7 +47,7 @@ export default function TopData() {
             <div className="p-[17px] flex flex-col justify-between bg-jubalDashboardBackground w-[129px] h-[113px] shrink-0 rounded-[var(--2,8px)]">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalRed">
                 <Image
-                  src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/lan.svg"}
+                  src={config.siteBaseUrl+"/dashboard/lan.svg"}
                   alt="Jubal Logo"
                   width="16"
                   height="16"
@@ -64,7 +65,7 @@ export default function TopData() {
             <div className="flex gap-[var(--2,8px)] items-center">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalYellow">
                 <Image
-                  src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/list-box.svg"}
+                  src={config.siteBaseUrl+"/dashboard/list-box.svg"}
                   alt="Jubal Logo"
                   width="16"
                   height="16"

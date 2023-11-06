@@ -37,3 +37,6 @@
   right: 50px;
 }
 
+.bg-forgot-password{
+  background: url("../../public/loginHero.png");
+}

@@ -30,14 +30,11 @@ export const useLogin = () => {
           type: "SET_NOTIFY",
           payload: {
             type: "success",
-            // @ts-ignore
             message: "Signed in successfully",
             open: true,
           },
         });
         window.location.href = `/${data.user.role}/dashboard`;
-        // window.location.href = "/dashboard";
-        // issue with next router redirect
       }
     },
     onError: (error: AxiosError) => {
@@ -75,13 +72,11 @@ export const useSignup = () => {
           type: "SET_NOTIFY",
           payload: {
             type: "success",
-            // @ts-ignore
             message: "Account created & logged in successfully",
             open: true,
           },
         });
 
-        // window.location.href = `/${data.user.role}/dashboard`;
       }
 
     },

@@ -10,6 +10,7 @@ import FormSeperator from "./FormSeperator";
 import { useRouter } from "next/router";
 import { useCheckLogin } from "@/hooks/app.hooks";
 import { useLogin } from "@/hooks/auth.hooks";
+import { config } from "@/config";
 
 interface IFormValues {
   email: string;
@@ -18,14 +19,12 @@ interface IFormValues {
 export default function LoginForm() {
   const router = useRouter();
   const isLogged = useCheckLogin();
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   useEffect(() => {
     if (isLogged) {
-      console.log("Logged in!");
       router.push("/client/dashboard");
     }
-    formik.validateForm();
   }, []);
 
   const togglePasswordVisibility = () => {
@@ -35,7 +34,6 @@ export default function LoginForm() {
   const { mutate: login, isLoading, error } = useLogin();
 
   const handleSubmit = (values: IFormValues) => {
-    console.log(values);
     login({ email: values.email, password: values.password });
   };
 
@@ -51,7 +49,6 @@ export default function LoginForm() {
       password: Yup.string().required("Password is required"),
     }),
     onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
       handleSubmit(values);
     },
   });
@@ -148,7 +145,7 @@ export default function LoginForm() {
           alt="facebook icon"
           buttonText="Log in with Facebook"
           onClick={() =>
-            router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/facebook")
+            router.push(config.apiBaseUrl+"/api/v1/auth/facebook")
           }
         />
         <FacebookGoogleBtn
@@ -156,7 +153,7 @@ export default function LoginForm() {
           alt="google icon"
           buttonText="Log in with Google"
           onClick={() =>
-            router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/google")
+            router.push(config.apiBaseUrl+"/api/v1/auth/google")
           }
         />
         <p className="text-center my-[2rem] text-[1.6rem]">

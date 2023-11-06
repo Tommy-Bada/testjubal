@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import Link from "next/link";
+import { config } from "@/config";
 interface GigItemProps {
   profileImage: string;
   title: string;
@@ -33,7 +34,7 @@ export default function GigItem({
         </div>
         <div>
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/heart.svg"}
+            src={config.siteBaseUrl+"/dashboard/heart.svg"}
             alt="Like Icon"
             width="36"
             height="36"
@@ -44,13 +45,13 @@ export default function GigItem({
       <div className="ratings flex justify-between mb-3 items-center gap-[var(--4,16px)]">
         <div className="flex star w-[106px] h-[17px]">
         <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/star.svg"}
+            src={config.siteBaseUrl+"/dashboard/star.svg"}
             alt="Like Icon"
             width="36"
             height="36"
           />
         <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/star.svg"}
+            src={config.siteBaseUrl+"/dashboard/star.svg"}
             alt="Like Icon"
             width="36"
             height="36"

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@material-tailwind/react";
+import { config } from "@/config";
 interface GigItemProps {
   profileImage: string;
   title: string;
@@ -28,7 +29,7 @@ export default function ManageGigItem({
     <div className="bg-white p-[2rem] rounded-[3rem] my-[2rem] flex items-start justify-between ">
       <div className="flex items-center  w-[35%]">
         <Image
-          src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/"+profileImage}
+          src={config.siteBaseUrl+"/"+profileImage}
           alt={`${profileImage} icon`}
           width="40"
           height="40"
@@ -42,7 +43,7 @@ export default function ManageGigItem({
       <div>
         <div className="flex mb-[2rem] ">
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/pay.svg"}
+            src={config.siteBaseUrl+"/dashboard/pay.svg"}
             alt="Currency Icon"
             width="22"
             height="16"
@@ -57,7 +58,7 @@ export default function ManageGigItem({
         </div>
         <div className="flex items-center">
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/location.svg"}
+            src={config.siteBaseUrl+"/dashboard/location.svg"}
             alt="Location Icon"
             width="14"
             height="20"

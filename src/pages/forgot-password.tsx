@@ -9,10 +9,7 @@ export default function ForgotPassword() {
   return (
     <div>
       <Header />
-      <div
-        style={{ background: "url(/loginHero.png)" }}
-        className="pl-[2rem] pr-[4rem] py-[2rem] lg:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
-      >
+      <div className="bg-forgot-password pl-[2rem] pr-[4rem] py-[2rem] lg:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]">
         <LoginLeft />
         <ForgotPasswordForm />
       </div>

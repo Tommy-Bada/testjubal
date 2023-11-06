@@ -1,3 +1,4 @@
+import { config } from "@/config";
 import Image from "next/image";
 export default function FinancialStat() {
   return (
@@ -15,7 +16,7 @@ export default function FinancialStat() {
       </div>
       <div className="flex justify-center items-center mb-[2rem] mt-[3rem]">
         <Image
-          src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/no-transactions.svg"}
+          src={config.siteBaseUrl+"/dashboard/no-transactions.svg"}
           alt="Financial Status"
           height="150"
           width="150"

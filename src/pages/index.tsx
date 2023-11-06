@@ -13,6 +13,8 @@ export default function Home() {
   useEffect(() => {
     if (isLogged || !!authToken) {
       router.push("/talent/dashboard");
+    }else{
+      router.push("/login");
     }
   }, []);
 

@@ -1,7 +1,6 @@
 import Image from "next/image";
 export default function TopData() {
   return (
-    // <div className="flex bg-jubalDashboardBackground justify-between p-[3rem] mt-[2rem] mb-[3rem] rounded-[2rem]">
     <div className="flex bg-jubalDashboardBackground w-[992px] h-[277px] p-[3rem] mt-[2rem] mb-[3rem] shrink-0 rounded-[var(--5,20px)]">
       <div className="relative w-[593px] h-[229px] shrink-0 rounded-[var(--2,8px)] custom-gradient">
         <div className="w-[202px] inline-flex flex-col items-start gap-[var(--4,16px)] m-[4rem] ">

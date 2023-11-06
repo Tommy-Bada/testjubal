@@ -8,10 +8,11 @@ import { useRouter } from "next/router";
 import { parseCookies } from "nookies";
 import { useQuery } from "react-query";
 import { Box, CircularProgress } from "@mui/material";
+import { config } from "@/config";
 
 export const getProfile = async (token: string, username: string) => {
   const response = await axios.get(
-    `http://localhost:4000/api/v1/user/${username}`,
+    `${config.apiBaseUrl}/api/v1/user/${username}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -31,7 +32,6 @@ export const useProfile = () => {
 
   if (!authToken && typeof window !== "undefined") {
     router.push("/login");
-    // return { data: {}, isLoading: false, error: null };
   }
 
   return useQuery(["profile", authToken], () =>
@@ -56,7 +56,7 @@ export default function Dashboard() {
 
   return (
     <div className="flex bg-gradient-to-r from-[#3F288339] to-[#2DA5A439] py-[2rem] px-[3rem] h-[100%]">
-      <SideBar/>
+      <SideBar />
       <div className="  bg-white p-[2rem] ml-[30rem] rounded-[2rem] w-[100%]">
         <TalentHeader />
         <TopData />

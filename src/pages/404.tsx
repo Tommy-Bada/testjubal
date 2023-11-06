@@ -1,12 +1,9 @@
+import { config } from '@/config';
 import * as React from 'react';
 
 require('dotenv').config();
 
-const NotFoundPage = () => {
-
-  // const name_public = process.env.NEXT_PUBLIC_SITE_BASE_URL;
-  // console.log(name_public);
-  
+const NotFoundPage = () => {  
   return (
     <main>
       <section className='bg-white'>

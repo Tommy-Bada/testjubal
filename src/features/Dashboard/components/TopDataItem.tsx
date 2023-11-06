@@ -1,3 +1,4 @@
+import { config } from "@/config";
 import Image from "next/image";
 interface TopDataItemProps {
   image: string;
@@ -18,7 +19,7 @@ export default function TopDataItem({
         style={{ backgroundColor: background }}
         className="w-[4rem] h-[4rem] rounded-[50%] flex justify-center items-center p-[1.2rem]"
       >
-        <Image src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/"+image} alt={`${image} icon`} width="30" height="30" />
+        <Image src={config.siteBaseUrl+"/"+image} alt={`${image} icon`} width="30" height="30" />
       </div>
       <p className="text-[1.6rem] font-[700] my-[2rem] text-jubalNav">{text}</p>
       <p className="text-[1.4rem] text-jubalFooterText">{number}</p>

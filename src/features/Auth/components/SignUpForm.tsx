@@ -12,25 +12,18 @@ import { useRouter } from "next/router";
 import { AppContext } from "@/context/app.context";
 import { useSignup } from "@/hooks/auth.hooks";
 import { IFormValues } from "@/pages/signup";
+import { config } from "@/config";
 export default function SignUpForm({ setShowModal }: any) {
   const router = useRouter();
   const [, dispatch] = useContext<any>(AppContext);
-  // console.log({dispatch});
 
   const { mutate: signup, isLoading, error } = useSignup();
   console.log("Error2: ", error?.response?.data);
 
   const handleSubmit = (values: IFormValues) => {
-    // console.log({values});
     signup(values);
     setShowModal(true);
   };
-
-  useEffect(() => {
-    // Trigger an initial validation check when the component mounts
-    formik.validateForm();
-  }, []);
-  // const [selected, setSelected] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -66,10 +59,7 @@ export default function SignUpForm({ setShowModal }: any) {
         .required("Confirm password is required"),
     }),
     onSubmit: (values) => {
-      // alert(JSON.stringify(values, null, 2));
-      // return;
       handleSubmit(values);
-      // alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -169,17 +159,7 @@ export default function SignUpForm({ setShowModal }: any) {
             value={formik.values.country}
             onChange={(_, e) => formik.handleChange(e)}
             onBlur={formik.handleBlur}
-            // className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
           />
-          {/* <ReactFlagsSelect
-            id="country"
-            selected={selected}
-            searchable={true}
-            onSelect={(code) => {
-              formik.setFieldValue("country", code); // Update the country field in formik.values
-              setSelected(code); // Update the selected state as well
-            }} */}
-          {/* /> */}
           {formik.touched.country && formik.errors.country ? (
             <div className="text-[1.3rem] text-red-700">
               {formik.errors.country}
@@ -258,13 +238,13 @@ export default function SignUpForm({ setShowModal }: any) {
         iconSrc="/siwFacebook.svg"
         alt="facebook icon"
         buttonText="Sign Up with Facebook"
-        onClick={() => router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/google")}
+        onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}
       />
       <FacebookGoogleBtn
         iconSrc="/siwGoogle.svg"
         alt="google icon"
         buttonText="Sign Up with Google"
-        onClick={() => router.push(process.env.NEXT_PUBLIC_API_BASE_URL+"/api/v1/auth/google")}
+        onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}
       />
       <p className="text-center my-[2rem] text-[1.6rem]">
         If you already have an account{" "}

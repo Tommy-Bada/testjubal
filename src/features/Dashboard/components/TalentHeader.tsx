@@ -1,10 +1,11 @@
+import { config } from "@/config";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function TalentHeader() {
   const router = useRouter();
   function switchUser() {
-    router.push(process.env.NEXT_PUBLIC_SITE_BASE_URL+"/client/dashboard/");
+    router.push("/client/dashboard");
   }
   return (
     <>
@@ -16,7 +17,7 @@ export default function TalentHeader() {
         </div>
         <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] cursor-pointer py-[1rem]  hidden ">
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/swap-horizontal.svg"}
+            src={config.siteBaseUrl+"/dashboard/swap-horizontal.svg"}
             alt="Switch Icon"
             width="20"
             height="20"
@@ -35,7 +36,7 @@ export default function TalentHeader() {
             className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none"
           />
           <Image
-            src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/search.svg"}
+            src={config.siteBaseUrl+"/dashboard/search.svg"}
             alt="Search Icon"
             width="20"
             height="20"
@@ -44,7 +45,7 @@ export default function TalentHeader() {
         <div className="flex items-center justify-en">
           <div className="flex justify-center items-center mr-[2rem] ">
             <Image
-              src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/profile-new.svg"}
+              src={config.siteBaseUrl+"/dashboard/profile-new.svg"}
               alt="User Icon"
               width="44"
               height="44"
@@ -53,7 +54,7 @@ export default function TalentHeader() {
           </div>
           <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center">
             <Image
-              src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/notification.svg"}
+              src={config.siteBaseUrl+"/dashboard/notification.svg"}
               alt="Notification Icon"
               width="20"
               height="20"

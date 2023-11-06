@@ -1,18 +1,19 @@
 import Image from "next/image";
 import { UserSwitchProps } from "@/pages/client/dashboard";
 import { useRouter } from "next/router";
+import { config } from "@/config";
 
 export default function DashboardHeader({ user, setUser }: UserSwitchProps) {
   const router = useRouter();
   function switchUser() {
-    router.push(process.env.NEXT_PUBLIC_SITE_BASE_URL + "/talent/dashboard/");
+    router.push("/talent/dashboard/");
   }
   return (
     <div className="flex justify-between items-center w-[100%] bg-jubalDashboardBackground h-[6.4rem] p-[2rem] rounded-[12px] ">
       <div className="flex w-60 bg-jubalViolet rounded-[1rem] px-[1rem] py-[0.5rem]">
         <Image
           src={
-            process.env.NEXT_PUBLIC_SITE_BASE_URL +
+            config.siteBaseUrl +
             "/dashboard/swap-horizontal.svg"
           }
           alt="Switch Icon"

@@ -13,7 +13,7 @@ export const useApp = () => {
 // Hook to check if the user is logged in
 export const useCheckLogin = () => {
   const router = useRouter();
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState<boolean>(false);
 
   useEffect(() => {
     router.events.on("routeChangeComplete", () => {

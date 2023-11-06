@@ -12,7 +12,7 @@ export interface UserSwitchProps {
 }
 
 export default function Dashboard() {
-  const [user, setUser] = useState("talent");
+  const [user, setUser] = useState<string>("talent");
 
   return (
     <div className="flex bg-gradient-to-r from-[#3F288339] to-[#2DA5A439] py-[3rem] px-[5rem]">
