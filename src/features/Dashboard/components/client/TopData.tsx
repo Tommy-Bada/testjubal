@@ -25,7 +25,7 @@ export default function TopData() {
       <div className="p-[8px] ml-[16px] bg-white w-[335px] h-[229px] shrink-0 rounded-[var(--2,8px)]">
         <div className="flex flex-col">
           <div className="flex flex-row justify-between">
-            <div className="p-[17px] bg-jubalGrey flex flex-col justify-between w-[182px] h-[113px] shrink-0 rounded-[var(--2,8px)]">
+            <div className="p-[17px] bg-jubalDashboardBackground flex flex-col justify-between w-[182px] h-[113px] shrink-0 rounded-[var(--2,8px)]">
   
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalGreen">
                 <Image
@@ -43,7 +43,7 @@ export default function TopData() {
               </div>
             </div>
   
-            <div className="p-[17px] flex flex-col justify-between bg-jubalGrey w-[129px] h-[113px] shrink-0 rounded-[var(--2,8px)]">
+            <div className="p-[17px] flex flex-col justify-between bg-jubalDashboardBackground w-[129px] h-[113px] shrink-0 rounded-[var(--2,8px)]">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalRed">
                 <Image
                   src={process.env.NEXT_PUBLIC_SITE_BASE_URL+"/dashboard/lan.svg"}
@@ -60,7 +60,7 @@ export default function TopData() {
               </div>
             </div>
           </div>
-          <div className="p-[17px] flex flex-col justify-around mt-[8px] bg-jubalGrey w-[319px] h-[92px] shrink-0 rounded-[var(--2,8px)]">
+          <div className="p-[17px] flex flex-col justify-around mt-[8px] bg-jubalDashboardBackground w-[319px] h-[92px] shrink-0 rounded-[var(--2,8px)]">
             <div className="flex gap-[var(--2,8px)] items-center">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalYellow">
                 <Image

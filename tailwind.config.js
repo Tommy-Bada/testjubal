@@ -125,7 +125,7 @@ module.exports = withMT({
       colors: {
         jubalViolet: "#262262",
         jubalYellow: "#F3A218",
-        jubalGrey: "#F5F6F7",
+        // jubalGrey: "#F5F6F7",
         jubalGreen: "#0F973D",
         jubalRed: "#D42620",
         jubalBlue: "#00798F",

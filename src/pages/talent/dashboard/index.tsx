@@ -30,7 +30,7 @@ export const useProfile = () => {
   const username = parseCookies().username;
 
   if (!authToken && typeof window !== "undefined") {
-    // router.push("/login");
+    router.push("/login");
     // return { data: {}, isLoading: false, error: null };
   }
 

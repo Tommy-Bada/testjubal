@@ -12,11 +12,6 @@ export interface UserSwitchProps {
 }
 
 export default function Dashboard() {
-  interface UserSwitchProps {
-    user: string;
-    setUser: (user: string) => void;
-  }
-
   const [user, setUser] = useState("talent");
 
   return (

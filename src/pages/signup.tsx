@@ -6,10 +6,12 @@ import Footer from "@/shared/components/Footer";
 import SignupLeft from "@/features/Auth/components/SignupLeft";
 import SignUpForm from "@/features/Auth/components/SignUpForm";
 import EmailVerificationModal from "@/features/Auth/components/EmailVerificationModal";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "@/context/app.context";
 import { useSignup } from "@/hooks/auth.hooks";
 import { useRouter } from "next/router";
+import { useCheckLogin } from "@/hooks/app.hooks";
+import { parseCookies } from "nookies";
 
 export interface IFormValues {
   email: string;
@@ -20,7 +22,17 @@ export interface IFormValues {
   country: string;
 }
 export default function Signup() {
+  const authToken = parseCookies().aToken;
+  console.log({ authToken });
+
   const router = useRouter();
+  const isLogged = useCheckLogin();
+
+  useEffect(() => {
+    if (isLogged || !!authToken) {
+      router.push("/talent/dashboard");
+    }
+  }, []);
 
   function clearModal() {
     setShowModal(false);
