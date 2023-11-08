@@ -22,7 +22,7 @@ export default function GigItem({
       <div className="flex items-start justify-between ">
         <div className="flex items-center">
           <Image
-            src={`http://localhost:3000/${profileImage}`}
+            src={`${config.siteBaseUrl}/${profileImage}`}
             alt={`${profileImage} icon`}
             width="40"
             height="40"
