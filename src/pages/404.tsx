@@ -1,5 +1,6 @@
 import { config } from '@/config';
 import * as React from 'react';
+import Image from "next/image";
 
 require('dotenv').config();
 

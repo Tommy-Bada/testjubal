@@ -3,14 +3,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Link from "next/link";
 import { Button } from "@material-tailwind/react";
-import { useEffect } from "react";
+import InputField from "../../../shared/components/InputField";
 
 export default function ForgotPasswordForm() {
-  useEffect(() => {
-    // Trigger an initial validation check when the component mounts
-    formik.validateForm();
-  }, []);
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -32,24 +27,20 @@ export default function ForgotPasswordForm() {
       <div className="bg-white rounded-2xl p-[2rem] text-jubalGrey my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
         <h2 className="text-[2.4rem] font-[700]">Forgot Password</h2>
         <form onSubmit={formik.handleSubmit} className="mt-[3rem]">
-          <div className="mb-[2rem]">
-            <label className="text-[1.6rem]">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-              className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-              placeholder="example@thejubal.com"
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="text-[1.3rem] text-red-700">
-                {formik.errors.email}
-              </div>
-            ) : null}
-          </div>
+          <InputField
+            label="Email"
+            name="email"
+            type="email"
+            value={formik.values.email}
+            placeholder="example@thejubal.com"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={
+              formik.touched.email && formik.errors.email
+                ? formik.errors.email
+                : null
+            }
+          />
           {formik.isValid ? (
             <Link href="/password-verification">
               <Button

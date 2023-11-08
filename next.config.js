@@ -77,6 +77,14 @@ const nextConfig = {
             icon: true,
           },
         },
+        {
+          loader: 'url-loader',
+          options: {
+            typescript: true,
+            icon: true,
+          },
+          
+        },
       ],
     });
     

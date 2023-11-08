@@ -3,8 +3,9 @@ import { MouseEventHandler } from "react";
 import { Button } from "@material-tailwind/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import SuccessModal from "@/features/Auth/components/SuccessModal";
+import InputField from "@/shared/components/InputField";
 
 interface AddNewTaskModalProps {
   isVisible: boolean;
@@ -19,12 +20,6 @@ export default function AddNewTaskModal({
   const handleAddNewTask = () => {
     setShowSuccessModal(true);
   };
-
-  useEffect(() => {
-    // Trigger an initial validation check when the component mounts
-    formik.validateForm();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -42,7 +37,7 @@ export default function AddNewTaskModal({
   if (!isVisible) return null;
 
   return (
-    <div className="bg-[#D9D9D9] fixed inset-0 bg-opacity-70 flex justify-center items-center">
+    <div className=" bg-jubalModalBackgroundColor fixed inset-0 bg-opacity-70 flex justify-center items-center">
       <div className="bg-white w-[80%] h-[90%] rounded-[2rem] p-[3rem] ">
         <div className="flex justify-end" onClick={handleRemoveModal}>
           <Image
@@ -59,120 +54,74 @@ export default function AddNewTaskModal({
               Add New Task
             </h2>
 
-            <div className="mb-[2rem] w-[100%]">
-              <label
-                className="text-[1.6rem] font-[600] text-jubalGrey"
-                htmlFor="taskName"
-              >
-                Task Name
-              </label>
-              <input
-                id="taskName"
-                name="taskName"
-                type="text"
-                className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-                placeholder="Give the task a Name"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.taskName}
-              />
-              {formik.touched.taskName && formik.errors.taskName ? (
-                <div className="text-[1.3rem] text-red-700">
-                  {formik.errors.taskName}
-                </div>
-              ) : null}
-            </div>
+            <InputField
+              label="Task Name"
+              name="taskName"
+              type="text"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.taskName}
+              placeholder="What is the task about?"
+              error={
+                formik.touched.taskName && formik.errors.taskName
+                  ? formik.errors.taskName
+                  : null
+              }
+            />
 
-            <div className="w-[100%] mb-[2rem]">
-              <label
-                className="text-[1.6rem] font-[600] text-jubalGrey"
-                htmlFor="taskDetails"
-              >
-                Task Details
-              </label>
-              <br />
-              <textarea
-                id="taskDetails"
-                name="taskDetails"
-                className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-                placeholder="What is the task about?"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.taskDetails}
-              ></textarea>
-            </div>
+            <InputField
+              type="textarea"
+              label="Task Details"
+              name="taskDetails"
+              placeholder="What is the task about?"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.taskDetails}
+              rows={5}
+            />
+            <InputField
+              label="Select Time to Start Task"
+              name="startTime"
+              type="time"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.startTime}
+              placeholder="01:00 PM"
+              error={
+                formik.touched.startTime && formik.errors.startTime
+                  ? formik.errors.startTime
+                  : null
+              }
+            />
+            <InputField
+              label="Select Time to End Task"
+              name="endTime"
+              type="time"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.endTime}
+              placeholder="01:00 PM"
+              error={
+                formik.touched.endTime && formik.errors.endTime
+                  ? formik.errors.endTime
+                  : null
+              }
+            />
+            <InputField
+              label="Select Date"
+              name="startDate"
+              type="date"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.date}
+              placeholder="01:00 PM"
+              error={
+                formik.touched.date && formik.errors.date
+                  ? formik.errors.date
+                  : null
+              }
+            />
 
-            <div className="mb-[2rem] w-[100%]">
-              <label
-                className="text-[1.6rem] font-[600] text-jubalGrey"
-                htmlFor="startTime"
-              >
-                Select Time to Start Task
-              </label>
-              <input
-                id="startTime"
-                name="startTime"
-                type="time"
-                className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-                placeholder="Give the task a Name"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.startTime}
-              />
-              {formik.touched.startTime && formik.errors.startTime ? (
-                <div className="text-[1.3rem] text-red-700">
-                  {formik.errors.startTime}
-                </div>
-              ) : null}
-            </div>
-
-            <div className="mb-[2rem] w-[100%]">
-              <label
-                className="text-[1.6rem] font-[600] text-jubalGrey"
-                htmlFor="endTime"
-              >
-                Select Time to End Task
-              </label>
-              <input
-                id="endTime"
-                name="endTime"
-                type="time"
-                className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-                placeholder=""
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.endTime}
-              />
-              {formik.touched.endTime && formik.errors.endTime ? (
-                <div className="text-[1.3rem] text-red-700">
-                  {formik.errors.endTime}
-                </div>
-              ) : null}
-            </div>
-
-            <div className="mb-[2rem] w-[100%]">
-              <label
-                className="text-[1.6rem] font-[600] text-jubalGrey"
-                htmlFor="date"
-              >
-                Select Date
-              </label>
-              <input
-                id="date"
-                name="date"
-                type="date"
-                className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-                placeholder=""
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.endTime}
-              />
-              {formik.touched.date && formik.errors.date ? (
-                <div className="text-[1.3rem] text-red-700">
-                  {formik.errors.date}
-                </div>
-              ) : null}
-            </div>
             <div className="text-center">
               <Button
                 className={`${

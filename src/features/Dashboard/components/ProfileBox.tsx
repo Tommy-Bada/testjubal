@@ -1,15 +1,19 @@
 import Image from "next/image";
 import ProfileHeader from "./ProfileHeader";
 import { useFormik } from "formik";
-import { useEffect } from "react";
+import InputField from "@/shared/components/InputField";
+import SelectField from "@/shared/components/SelectField";
 import * as Yup from "yup";
 import { CountryDropdown } from "react-country-region-selector";
+import { useState } from "react";
 
 export default function ProfileBox() {
-  useEffect(() => {
-    // Trigger an initial validation check when the component mounts
-    formik.validateForm();
-  }, []);
+  const [selectedValue, setSelectedValue] = useState<string>("");
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(e.target.value);
+    formik.setFieldValue("serviceType", selectedValue);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -33,53 +37,36 @@ export default function ProfileBox() {
         onSubmit={formik.handleSubmit}
         className="mt-[3rem] flex justify-between flex-wrap"
       >
-        <div className="mb-[2rem] w-[46%]">
-          <label
-            className="text-[1.6rem] font-[600] text-jubalGrey"
-            htmlFor="name"
-          >
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            placeholder="Please Enter Your Name"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-          />
-          {formik.touched.name && formik.errors.name ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.name}
-            </div>
-          ) : null}
-        </div>
-        <div className="mb-[2rem] w-[46%]">
-          <label
-            className="text-[1.6rem] font-[600] text-jubalGrey"
-            htmlFor="name"
-          >
-            Username{" "}
-            <span className="text-[1.6rem] text-jubalFooterText font-[400] ">{`(Profile Link)`}</span>
-          </label>
-          <input
-            id="userName"
-            name="userName"
-            type="text"
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            placeholder="thejubal.com/"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.userName}
-          />
-          {formik.touched.userName && formik.errors.userName ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.userName}
-            </div>
-          ) : null}
-        </div>
+        <InputField
+          label="Name"
+          name="name"
+          type="text"
+          placeholder="Please Enter Your Name"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.name}
+          error={
+            formik.touched.name && formik.errors.name
+              ? formik.errors.name
+              : null
+          }
+        />
+
+        <InputField
+          label="Username(Profile Link)"
+          type="text"
+          name="userName"
+          placeholder="thejubal.com/"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.userName}
+          error={
+            formik.touched.userName && formik.errors.userName
+              ? formik.errors.userName
+              : null
+          }
+        />
+
         <div className="mb-[2rem] w-[46%] ">
           <label
             className="text-[1.6rem] font-[600] text-jubalGrey"
@@ -101,6 +88,7 @@ export default function ProfileBox() {
             </div>
           ) : null}
         </div>
+
         <div className="mb-[2rem] w-[46%] ">
           <label
             className="text-[1.6rem] font-[600] text-jubalGrey"
@@ -122,83 +110,88 @@ export default function ProfileBox() {
             </div>
           ) : null}
         </div>
-        <div className="mb-[2rem] w-[46%]">
-          <label className="text-[1.6rem]">Select Your Skill Or Talent</label>
-          <select
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            id="skillOrTalent"
-            name="skillOrTalent"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.skillOrTalent}
-          >
-            <option value="Sound Engineer">Sound Engineer</option>
-            <option value="Music Producer">Music Producer</option>
-            <option value="Pianist">Pianist</option>
-          </select>
-          {formik.touched.skillOrTalent && formik.errors.skillOrTalent ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.skillOrTalent}
-            </div>
-          ) : null}
-        </div>
+
+        <SelectField
+          label="Select Your Skill or Talent"
+          name="SkillOrTalent"
+          options={[
+            { value: "", label: "--Select Your Skill--" },
+            { value: "Sound Engineer", label: "Sound Engineeer" },
+            {
+              value: "Music Producer",
+              label: "Music Producter",
+            },
+            {
+              value: "Pianist",
+              label: "Pianist",
+            },
+          ]}
+          value={selectedValue}
+          onChange={handleSelectChange}
+          onBlur={formik.handleBlur}
+          error={
+            formik.touched.skillOrTalent && formik.errors.skillOrTalent
+              ? formik.errors.skillOrTalent
+              : null
+          }
+        />
+
         <div className="mb-[2rem] w-[46%] flex items-center">
           <p className="text-[1.6rem] text-left">Add More Skills</p>
         </div>
-        <div className="mb-[2rem] w-[46%]">
-          <label
-            className="text-[1.6rem] font-[600] text-jubalGrey"
-            htmlFor="name"
-          >
-            Rate{" "}
-          </label>
-          <div className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem] flex justify-between items-center">
-            <input
-              id="rate"
-              name="rate"
-              type="text"
-              className=" w-[100%] text-[1.6rem] focus:outline-none "
-              placeholder="20"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.rate}
-            />
-            <p className="text-[1.6rem] text-[#727A86]">$/hr</p>
-          </div>
-          {formik.touched.rate && formik.errors.rate ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.rate}
-            </div>
-          ) : null}
-        </div>
-        <div className="mb-[2rem] w-[46%]">
-          <label className="text-[1.6rem]">Experience Level</label>
-          <select
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            id="skillOrTalent"
-            name="skillOrTalent"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.experienceLevel}
-          >
-            <option value="1 Year">1 Year</option>
-            <option value="1 Year">2 Year</option>
-            <option value="1 Years">3-5 Years</option>
-            <option value="1 Years">4-5 Years</option>
-          </select>
-          {formik.touched.experienceLevel && formik.errors.experienceLevel ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.experienceLevel}
-            </div>
-          ) : null}
-        </div>
-        <div className="w-[100%]">
-          <label className="text-[1.6rem]">Bio</label>
-          <textarea
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            placeholder="What makes you great at what you do?"
-          ></textarea>
-        </div>
+
+        <InputField
+          name="rate"
+          type="text"
+          label="Rate"
+          placeholder=""
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.rate}
+          error={
+            formik.touched.rate && formik.errors.rate
+              ? formik.errors.rate
+              : null
+          }
+        />
+
+        <SelectField
+          label="Experience Level"
+          name="experienceLevel"
+          options={[
+            { value: "0-1 year", label: "0-1 year" },
+            {
+              value: "2-5 years",
+              label: "2-5 years ",
+            },
+            {
+              value: "5-7 years",
+              label: "5-7 years ",
+            },
+          ]}
+          value={selectedValue}
+          onChange={handleSelectChange}
+          onBlur={formik.handleBlur}
+          error={
+            formik.touched.experienceLevel && formik.errors.experienceLevel
+              ? formik.errors.experienceLevel
+              : null
+          }
+        />
+
+        <InputField
+          label="Bio"
+          rows={3}
+          type="textarea"
+          name="bio"
+          placeholder="What makes you great at what you do?"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.bio}
+          error={
+            formik.touched.bio && formik.errors.bio ? formik.errors.bio : null
+          }
+        />
       </form>
     </div>
   );

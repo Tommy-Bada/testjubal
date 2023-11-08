@@ -1,9 +1,11 @@
 import ManagerGigItem from "./ManagerGigItem";
+import NewestToOldestFilterBtn from "./buttons/NewestToOldestFilterBtn";
+import Image from "next/image";
 
 export default function ManagerGigBox() {
   return (
     <div className="bg-white w-[62%] p-[2.4rem] rounded-[2rem]">
-      <div className="flex justify-between ">
+      <div className="flex items-center justify-between ">
         <div className="flex">
           <p className="text-[1.6rem] text-jubalViolet p-[1rem]">
             Available Gigs
@@ -13,9 +15,7 @@ export default function ManagerGigBox() {
           </p>
           <p className="text-[1.6rem] text-jubalViolet p-[1rem]">Gig History</p>
         </div>
-        <div>
-          <p className="text-[1.6rem] text-jubalViolet p-[1rem]">Newest</p>
-        </div>
+        <NewestToOldestFilterBtn handleFilter={() => {}} />
       </div>
       <div className="overflow-y-auto h-[80vh] bg-jubalDashboardBackground p-[2rem] rounded-[2rem] mt-[2rem]">
         <ManagerGigItem
