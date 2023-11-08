@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Images } from "@/shared/components/Images";
 import { Button } from "@material-tailwind/react";
 
 interface SearchResultItemProps {
@@ -33,7 +34,7 @@ export default function SearchResultItem({
       </div>
       <div className="flex justify-between items-center">
         <Image
-          src="/dashboard/icSalary.svg"
+          src={Images.icSalary}
           alt="Profile Image"
           height="45"
           width="45"
@@ -45,7 +46,7 @@ export default function SearchResultItem({
       </div>
       <div className="flex justify-between items-center">
         <Image
-          src="/dashboard/ilocation.svg"
+          src={Images.ilocation}
           alt="Profile Image"
           height="45"
           width="45"
@@ -64,9 +65,7 @@ export default function SearchResultItem({
         </Button>
         <div onClick={handleLike}>
           <Image
-            src={`${
-              isLiked ? "dashboard/heart-liked.svg" : "dashboard/heart.svg"
-            }`}
+            src={`${isLiked ? Images.likedHeartIcon : Images.heartIcon}`}
             alt="Like Icon"
             width="30"
             height="30"

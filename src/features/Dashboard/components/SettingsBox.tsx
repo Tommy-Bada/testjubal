@@ -4,14 +4,21 @@ import FAQs from "./FAQs";
 import { Switch } from "@material-tailwind/react";
 import { useState } from "react";
 import Image from "next/image";
+import { Images } from "@/shared/components/Images";
 import Button from "@material-tailwind/react";
 
 export default function SettingsBox() {
-  const [isHelpAndSupportClicked, setIsHelpAndSupportClicked] = useState(true);
+  interface FAQsProps {
+    question: string;
+    answer: string;
+  }
+  const [isHelpAndSupportClicked, setIsHelpAndSupportClicked] =
+    useState<Boolean>(true);
   const [isPlatformSettingsClicked, setIsPlatformSettingsClicked] =
-    useState(false);
-  const [isBankAccountClicked, setIsBankAccountClicked] = useState(false);
-  const [isLogoutClicked, setIsLogoutClicked] = useState(false);
+    useState<Boolean>(false);
+  const [isBankAccountClicked, setIsBankAccountClicked] =
+    useState<Boolean>(false);
+  const [isLogoutClicked, setIsLogoutClicked] = useState<Boolean>(false);
 
   const handleHelpAndSupportClick = () => {
     setIsHelpAndSupportClicked(true);
@@ -41,7 +48,7 @@ export default function SettingsBox() {
     setIsLogoutClicked(true);
   };
 
-  const faqs = [
+  const faqs: FAQsProps[] = [
     {
       question: "What is Jubal, and how does it work",
       answer:
@@ -121,7 +128,6 @@ export default function SettingsBox() {
                 text="1437 Sanusi Fafunwa St, Victoria Island 106104, Lagos."
               />
             </div>
-
             <h1 className=" text-[2rem] text-jubalGrey font-[700] mt-[3rem] mb-[2rem]">
               FAQs
             </h1>
@@ -321,7 +327,7 @@ export default function SettingsBox() {
             </h1>
             <div className="flex items-center">
               <Image
-                src="/dashboard/logout-variant.svg"
+                src={Images.logoutIcon}
                 alt="logout icon"
                 height="40"
                 width="40"
