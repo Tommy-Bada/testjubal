@@ -4,7 +4,7 @@ import FAQs from "./FAQs";
 import { Switch } from "@material-tailwind/react";
 import { useState } from "react";
 import Image from "next/image";
-import { Images } from "@/shared/components/Images";
+import { Images } from "@/shared/components/SvgIcons";
 import Button from "@material-tailwind/react";
 
 export default function SettingsBox() {

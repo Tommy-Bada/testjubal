@@ -2,6 +2,7 @@ import { config } from "@/config";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import swapHorizontal from "public/dashboard/swap-horizontal.svg";
+import {SvgIcons} from "@/shared/components/SvgIcons";
 
 export default function TalentHeader() {
   const router = useRouter();
@@ -18,7 +19,7 @@ export default function TalentHeader() {
         </div>
         <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] cursor-pointer py-[1rem]  hidden ">
           <Image
-            src={swapHorizontal}
+            src={SvgIcons.swapHorizontal}
             alt="Switch Icon"
             width="20"
             height="20"

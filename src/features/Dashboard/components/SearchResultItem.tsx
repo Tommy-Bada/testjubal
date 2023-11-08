@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Images } from "@/shared/components/Images";
+import { Images } from "@/shared/components/SvgIcons";
 import { Button } from "@material-tailwind/react";
 
 interface SearchResultItemProps {

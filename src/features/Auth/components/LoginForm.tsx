@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Button, Input } from "@material-tailwind/react";
 import { Switch } from "@material-tailwind/react";
 import Link from "next/link";
@@ -30,10 +29,6 @@ export default function LoginForm() {
       router.push("/client/dashboard");
     }
   }, []);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
 
   const { mutate: login, isLoading, error } = useLogin();
 

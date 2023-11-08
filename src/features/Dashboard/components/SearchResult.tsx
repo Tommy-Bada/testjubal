@@ -3,7 +3,7 @@ import { Switch } from "@material-tailwind/react";
 import NewestToOldestFilterBtn from "./buttons/NewestToOldestFilterBtn";
 import { useState } from "react";
 import Image from "next/image";
-import { Images } from "@/shared/components/Images";
+import { Images } from "@/shared/components/SvgIcons";
 import PrevBtn from "./buttons/PrevBtn";
 import NextBtn from "./buttons/NextBtn";
 
