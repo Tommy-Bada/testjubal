@@ -1,4 +1,6 @@
 import Image from "next/image";
+import React from "react";
+
 import { arrowRightIcon } from "@/image";
 
 interface NextBtnProps {

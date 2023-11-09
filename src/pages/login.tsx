@@ -4,9 +4,20 @@ import Subscribe from "@/shared/components/Subscribe";
 import Footer from "@/shared/components/Footer";
 import LoginLeft from "@/features/Auth/components/LoginLeft";
 import LoginForm from "@/features/Auth/components/LoginForm";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useCheckLogin } from "@/hooks/app.hooks";
 import { loginHero } from "@/image";
 
 export default function Login() {
+  const router = useRouter();
+  const isLogged = useCheckLogin();
+
+  if (isLogged) {
+    router.push("/talent/dashboard");
+    return;
+  }
+
   return (
     <div>
       <Header />

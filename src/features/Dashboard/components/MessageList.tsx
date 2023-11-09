@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { searchIcon, placeholderImage } from "@/image";
 import MessageItem from "./MessageItem";
+import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 
 export default function MessageList() {
   return (
@@ -11,7 +13,12 @@ export default function MessageList() {
           placeholder="Search"
           className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none bg-jubalDashboardBackground"
         />
-        <Image src={searchIcon} alt="Search Icon" width="20" height="20" />
+        <Image
+          src={ImageIcons.searchIcon}
+          alt="Search Icon"
+          width="20"
+          height="20"
+        />
       </div>
       <div className="mt-[3rem]">
         <MessageItem

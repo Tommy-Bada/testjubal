@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 import { arrowLeftIcon } from "@/image";
 
 interface PrevBtnProps {

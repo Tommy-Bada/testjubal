@@ -7,6 +7,8 @@ import {
 } from "@/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
+import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 interface GigItemProps {
   profileImage: string;
   title: string;
@@ -30,7 +32,7 @@ export default function GigItem({
 }: GigItemProps) {
   return (
     <div className="bg-white p-[2rem] rounded-[3rem] my-[1.5rem]">
-      <div className="flex justify-between items-start ">
+      <div className="flex items-start justify-between ">
         <div className="flex items-center">
           <Image
             src={`${profileImage}`}
@@ -45,7 +47,9 @@ export default function GigItem({
         </div>
         <div onClick={handleLike}>
           <Image
-            src={`${isLiked ? likedHeartIcon : heartIcon}`}
+            src={
+              isLiked ?  ImageIcons.likedHeartIcon: ImageIcons.heartIcon
+            }
             alt="Like Icon"
             width="30"
             height="30"
@@ -54,7 +58,12 @@ export default function GigItem({
       </div>
       <hr className="my-[1rem]" />
       <div className="flex mb-[1rem] ">
-        <Image src={payIcon} alt="Currency Icon" width="22" height="16" />
+        <Image
+          src={ImageIcons.payIcon}
+          alt="Currency Icon"
+          width="22"
+          height="16"
+        />
         <p className="text-[1.4rem] text-jubalNav ml-[.5rem]">
           {`$${startPrice} - $${endPrice} `}
           <span className="text-[1.4rem] text-jubalFooterText"> / monthly</span>
@@ -63,7 +72,7 @@ export default function GigItem({
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
-            src={dashboardLocationIcon}
+            src={ImageIcons.dashboardLocationIcon}
             alt="Location Icon"
             width="14"
             height="20"

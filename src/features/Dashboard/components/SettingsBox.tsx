@@ -4,6 +4,7 @@ import FAQs from "./FAQs";
 import { Switch } from "@material-tailwind/react";
 import { useState } from "react";
 import Image from "next/image";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import {
   settingsEmailIcon,
   settingsLocationIcon,
@@ -161,7 +162,7 @@ export default function SettingsBox() {
                 label="Subscribe to Newsletter"
                 ripple={true}
                 id="switch-to-newsletter"
-                className="h-full w-full checked:bg-jubalViolet"
+                className="w-full h-full checked:bg-jubalViolet"
                 labelProps={{
                   className:
                     "text-[1.6rem] ml-[1rem] text-jubalFooterGrey font-[400]",
@@ -180,7 +181,7 @@ export default function SettingsBox() {
                 label="Monthly Product Update"
                 ripple={true}
                 id="switch-to-prodcuct-update"
-                className="h-full w-full checked:bg-jubalViolet"
+                className="w-full h-full checked:bg-jubalViolet"
                 labelProps={{
                   className:
                     "text-[1.6rem] ml-[1rem] text-jubalFooterGrey font-[400]",
@@ -199,7 +200,7 @@ export default function SettingsBox() {
                 label="New Launches and Projects"
                 ripple={true}
                 id="switch-to-new-launches"
-                className="h-full w-full checked:bg-jubalViolet"
+                className="w-full h-full checked:bg-jubalViolet"
                 labelProps={{
                   className:
                     "text-[1.6rem] ml-[1rem] text-jubalFooterGrey font-[400]",
@@ -223,7 +224,7 @@ export default function SettingsBox() {
                 label="Email me when someone view application"
                 ripple={true}
                 id="switch-to-view-application"
-                className="h-full w-full checked:bg-jubalViolet"
+                className="w-full h-full checked:bg-jubalViolet"
                 labelProps={{
                   className:
                     "text-[1.6rem] ml-[1rem] text-jubalFooterGrey font-[400]",
@@ -242,7 +243,7 @@ export default function SettingsBox() {
                 label="Email me when someone sends message through my application"
                 ripple={true}
                 id="switch-to-message-application"
-                className="h-full w-full checked:bg-jubalViolet"
+                className="w-full h-full checked:bg-jubalViolet"
                 labelProps={{
                   className:
                     "text-[1.6rem] ml-[1rem] text-jubalFooterGrey font-[400]",
@@ -261,7 +262,7 @@ export default function SettingsBox() {
                 label="Email me when someone sends a payment"
                 ripple={true}
                 id="switch-to-send-payment"
-                className="h-full w-full checked:bg-jubalViolet"
+                className="w-full h-full checked:bg-jubalViolet"
                 labelProps={{
                   className:
                     "text-[1.6rem] ml-[1rem] text-jubalFooterGrey font-[400]",
@@ -313,13 +314,6 @@ export default function SettingsBox() {
                   placeholder="Please Enter Your Account Number"
                 />
               </div>
-
-              {/* <Button
-              variant="filled"
-              className="bg-jubalDark  w-[60%] text-[1.6rem] normal-case"
-            >
-              Proceed
-            </Button> */}
             </form>
           </div>
         )}
@@ -332,7 +326,7 @@ export default function SettingsBox() {
             </h1>
             <div className="flex items-center">
               <Image
-                src={logoutIcon}
+                src={ImageIcons.logoutIcon}
                 alt="logout icon"
                 height="40"
                 width="40"

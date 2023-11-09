@@ -1,7 +1,14 @@
+import { config } from "@/config";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import { swapIcon, searchIcon, newProfile, notificationIcon } from "@/image";
 
 export default function TalentHeader() {
+  const router = useRouter();
+  function switchUser() {
+    router.push("/client/dashboard");
+  }
   return (
     <>
       <header className="flex justify-between items-center w-[100%] bg-jubalDashboardBackground h-[6.4rem] p-[2rem] rounded-[12px] ">
@@ -10,9 +17,17 @@ export default function TalentHeader() {
           <div className="w-[1.2rem] bg-white h-[2px] my-[2px]"></div>
           <div className="w-[1.2rem] bg-white h-[2px]"></div>
         </div>
-        <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] py-[1rem] hidden ">
-          <Image src={swapIcon} alt="Switch Icon" width="20" height="20" />
-          <p className="text-white text-[1.6rem] ml-[0.5rem]">
+        <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] cursor-pointer py-[1rem]  hidden ">
+          <Image
+            src={ImageIcons.swapHorizontal}
+            alt="Switch Icon"
+            width="20"
+            height="20"
+          />
+          <p
+            onClick={switchUser}
+            className="text-white text-[1.6rem] ml-[0.5rem]"
+          >
             Switch to Client
           </p>
         </div>

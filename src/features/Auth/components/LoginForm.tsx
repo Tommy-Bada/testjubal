@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
+import { useState, useEffect } from "react";
 import { Button, Input } from "@material-tailwind/react";
 import { Switch } from "@material-tailwind/react";
 import Link from "next/link";
@@ -7,11 +6,30 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
-import InputField from "../../../shared/components/InputField";
-import PasswordField from "../../../shared/components/PasswordField";
-import { googleSignupIcon, facebookSignupIcon } from "@/image";
+import { useRouter } from "next/router";
+import { useCheckLogin } from "@/hooks/app.hooks";
+import { useLogin } from "@/hooks/auth.hooks";
+import { config } from "@/config";
+import InputField from "@/shared/components/InputField";
+import PasswordField from "@/shared/components/PasswordField";
+import { facebookSignupIcon, googleSignupIcon } from "@/image";
 
+
+
+
+interface IFormValues {
+  email: string;
+  password: string;
+}
 export default function LoginForm() {
+  const router = useRouter();
+
+  const { mutate: login, isLoading, error } = useLogin();
+
+  const handleSubmit = (values: IFormValues) => {
+    login({ email: values.email, password: values.password });
+  };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -24,7 +42,7 @@ export default function LoginForm() {
       password: Yup.string().required("Password is required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
     },
   });
 
@@ -63,8 +81,8 @@ export default function LoginForm() {
             className={`${
               formik.isValid ? "bg-jubalViolet" : "bg-jubalFooterGrey"
             } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
-            type="submit"
             disabled={!formik.isValid}
+            onClick={() => formik.handleSubmit()}
           >
             Login
           </Button>
@@ -76,7 +94,7 @@ export default function LoginForm() {
               label="Remember Me"
               ripple={true}
               id="custom-switch-component"
-              className="h-full w-full checked:bg-jubalViolet"
+              className="w-full h-full checked:bg-jubalViolet"
               labelProps={{
                 className: "text-[1.6rem] ml-[1rem] text-jubalGrey font-[400]",
               }}
@@ -97,11 +115,17 @@ export default function LoginForm() {
           iconSrc={facebookSignupIcon}
           alt="facebook icon"
           buttonText="Log in with Facebook"
+          onClick={() =>
+            router.push(config.apiBaseUrl+"/api/v1/auth/facebook")
+          }
         />
         <FacebookGoogleBtn
           iconSrc={googleSignupIcon}
           alt="google icon"
           buttonText="Log in with Google"
+          onClick={() =>
+            router.push(config.apiBaseUrl+"/api/v1/auth/google")
+          }
         />
         <p className="text-center my-[2rem] text-[1.6rem]">
           If you don&apos;t have an account{" "}

@@ -6,7 +6,7 @@ import { placeholderImage } from "@/image";
 export default function ManagerGigBox() {
   return (
     <div className="bg-white w-[62%] p-[2.4rem] rounded-[2rem]">
-      <div className=" flex justify-between items-center">
+      <div className="flex items-center justify-between ">
         <div className="flex">
           <p className="text-[1.6rem] text-jubalViolet p-[1rem]">
             Available Gigs

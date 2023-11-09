@@ -1,4 +1,6 @@
+import { config } from "@/config";
 import Image from "next/image";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import { noTransactionIcon } from "@/image";
 export default function FinancialStat() {
   return (
@@ -16,7 +18,7 @@ export default function FinancialStat() {
       </div>
       <div className="flex justify-center items-center mb-[2rem] mt-[3rem]">
         <Image
-          src={noTransactionIcon}
+          src={ImageIcons.noTransactionIcon}
           alt="Financial Status"
           height="150"
           width="150"

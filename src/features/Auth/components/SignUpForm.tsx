@@ -1,18 +1,32 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@material-tailwind/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import React, { useState, useEffect, useContext } from "react";
 import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
 import { CountryDropdown } from "react-country-region-selector";
-import SelectField from "../../../shared/components/SelectField";
-import InputField from "../../../shared/components/InputField";
-import PasswordField from "../../../shared/components/PasswordField";
-import { googleSignupIcon, facebookSignupIcon } from "@/image";
+import { useRouter } from "next/router";
+import { AppContext } from "@/context/app.context";
+import { useSignup } from "@/hooks/auth.hooks";
+import { IFormValues } from "@/pages/signup";
+import { config } from "@/config";
+import SelectField from "@/shared/components/SelectField";
+import InputField from "@/shared/components/InputField";
+import PasswordField from "@/shared/components/PasswordField";
+import { facebookSignupIcon, googleSignupIcon } from "@/image";
+export default function SignUpForm({ setShowModal }: any) {
+  const router = useRouter();
+  const [, dispatch] = useContext<any>(AppContext);
 
-export default function SignUpForm({ handleSignUp }: any) {
+  const { mutate: signup, isLoading, error } = useSignup();
+
+  const handleSubmit = (values: IFormValues) => {
+    signup(values);
+    setShowModal(true);
+  };
+ 
   const [selectedValue, setSelectedValue] = useState<string>("");
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -26,6 +40,7 @@ export default function SignUpForm({ handleSignUp }: any) {
       name: "",
       email: "",
       phone: "",
+      contact: "",
       country: "",
       password: "",
       confirmPassword: "",
@@ -50,7 +65,7 @@ export default function SignUpForm({ handleSignUp }: any) {
         .required("Confirm password is required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
     },
   });
 
@@ -134,7 +149,6 @@ export default function SignUpForm({ handleSignUp }: any) {
             onChange={(_, e) => formik.handleChange(e)}
             onBlur={formik.handleBlur}
           />
-
           {formik.touched.country && formik.errors.country ? (
             <div className="text-[1.3rem] text-red-700">
               {formik.errors.country}
@@ -172,8 +186,7 @@ export default function SignUpForm({ handleSignUp }: any) {
           className={`${
             formik.isValid ? "bg-jubalViolet" : "bg-jubalFooterGrey"
           } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
-          onClick={formik.isValid ? handleSignUp : null}
-          type="submit"
+          onClick={() => formik.handleSubmit()}
           disabled={!formik.isValid}
         >
           Sign Up
@@ -184,11 +197,13 @@ export default function SignUpForm({ handleSignUp }: any) {
         iconSrc={facebookSignupIcon}
         alt="facebook icon"
         buttonText="Sign Up with Facebook"
+        onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}
       />
       <FacebookGoogleBtn
         iconSrc={googleSignupIcon}
         alt="google icon"
         buttonText="Sign Up with Google"
+        onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}
       />
       <p className="text-center my-[2rem] text-[1.6rem]">
         If you already have an account{" "}

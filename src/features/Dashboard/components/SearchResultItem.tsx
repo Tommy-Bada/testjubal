@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import {
   icSalaryIcon,
   ilocationIcon,
@@ -30,22 +31,32 @@ export default function SearchResultItem({
 }: SearchResultItemProps) {
   return (
     <div className="bg-white flex items-center justify-between px-[1rem] py-[1.5rem] rounded-[2rem] mb-[1.5rem]">
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <Image src={profileImage} alt="Profile Image" height="60" width="60" />
         <div className="ml-[1rem]">
           <p className="text-[1.6rem] font-[700] text-jubalNav">{gigRole}</p>
           <p className="text-[1.3rem] mt-[1rem]">{gigCompany}</p>
         </div>
       </div>
-      <div className="flex justify-between items-center">
-        <Image src={icSalaryIcon} alt="Profile Image" height="45" width="45" />
+      <div className="flex items-center justify-between">
+        <Image
+          src={ImageIcons.icSalary}
+          alt="Profile Image"
+          height="45"
+          width="45"
+        />
         <div className="ml-[1rem]">
           <p className="text-jubalGrey text-[1.4rem] font-[600]">{`$${startPrice} - $${endPrice}`}</p>
           <p className="text-jubalFAQGrey text-[1.4rem]">Monthly Salary</p>
         </div>
       </div>
-      <div className="flex justify-between items-center">
-        <Image src={ilocationIcon} alt="Profile Image" height="45" width="45" />
+      <div className="flex items-center justify-between">
+        <Image
+          src={ImageIcons.ilocationIcon}
+          alt="Profile Image"
+          height="45"
+          width="45"
+        />
         <div className="ml-[1rem]">
           <p className="text-jubalGrey text-[1.4rem] font-[600]">{location}</p>
           <p className="text-jubalFAQGrey text-[1.4rem]">Location</p>
@@ -60,7 +71,7 @@ export default function SearchResultItem({
         </Button>
         <div onClick={handleLike}>
           <Image
-            src={`${isLiked ? likedHeartIcon : heartIcon}`}
+            src={`${isLiked ? ImageIcons.likedHeartIcon : ImageIcons.heartIcon}`}
             alt="Like Icon"
             width="30"
             height="30"
