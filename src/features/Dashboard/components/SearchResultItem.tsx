@@ -71,11 +71,7 @@ export default function SearchResultItem({
         </Button>
         <div onClick={handleLike}>
           <Image
-<<<<<<< HEAD
             src={`${isLiked ? ImageIcons.likedHeartIcon : ImageIcons.heartIcon}`}
-=======
-            src={`${isLiked ? likedHeartIcon : heartIcon}`}
->>>>>>> 715000f27ed646488bb90ebe41a56bde9128213f
             alt="Like Icon"
             width="30"
             height="30"

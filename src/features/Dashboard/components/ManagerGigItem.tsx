@@ -44,16 +44,12 @@ export default function ManageGigItem({
 
       <div>
         <div className="flex mb-[2rem] ">
-<<<<<<< HEAD
           <Image
             src={ImageIcons.payIcon}
             alt="Currency Icon"
             width="22"
             height="16"
           />
-=======
-          <Image src={payIcon} alt="Currency Icon" width="22" height="16" />
->>>>>>> 715000f27ed646488bb90ebe41a56bde9128213f
           <p className="text-[1.2rem] text-jubalNav ml-[.5rem]">
             {`$${startPrice} - $${endPrice} `}
             <span className="text-[1.2rem] text-jubalFooterText">
@@ -64,11 +60,7 @@ export default function ManageGigItem({
         </div>
         <div className="flex items-center">
           <Image
-<<<<<<< HEAD
-            src={ImageIcons.locationIcon}
-=======
             src={dashboardLocationIcon}
->>>>>>> 715000f27ed646488bb90ebe41a56bde9128213f
             alt="Location Icon"
             width="14"
             height="20"

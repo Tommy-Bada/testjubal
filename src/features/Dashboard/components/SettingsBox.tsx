@@ -4,16 +4,13 @@ import FAQs from "./FAQs";
 import { Switch } from "@material-tailwind/react";
 import { useState } from "react";
 import Image from "next/image";
-<<<<<<< HEAD
 import { ImageIcons } from "@/shared/components/ImageIcons";
-=======
 import {
   settingsEmailIcon,
   settingsLocationIcon,
   settingsPhoneIcon,
   logoutIcon,
 } from "@/image";
->>>>>>> 715000f27ed646488bb90ebe41a56bde9128213f
 import Button from "@material-tailwind/react";
 
 export default function SettingsBox() {
