@@ -20,14 +20,12 @@ export default function SignUpForm({ setShowModal }: any) {
   const [, dispatch] = useContext<any>(AppContext);
 
   const { mutate: signup, isLoading, error } = useSignup();
-  console.log("Error2: ", error?.response?.data);
 
   const handleSubmit = (values: IFormValues) => {
     signup(values);
     setShowModal(true);
   };
-  const [showPassword, setShowPassword] = useState(false);
-
+ 
   const [selectedValue, setSelectedValue] = useState<string>("");
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

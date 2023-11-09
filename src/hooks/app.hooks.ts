@@ -16,33 +16,27 @@ export const useCheckLogin = () => {
   const [isLogged, setIsLogged] = useState<boolean>(false);
 
   useEffect(() => {
-    router.events.on("routeChangeComplete", () => {
-      console.log("route change complete ON");
-
+    const handleRouteChange = () => {
       const authToken = parseCookies().aToken;
-      console.log({ authToken });
+      setIsLogged(!!authToken);
+    };
 
-      if (!authToken) {
-        return setIsLogged(false);
-      }
-      setIsLogged(true);
-    });
-    console.log("isLogged: ", isLogged);
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    const authToken = parseCookies().aToken;
+    setIsLogged(!!authToken);
+
 
     return () => {
-      router.events.off("routeChangeComplete", () => {
-        console.log("route change complete OFF");
-      });
+      router.events.off('routeChangeComplete', handleRouteChange);
     };
-  }, [router.events]);
-
-  useEffect(() => {
-    const authToken = parseCookies().aToken;
-    if (authToken) {
-      return setIsLogged(true);
-    }
-    setIsLogged(false);
-  }, []);
+  }, [router]);
 
   return isLogged;
 };
+
+
+
+
+
+

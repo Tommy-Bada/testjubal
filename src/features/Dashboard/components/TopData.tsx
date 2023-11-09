@@ -1,3 +1,4 @@
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import Image from "next/image";
 export default function TopData() {
   return (
@@ -28,7 +29,7 @@ export default function TopData() {
   
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalGreen">
                 <Image
-                  src="../dashboard/cash.svg"
+                  src={ImageIcons.cashIcon}
                   alt="Jubal Logo"
                   width="16"
                   height="16"
@@ -45,7 +46,7 @@ export default function TopData() {
             <div className="p-[17px] flex flex-col justify-between bg-jubalGrey w-[129px] h-[113px] shrink-0 rounded-[var(--2,8px)]">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalRed">
                 <Image
-                  src="../dashboard/lan.svg"
+                  src={ImageIcons.lanIcon}
                   alt="Jubal Logo"
                   width="16"
                   height="16"
@@ -63,7 +64,7 @@ export default function TopData() {
             <div className="flex gap-[var(--2,8px)] items-center">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalYellow">
                 <Image
-                  src="../dashboard/list-box.svg"
+                  src={ImageIcons.listBoxIcon}
                   alt="Jubal Logo"
                   width="16"
                   height="16"

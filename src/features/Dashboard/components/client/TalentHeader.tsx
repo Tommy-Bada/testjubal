@@ -2,8 +2,9 @@ import Image from "next/image";
 import { UserSwitchProps } from "@/pages/client/dashboard";
 import { useRouter } from "next/router";
 import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 
-export default function DashboardHeader({ user, setUser }: UserSwitchProps) {
+export default function DashboardHeader() {
   const router = useRouter();
   function switchUser() {
     router.push("/talent/dashboard/");
@@ -12,10 +13,8 @@ export default function DashboardHeader({ user, setUser }: UserSwitchProps) {
     <div className="flex justify-between items-center w-[100%] bg-jubalDashboardBackground h-[6.4rem] p-[2rem] rounded-[12px] ">
       <div className="flex w-60 bg-jubalViolet rounded-[1rem] px-[1rem] py-[0.5rem]">
         <Image
-          src={
-            config.siteBaseUrl +
-            "/dashboard/swap-horizontal.svg"
-          }
+          src={ImageIcons.swapIcon}
+          
           alt="Switch Icon"
           width="20"
           height="20"

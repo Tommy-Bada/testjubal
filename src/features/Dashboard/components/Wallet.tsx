@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Images } from "@/shared/components/SvgIcons";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 
 export default function Wallet() {
   return (
@@ -7,7 +7,7 @@ export default function Wallet() {
       <div className="bg-gradient-to-r from-jubalGradientBlue to-jubalGradientGreen rounded-[1rem] w-[100%] px-[2rem] py-[3rem]">
         <div className="bg-white rounded-[50%] h-[4.4rem] w-[4.4rem] flex justify-center items-center mb-[1rem]">
           <Image
-            src={Images.bankMoneyIcon}
+            src={ImageIcons.bankMoneyIcon}
             alt="Money"
             width="18"
             height="12"
@@ -20,10 +20,10 @@ export default function Wallet() {
           <p className="text-white text-[1.6rem] font-[700]">Create Wallet</p>
         </div>
       </div>
-      <div className="flex justify-center flex-wrap">
+      <div className="flex flex-wrap justify-center">
         <div className="bg-jubalViolet flex items-center px-[2rem] py-[1rem] rounded-[0.8rem] my-[4rem] mr-[2rem]">
           <Image
-            src={Images.addFundsIcon}
+            src={ImageIcons.addFundsIcon}
             alt="money Icon"
             height="14"
             width="20"
@@ -34,7 +34,7 @@ export default function Wallet() {
         </div>
         <div className="bg-jubalViolet flex items-center px-[2rem] py-[1rem] rounded-[0.8rem] my-[4rem]">
           <Image
-            src={Images.removeFundsIcon}
+            src={ImageIcons.removeFundsIcon}
             alt="money Icon"
             height="14"
             width="20"
@@ -45,7 +45,7 @@ export default function Wallet() {
         </div>
         <div className="bg-jubalViolet flex items-center px-[2rem] py-[1rem] rounded-[0.8rem]">
           <Image
-            src={Images.addFundsIcon}
+            src={ImageIcons.addFundsIcon}
             alt="money Icon"
             height="14"
             width="20"

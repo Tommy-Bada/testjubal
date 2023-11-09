@@ -19,8 +19,6 @@ export const getProfile = async (token: string, username: string) => {
       },
     }
   );
-  console.log({ response });
-
   return response.data.username;
 };
 
@@ -41,7 +39,6 @@ export const useProfile = () => {
 
 export default function Dashboard() {
   const { data: userProfile, isLoading, error } = useProfile();
-  console.log("userProfile", userProfile);
 
   if (isLoading) {
     return (

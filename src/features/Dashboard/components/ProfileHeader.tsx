@@ -1,20 +1,20 @@
 import { config } from "@/config";
 import Image from "next/image";
-import { SvgIcons } from "@/shared/components/SvgIcons";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 
 export default function ProfileHeader() {
   return (
     <div className="flex items-center ">
       <div className="relative">
         <Image
-          src={SvgIcons.tomiwaImage}
+          src={ImageIcons.tomiwaImage}
           alt="Image of Tomiwa"
           width="114"
           height="114"
           className="object-cover rounded-[50%] w-[20.4rem] h-[16rem] border-[0.3rem] border-jubalViolet"
         />
         <Image
-          src={SvgIcons.cameraIcon}
+          src={ImageIcons.cameraIcon}
           alt="camera icon"
           width="36"
           height="36"

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Images } from "@/shared/components/SvgIcons";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import { Button } from "@material-tailwind/react";
 
 interface SearchResultItemProps {
@@ -25,16 +25,16 @@ export default function SearchResultItem({
 }: SearchResultItemProps) {
   return (
     <div className="bg-white flex items-center justify-between px-[1rem] py-[1.5rem] rounded-[2rem] mb-[1.5rem]">
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <Image src={profileImage} alt="Profile Image" height="60" width="60" />
         <div className="ml-[1rem]">
           <p className="text-[1.6rem] font-[700] text-jubalNav">{gigRole}</p>
           <p className="text-[1.3rem] mt-[1rem]">{gigCompany}</p>
         </div>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <Image
-          src={Images.icSalary}
+          src={ImageIcons.icSalary}
           alt="Profile Image"
           height="45"
           width="45"
@@ -44,9 +44,9 @@ export default function SearchResultItem({
           <p className="text-jubalFAQGrey text-[1.4rem]">Monthly Salary</p>
         </div>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <Image
-          src={Images.ilocation}
+          src={ImageIcons.ilocation}
           alt="Profile Image"
           height="45"
           width="45"
@@ -65,7 +65,7 @@ export default function SearchResultItem({
         </Button>
         <div onClick={handleLike}>
           <Image
-            src={`${isLiked ? Images.likedHeartIcon : Images.heartIcon}`}
+            src={`${isLiked ? ImageIcons.likedHeartIcon : ImageIcons.heartIcon}`}
             alt="Like Icon"
             width="30"
             height="30"

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 interface GigItemProps {
   profileImage: string;
   title: string;
@@ -40,9 +41,9 @@ export default function GigItem({
         </div>
         <div onClick={handleLike}>
           <Image
-            src={`${
-              isLiked ? config.siteBaseUrl+"/dashboard/heart-liked.svg" : "../dashboard/heart.svg"
-            }`}
+            src={
+              isLiked ?  ImageIcons.likedHeartIcon: ImageIcons.heartIcon
+            }
             alt="Like Icon"
             width="30"
             height="30"
@@ -52,7 +53,7 @@ export default function GigItem({
       <hr className="my-[1rem]" />
       <div className="flex mb-[1rem] ">
         <Image
-          src={config.siteBaseUrl+"/dashboard/pay.svg"}
+          src={ImageIcons.payIcon}
           alt="Currency Icon"
           width="22"
           height="16"
@@ -65,7 +66,7 @@ export default function GigItem({
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
-            src={config.siteBaseUrl+"/dashboard/location.svg"}
+            src={ImageIcons.locationIcon}
             alt="Location Icon"
             width="14"
             height="20"

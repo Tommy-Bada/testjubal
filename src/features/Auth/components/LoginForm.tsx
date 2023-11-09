@@ -21,14 +21,6 @@ interface IFormValues {
 }
 export default function LoginForm() {
   const router = useRouter();
-  const isLogged = useCheckLogin();
-  const [showPassword, setShowPassword] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (isLogged) {
-      router.push("/client/dashboard");
-    }
-  }, []);
 
   const { mutate: login, isLoading, error } = useLogin();
 

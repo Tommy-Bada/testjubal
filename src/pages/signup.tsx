@@ -22,29 +22,19 @@ export interface IFormValues {
   country: string;
 }
 export default function Signup() {
-  const authToken = parseCookies().aToken;
-  console.log({ authToken });
-
   const router = useRouter();
   const isLogged = useCheckLogin();
 
-  useEffect(() => {
-    if (isLogged || !!authToken) {
+    if (isLogged) {
       router.push("/talent/dashboard");
+      return;
     }
-  }, []);
-
+  
   function clearModal() {
     setShowModal(false);
     router.push("talent/dashboard");
   }
-
   const [showModal, setShowModal] = useState(false);
-  console.log("working!");
-  const [, dispatch] = useContext<any>(AppContext);
-  console.log({ dispatch });
-  const { mutate: signup, isLoading, error } = useSignup();
-  console.log("Error2: ", error?.response?.data);
 
   return (
     <div>
@@ -69,3 +59,10 @@ export default function Signup() {
     </div>
   );
 }
+
+
+
+
+
+
+

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import MessageItem from "./MessageItem";
 import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 
 export default function MessageList() {
   return (
@@ -12,7 +13,7 @@ export default function MessageList() {
           className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none bg-jubalDashboardBackground"
         />
         <Image
-          src={config.siteBaseUrl+"/dashboard/search.svg"}
+          src={ImageIcons.searchIcon}
           alt="Search Icon"
           width="20"
           height="20"

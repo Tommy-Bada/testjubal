@@ -1,8 +1,7 @@
 import { config } from "@/config";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import swapHorizontal from "public/dashboard/swap-horizontal.svg";
-import {SvgIcons} from "@/shared/components/SvgIcons";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 
 export default function TalentHeader() {
   const router = useRouter();
@@ -19,7 +18,7 @@ export default function TalentHeader() {
         </div>
         <div className="lg:flex bg-jubalViolet rounded-[1rem] px-[1.5rem] cursor-pointer py-[1rem]  hidden ">
           <Image
-            src={SvgIcons.swapHorizontal}
+            src={ImageIcons.swapHorizontal}
             alt="Switch Icon"
             width="20"
             height="20"
@@ -38,7 +37,7 @@ export default function TalentHeader() {
             className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none"
           />
           <Image
-            src={config.siteBaseUrl+"/dashboard/search.svg"}
+            src={"/dashboard/search.svg"}
             alt="Search Icon"
             width="20"
             height="20"
@@ -47,7 +46,7 @@ export default function TalentHeader() {
         <div className="flex items-center justify-en">
           <div className="flex justify-center items-center mr-[2rem] ">
             <Image
-              src={config.siteBaseUrl+"/dashboard/profile-new.svg"}
+              src={"/dashboard/profile-new.svg"}
               alt="User Icon"
               width="44"
               height="44"
@@ -56,7 +55,7 @@ export default function TalentHeader() {
           </div>
           <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center">
             <Image
-              src={config.siteBaseUrl+"/dashboard/notification.svg"}
+              src={"/dashboard/notification.svg"}
               alt="Notification Icon"
               width="20"
               height="20"

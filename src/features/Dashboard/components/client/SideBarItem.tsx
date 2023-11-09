@@ -17,7 +17,6 @@ export default function SideBarItem({
       className={`inline-flex flex-col mt-[2rem] justify-center gap-[var(--2,8px)] rounded-[var(--2,8px)] w-full ${
         active ? "bg-jubalViolet" : ""
       }`}
-      onClick={() => console.log("Hello!")}
     >
       <div className="flex items-center my-[4px] mx-[4px] gap-[var(--3,12px)]">
         <Image src={`/${image}`} alt={`${image} icon`} width="36" height="36" />

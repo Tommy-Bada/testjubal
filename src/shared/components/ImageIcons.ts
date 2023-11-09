@@ -68,7 +68,11 @@ import tomiwaImage from "public/dashboard/Tomiwa.jpg";
 import totalAppliedIcon from "public/dashboard/total-applied.svg";
 import totalCompletedIcon from "public/dashboard/total-completed.svg";
 import totalEarningsIcon from "public/dashboard/total-earnings.svg";
-import uncheckedBtn from "public/dashboard/unchecked.svg";
+import listBoxIcon from "public/dashboard/list-box.svg";
+import lanIcon from "public/dashboard/lan.svg";
+import cashIcon from "public/dashboard/pay.svg";
+import uncheckedBtn from "public/dashboard/unchecked.svg"
+
 import { StaticImageData } from "next/image";
 
 
@@ -76,7 +80,7 @@ interface ImagesProps {
   [key: string]: StaticImageData;
 }
 
-export const SvgIcons: ImagesProps = {
+export const ImageIcons: ImagesProps = {
   cancelBtn,
   swapHorizontal,
   cardIcon,
@@ -148,5 +152,8 @@ export const SvgIcons: ImagesProps = {
   totalCompletedIcon,
   totalEarningsIcon,
   uncheckedBtn,
+  lanIcon,
+  cashIcon,
+  listBoxIcon
 };
 

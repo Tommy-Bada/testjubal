@@ -1,7 +1,7 @@
 import Image from "next/image";
 import SideBarItem from "./SideBarItem";
 import { UserSwitchProps } from "@/pages/client/dashboard";
-export default function SideBar({ user, setUser }: UserSwitchProps) {
+export default function SideBar() {
   return (
     <div className="w-[18%] bg-white h-[92vh] px-[2rem] py-[3rem] fixed rounded-[2rem]">
       <div className="w-[10rem] mx-[auto] my-[2rem]">
@@ -16,36 +16,19 @@ export default function SideBar({ user, setUser }: UserSwitchProps) {
             link="/dashboard"
           />
 
-          {user === "talent" ? (
           <SideBarItem
-          active={false}
-          image="dashboard/briefcase.svg"
-          text="My Manager"
-          link="/manager"
-        />
-          ) : (
-            <SideBarItem
             active={false}
             image="dashboard/briefcase.svg"
             text="Manage Gigs"
             link="/manage-gigs"
           />
-          )}
-          {user === "talent" ? (
-            <SideBarItem
-              active={false}
-              image="dashboard/bank-check.svg"
-              text="My Bank"
-              link="/bank"
-            />
-          ) : (
-            <SideBarItem
-              active={false}
-              image="dashboard/wallet.svg"
-              text="My Wallet"
-              link="/wallet"
-            />
-          )}
+
+          <SideBarItem
+            active={false}
+            image="dashboard/wallet.svg"
+            text="My Wallet"
+            link="/wallet"
+          />
 
           <SideBarItem
             active={false}

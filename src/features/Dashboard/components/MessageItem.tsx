@@ -1,4 +1,5 @@
 import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import Image from "next/image";
 
 interface MessageItemProps {
@@ -19,7 +20,7 @@ export default function MessageItem({
   return (
     <div className="flex justify-between items-center p-[1rem]">
       <div className="flex items-center">
-        <Image src={config.siteBaseUrl+"/"+profileImage} alt="profile image" width="50" height="50" />
+        <Image src={ImageIcons.profile} alt="profile image" width="50" height="50" />
         <div className="ml-[1rem]">
           <p className="font-[600] text-[1.6rem] text-jubalGrey">{name}</p>
           <p className="text-[1.2rem]">{textOrTyping}</p>
