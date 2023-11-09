@@ -56,7 +56,7 @@ export default function SideBar() {
             active={router.pathname === "/profile"}
           />
           <SideBarItem
-            image={ImageIcons.dashboardEmailIcon}
+            image={ImageIcons.dashboardMessageIcon}
             activeImage={ImageIcons.activeDashboardEmailIcon}
             text="My Message"
             link={"/talent/dashboard/message"}

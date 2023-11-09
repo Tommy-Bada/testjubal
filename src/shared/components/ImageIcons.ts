@@ -72,6 +72,7 @@ import listBoxIcon from "public/icons/list-box.svg";
 import lanIcon from "public/icons/lan.svg";
 import cashIcon from "public/icons/pay.svg";
 import uncheckedBtn from "public/icons/unchecked.svg";
+import dashboardMessageIcon from "public/icons/dashboard-message.svg";
 
 import { StaticImageData } from "next/image";
 
