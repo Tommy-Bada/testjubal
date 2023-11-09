@@ -6,6 +6,6 @@ export default function GoogleLoginCallback(){
 
     useEffect(() => {
       router.push('/client/dashboard');
-    }, []);
+    }, [router]);
     return <div></div>
 }

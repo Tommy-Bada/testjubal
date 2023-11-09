@@ -6,7 +6,7 @@ export default function FacebookLoginCallback() {
 
   useEffect(() => {
     router.push('/client/dashboard');
-  }, []);
+  }, [router]);
 
   return <div></div>;
 }

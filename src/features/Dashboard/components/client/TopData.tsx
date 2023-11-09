@@ -1,8 +1,8 @@
 import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import Image from "next/image";
 export default function TopData() {
   return (
-    // <div className="flex bg-jubalDashboardBackground justify-between p-[3rem] mt-[2rem] mb-[3rem] rounded-[2rem]">
     <div className="flex bg-jubalDashboardBackground w-[992px] h-[277px] p-[3rem] mt-[2rem] mb-[3rem] shrink-0 rounded-[var(--5,20px)]">
       <div className="relative w-[593px] h-[229px] shrink-0 rounded-[var(--2,8px)] custom-gradient">
         <div className="w-[202px] inline-flex flex-col items-start gap-[var(--4,16px)] m-[4rem] ">
@@ -30,7 +30,7 @@ export default function TopData() {
   
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalGreen">
                 <Image
-                  src={config.siteBaseUrl+"/dashboard/cash.svg"}
+                  src={ImageIcons.cashIcon}
                   alt="Jubal Logo"
                   width="16"
                   height="16"
@@ -47,7 +47,7 @@ export default function TopData() {
             <div className="p-[17px] flex flex-col justify-between bg-jubalDashboardBackground w-[129px] h-[113px] shrink-0 rounded-[var(--2,8px)]">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalRed">
                 <Image
-                  src={config.siteBaseUrl+"/dashboard/lan.svg"}
+                  src={ImageIcons.lanIcon}
                   alt="Jubal Logo"
                   width="16"
                   height="16"
@@ -65,7 +65,7 @@ export default function TopData() {
             <div className="flex gap-[var(--2,8px)] items-center">
               <div className="flex justify-center w-[var(--6,30px)] pb-[3px] h-[var(--6,30px)] shrink-0 rounded-full bg-jubalYellow">
                 <Image
-                  src={config.siteBaseUrl+"/dashboard/list-box.svg"}
+                  src={ImageIcons.listBoxIcon}
                   alt="Jubal Logo"
                   width="16"
                   height="16"

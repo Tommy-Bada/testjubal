@@ -1,3 +1,4 @@
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import GigItem from "./GigItem";
 
 export default function GigBox() {
@@ -12,68 +13,55 @@ export default function GigBox() {
       </div>
       <div className="overflow-y-auto h-[80vh]">
         <GigItem
-          profileImage="dashboard/talent-avatar.png"
+          profileImage={ImageIcons.talentAvatar}
           title="Driston Watson"
           name="Sound Designer"
           rating="5000"
           location="San Francisco, USA"
         />
         <GigItem
-          profileImage="dashboard/talent-avatar.png"
+          profileImage={ImageIcons.talentAvatar}
           title="Driston Watson"
           name="Sound Designer"
           rating="5000"
           location="San Francisco, USA"
         />
         <GigItem
-          profileImage="dashboard/talent-avatar.png"
+          profileImage={ImageIcons.talentAvatar}
           title="Driston Watson"
           name="Sound Designer"
           rating="5000"
           location="San Francisco, USA"
         />
         <GigItem
-          profileImage="dashboard/talent-avatar.png"
+          profileImage={ImageIcons.talentAvatar}
           title="Driston Watson"
           name="Sound Designer"
           rating="5000"
           location="San Francisco, USA"
         />
         <GigItem
-          profileImage="dashboard/talent-avatar.png"
+          profileImage={ImageIcons.talentAvatar}
           title="Driston Watson"
           name="Sound Designer"
           rating="5000"
           location="San Francisco, USA"
         />
         <GigItem
-          profileImage="dashboard/talent-avatar.png"
+          profileImage={ImageIcons.talentAvatar}
           title="Driston Watson"
           name="Sound Designer"
           rating="5000"
           location="San Francisco, USA"
         />
         <GigItem
-          profileImage="dashboard/talent-avatar.png"
+          profileImage={ImageIcons.talentAvatar}
           title="Driston Watson"
           name="Sound Designer"
           rating="5000"
           location="San Francisco, USA"
         />
-        <GigItem
-          profileImage="dashboard/talent-avatar.png"
-          title="Driston Watson"
-          name="Sound Designer"
-          rating="5000"
-          location="San Francisco, USA"
-        />
-        <GigItem
-          profileImage="dashboard/talent-avatar.png"
-          title="Driston Watson"
-          name="Sound Designer"
-          rating="5000"
-          location="San Francisco, USA"
-        />
+
  
       </div>
     </div>

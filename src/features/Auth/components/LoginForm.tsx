@@ -7,7 +7,6 @@ import * as Yup from "yup";
 import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
 import { useRouter } from "next/router";
-import { useCheckLogin } from "@/hooks/app.hooks";
 import { useLogin } from "@/hooks/auth.hooks";
 import { config } from "@/config";
 import InputField from "@/shared/components/InputField";

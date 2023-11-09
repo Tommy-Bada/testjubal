@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { config } from "@/config";
 import { ImageIcons } from "@/shared/components/ImageIcons";
 
-export default function DashboardHeader() {
+export default function ClientHeader() {
   const router = useRouter();
   function switchUser() {
     router.push("/talent/dashboard/");
@@ -33,7 +33,7 @@ export default function DashboardHeader() {
           className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none"
         />
         <Image
-          src="../dashboard/search.svg"
+          src={ImageIcons.searchIcon}
           alt="Search Icon"
           width="20"
           height="20"
@@ -41,14 +41,14 @@ export default function DashboardHeader() {
       </div>
       <div className="flex items-center">
         <Image
-          src="../dashboard/profile.svg"
+          src={ImageIcons.profile}
           alt="User Icon"
           width="150"
           height="150"
         />
         <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center">
           <Image
-            src="../dashboard/notification.svg"
+            src={ImageIcons.notificationIcon}
             alt="Notification Icon"
             width="20"
             height="20"

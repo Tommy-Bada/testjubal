@@ -6,12 +6,9 @@ import Footer from "@/shared/components/Footer";
 import SignupLeft from "@/features/Auth/components/SignupLeft";
 import SignUpForm from "@/features/Auth/components/SignUpForm";
 import EmailVerificationModal from "@/features/Auth/components/EmailVerificationModal";
-import { useContext, useEffect, useState } from "react";
-import { AppContext } from "@/context/app.context";
-import { useSignup } from "@/hooks/auth.hooks";
+import {useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useCheckLogin } from "@/hooks/app.hooks";
-import { parseCookies } from "nookies";
 import { secondHeroBackground } from "@/image";
 
 export interface IFormValues {
@@ -22,20 +19,22 @@ export interface IFormValues {
   contact: string;
   country: string;
 }
+
 export default function Signup() {
   const router = useRouter();
   const isLogged = useCheckLogin();
+  const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
     if (isLogged) {
       router.push("/talent/dashboard");
-      return;
     }
-  
+  }, [isLogged, router]);
+
   function clearModal() {
     setShowModal(false);
     router.push("talent/dashboard");
   }
-  const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
@@ -60,10 +59,3 @@ export default function Signup() {
     </div>
   );
 }
-
-
-
-
-
-
-

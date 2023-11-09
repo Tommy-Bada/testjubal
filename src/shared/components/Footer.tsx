@@ -12,8 +12,6 @@ import {
 } from "@/image";
 
 export default function Footer() {
-  //
-
   return (
     <footer className=" w-full bg-jubalDark text-white sm:p-[3rem] lg:flex p-[2rem] text-[1.2rem] lg:p-[5rem]">
       <div className="lg:w-[50%] lg:mr-[5rem]">

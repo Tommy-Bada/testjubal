@@ -45,7 +45,7 @@ function Header() {
             </Button>
           </Link>
         </div>
-        <div className="lg:hidden block" onClick={handleMobileMenu}>
+        <div className="block lg:hidden" onClick={handleMobileMenu}>
           <div className="w-[3rem] h-[2px] bg-jubalDark mb-[0.6rem]"></div>
           <div
             className={` h-[2px] bg-jubalDark mb-[0.6rem] transition-all duration-300 ease-out ${

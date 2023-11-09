@@ -1,9 +1,10 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "@material-tailwind/react";
 import Link from "next/link";
 import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 interface GigItemProps {
-  profileImage: string;
+  profileImage: string | StaticImageData;
   title: string;
   name: string;
   rating: string;
@@ -22,7 +23,7 @@ export default function GigItem({
       <div className="flex items-start justify-between ">
         <div className="flex items-center">
           <Image
-            src={`${config.siteBaseUrl}/${profileImage}`}
+            src={ImageIcons.profileImage}
             alt={`${profileImage} icon`}
             width="40"
             height="40"
@@ -34,7 +35,7 @@ export default function GigItem({
         </div>
         <div>
           <Image
-            src={config.siteBaseUrl+"/dashboard/heart.svg"}
+            src={ImageIcons.heartIcon}
             alt="Like Icon"
             width="36"
             height="36"
@@ -45,31 +46,32 @@ export default function GigItem({
       <div className="ratings flex justify-between mb-3 items-center gap-[var(--4,16px)]">
         <div className="flex star w-[106px] h-[17px]">
         <Image
-            src={config.siteBaseUrl+"/dashboard/star.svg"}
+            src={ImageIcons.starIcon}
             alt="Like Icon"
             width="36"
             height="36"
           />
         <Image
-            src={config.siteBaseUrl+"/dashboard/star.svg"}
+            src={ImageIcons.starIcon}
             alt="Like Icon"
             width="36"
             height="36"
           />
         <Image
-            src="../dashboard/star.svg"
+            src={ImageIcons.starIcon}
             alt="Like Icon"
             width="36"
             height="36"
           />
         <Image
-            src="../dashboard/star.svg"
+            src={ImageIcons.starIcon}
             alt="Like Icon"
             width="36"
             height="36"
           />
+
         <Image
-            src="../dashboard/star-white.svg"
+            src={ImageIcons.starWhite}
             alt="Like Icon"
             width="36"
             height="36"
@@ -86,7 +88,7 @@ export default function GigItem({
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
-            src="../dashboard/location.svg"
+            src={ImageIcons.locationIcon}
             alt="Location Icon"
             width="14"
             height="20"

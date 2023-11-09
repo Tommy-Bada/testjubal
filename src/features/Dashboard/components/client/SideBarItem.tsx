@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 interface SideBarItemProps {
-  image: string;
+  image: string | StaticImageData;
   text: string;
   link: string;
   active: boolean;
@@ -19,7 +19,7 @@ export default function SideBarItem({
       }`}
     >
       <div className="flex items-center my-[4px] mx-[4px] gap-[var(--3,12px)]">
-        <Image src={`/${image}`} alt={`${image} icon`} width="36" height="36" />
+        <Image src={image} alt={`${image} icon`} width="36" height="36" />
         <Link href={link}>
           <p
             className={`${

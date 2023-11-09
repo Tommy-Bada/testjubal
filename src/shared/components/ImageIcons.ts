@@ -73,6 +73,10 @@ import lanIcon from "public/icons/lan.svg";
 import cashIcon from "public/icons/pay.svg";
 import uncheckedBtn from "public/icons/unchecked.svg";
 import dashboardMessageIcon from "public/icons/dashboard-message.svg";
+import walletIcon from "public/icons/wallet.svg";
+import talentAvatar from "public/images/talent-avatar.png"
+import starIcon from "public/icons/star.svg";
+import starWhite from "public/icons/star-white.svg";
 
 import { StaticImageData } from "next/image";
 
@@ -156,6 +160,10 @@ export const ImageIcons: ImagesProps = {
   lanIcon,
   cashIcon,
   listBoxIcon,
-  dashboardMessageIcon
+  dashboardMessageIcon,
+  walletIcon,
+  talentAvatar,
+  starIcon,
+  starWhite
 };
 
