@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { cancelBtn } from "@/image";
 import { MouseEventHandler } from "react";
 import { Button } from "@material-tailwind/react";
 import { useFormik } from "formik";
@@ -41,7 +42,7 @@ export default function AddNewTaskModal({
       <div className="bg-white w-[80%] h-[90%] rounded-[2rem] p-[3rem] ">
         <div className="flex justify-end" onClick={handleRemoveModal}>
           <Image
-            src="/cancel.svg"
+            src={cancelBtn}
             alt="cancel icon"
             width="30"
             height="30"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { checkBtn } from "@/image";
 
 export default function SignupLeft() {
   return (
@@ -25,7 +26,7 @@ export default function SignupLeft() {
         ].map((item, index) => (
           <div key={index} className="flex my-[1rem]">
             <Image
-              src="/check.svg"
+              src={checkBtn}
               alt="check icon"
               height="20"
               width="20"

@@ -1,5 +1,6 @@
 import ToDoListItem from "./ToDoListItem";
 import Image from "next/image";
+import { toDoListIcon } from "@/image";
 
 type ToDoListProps = {
   handleAddNewTask: () => void;
@@ -12,7 +13,7 @@ export default function ToDoList({ handleAddNewTask }: ToDoListProps) {
         <div className="flex items-center ">
           <div className=" rounded-[50%] bg-jubalDashboardBackground w-[5rem] h-[5rem] flex justify-center items-center ">
             <Image
-              src="dashboard/todolist.svg"
+              src={toDoListIcon}
               alt="Notification Icon"
               width="20"
               height="20"

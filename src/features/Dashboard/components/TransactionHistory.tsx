@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { placeholderImage, dropDownIcon } from "@/image";
 import Transaction from "./Transaction";
 export default function TransactionHistory() {
   return (
@@ -7,31 +8,26 @@ export default function TransactionHistory() {
         <p className="text-jubalGrey text-[1.6rem]">Transaction History</p>
         <div className="bg-white rounded-[1rem] flex p-[1rem]">
           <p className="mr-[1rem] text-[1.4rem]">Newest</p>
-          <Image
-            src="/dashboard/drop-down.svg"
-            alt="drop down"
-            width="20"
-            height="20"
-          />
+          <Image src={dropDownIcon} alt="drop down" width="20" height="20" />
         </div>
       </div>
       <div>
         <Transaction
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="David Akpan"
           type="Widthdrawal"
           amount="5000"
           day="Today"
         />
         <Transaction
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="David Akpan"
           type="Widthdrawal"
           amount="5000"
           day="Today"
         />
         <Transaction
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="David Akpan"
           type="Widthdrawal"
           amount="5000"

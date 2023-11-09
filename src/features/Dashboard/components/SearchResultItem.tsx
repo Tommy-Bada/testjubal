@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { Images } from "@/shared/components/Images";
+import {
+  icSalaryIcon,
+  ilocationIcon,
+  heartIcon,
+  likedHeartIcon,
+} from "@/image";
 import { Button } from "@material-tailwind/react";
 
 interface SearchResultItemProps {
@@ -33,24 +38,14 @@ export default function SearchResultItem({
         </div>
       </div>
       <div className="flex justify-between items-center">
-        <Image
-          src={Images.icSalary}
-          alt="Profile Image"
-          height="45"
-          width="45"
-        />
+        <Image src={icSalaryIcon} alt="Profile Image" height="45" width="45" />
         <div className="ml-[1rem]">
           <p className="text-jubalGrey text-[1.4rem] font-[600]">{`$${startPrice} - $${endPrice}`}</p>
           <p className="text-jubalFAQGrey text-[1.4rem]">Monthly Salary</p>
         </div>
       </div>
       <div className="flex justify-between items-center">
-        <Image
-          src={Images.ilocation}
-          alt="Profile Image"
-          height="45"
-          width="45"
-        />
+        <Image src={ilocationIcon} alt="Profile Image" height="45" width="45" />
         <div className="ml-[1rem]">
           <p className="text-jubalGrey text-[1.4rem] font-[600]">{location}</p>
           <p className="text-jubalFAQGrey text-[1.4rem]">Location</p>
@@ -65,7 +60,7 @@ export default function SearchResultItem({
         </Button>
         <div onClick={handleLike}>
           <Image
-            src={`${isLiked ? Images.likedHeartIcon : Images.heartIcon}`}
+            src={`${isLiked ? likedHeartIcon : heartIcon}`}
             alt="Like Icon"
             width="30"
             height="30"

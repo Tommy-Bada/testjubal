@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { payIcon } from "@/image";
 
 interface TransactionProps {
   profileImage: string;
@@ -28,12 +29,7 @@ export default function Transaction({
       </div>
       <div>
         <div className="flex mb-[2rem]">
-          <Image
-            src="dashboard/pay.svg"
-            alt="Currency Icon"
-            width="22"
-            height="16"
-          />
+          <Image src={payIcon} alt="Currency Icon" width="22" height="16" />
           <p className="text-[1.4rem] text-jubalNav ml-[1rem]">{`$${amount}`}</p>
         </div>
         <p className="text-[1.4rem] text-right text-jubalFooterText">{day}</p>

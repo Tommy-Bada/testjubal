@@ -1,47 +1,62 @@
 import Image from "next/image";
 import SideBarItem from "./SideBarItem";
 import { useRouter } from "next/router";
+import {
+  logo,
+  dashboardIcon,
+  activeDashboardIcon,
+  briefcaseIcon,
+  briefcaseActiveIcon,
+  bankCheckIcon,
+  activeBankCheckIcon,
+  cardIcon,
+  activeCardIcon,
+  dashboardMessageIcon,
+  activeDashboardEmailIcon,
+  settingsIcon,
+  activeSettingsIcon,
+} from "@/image";
 
 export default function SideBar() {
   const router = useRouter();
   return (
     <div className="w-[max-content] bg-white h-[94%] px-[2rem] py-[2rem] fixed  rounded-[2rem] mr-[2rem]">
       <div className="w-[10rem] mx-[auto] my-[2rem]">
-        <Image src="Logo.png" alt="Jubal Logo" width="100" height="50" />
+        <Image src={logo} alt="Jubal Logo" width="100" height="50" />
       </div>
       <div className="py-[2rem] px-[3rem]  bg-jubalDashboardBackground rounded-[2rem] h-[86%] flex flex-col justify-between">
         <div>
           <SideBarItem
-            image="dashboard/dashboard.svg"
-            activeImage="dashboard/dashboard-active.svg"
+            image={dashboardIcon}
+            activeImage={activeDashboardIcon}
             text="Dashboard"
             link="/dashboard"
             active={router.pathname === "/dashboard"}
           />
           <SideBarItem
-            image="dashboard/briefcase.svg"
-            activeImage="dashboard/briefcase-active.svg"
+            image={briefcaseIcon}
+            activeImage={briefcaseActiveIcon}
             text="My Manager"
             link="/manager"
             active={router.pathname === "/manager"}
           />
           <SideBarItem
-            image="dashboard/bank-check.svg"
-            activeImage="dashboard/bank-check-active.svg"
+            image={bankCheckIcon}
+            activeImage={activeBankCheckIcon}
             text="My Bank"
             link="/bank"
             active={router.pathname === "/bank"}
           />
           <SideBarItem
-            image="dashboard/card.svg"
-            activeImage="dashboard/card-active.svg"
+            image={cardIcon}
+            activeImage={activeCardIcon}
             text="My Profile"
             link="/profile"
             active={router.pathname === "/profile"}
           />
           <SideBarItem
-            image="dashboard/email.svg"
-            activeImage="dashboard/email-active.svg"
+            image={dashboardMessageIcon}
+            activeImage={activeDashboardEmailIcon}
             text="My Message"
             link="/message"
             active={router.pathname === "/message"}
@@ -49,8 +64,8 @@ export default function SideBar() {
         </div>
         <div>
           <SideBarItem
-            image="dashboard/cogs.svg"
-            activeImage="dashboard/cogs-active.svg"
+            image={settingsIcon}
+            activeImage={activeSettingsIcon}
             text="Settings"
             link="/settings"
             active={router.pathname === "/settings"}

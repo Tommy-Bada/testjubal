@@ -1,4 +1,10 @@
 import Image from "next/image";
+import {
+  heartIcon,
+  likedHeartIcon,
+  payIcon,
+  dashboardLocationIcon,
+} from "@/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 interface GigItemProps {
@@ -27,7 +33,7 @@ export default function GigItem({
       <div className="flex justify-between items-start ">
         <div className="flex items-center">
           <Image
-            src={`/${profileImage}`}
+            src={`${profileImage}`}
             alt={`${profileImage} icon`}
             width="40"
             height="40"
@@ -39,9 +45,7 @@ export default function GigItem({
         </div>
         <div onClick={handleLike}>
           <Image
-            src={`${
-              isLiked ? "dashboard/heart-liked.svg" : "dashboard/heart.svg"
-            }`}
+            src={`${isLiked ? likedHeartIcon : heartIcon}`}
             alt="Like Icon"
             width="30"
             height="30"
@@ -50,12 +54,7 @@ export default function GigItem({
       </div>
       <hr className="my-[1rem]" />
       <div className="flex mb-[1rem] ">
-        <Image
-          src="dashboard/pay.svg"
-          alt="Currency Icon"
-          width="22"
-          height="16"
-        />
+        <Image src={payIcon} alt="Currency Icon" width="22" height="16" />
         <p className="text-[1.4rem] text-jubalNav ml-[.5rem]">
           {`$${startPrice} - $${endPrice} `}
           <span className="text-[1.4rem] text-jubalFooterText"> / monthly</span>
@@ -64,7 +63,7 @@ export default function GigItem({
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
-            src="dashboard/location.svg"
+            src={dashboardLocationIcon}
             alt="Location Icon"
             width="14"
             height="20"

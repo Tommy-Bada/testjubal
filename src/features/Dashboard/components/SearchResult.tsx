@@ -3,9 +3,9 @@ import { Switch } from "@material-tailwind/react";
 import NewestToOldestFilterBtn from "./buttons/NewestToOldestFilterBtn";
 import { useState } from "react";
 import Image from "next/image";
-import { Images } from "@/shared/components/Images";
 import PrevBtn from "./buttons/PrevBtn";
 import NextBtn from "./buttons/NextBtn";
+import { checkedBtn, uncheckedBtn, gigProfileImage } from "@/image";
 
 export default function SearchResult() {
   const [isChecked, setIsChecked] = useState(false);
@@ -16,7 +16,7 @@ export default function SearchResult() {
         <div className="flex justify-between items-center">
           <div className="flex items-center mr-[5rem]">
             <Image
-              src={isChecked ? Images.checkedBtn : Images.uncheckedBtn}
+              src={isChecked ? checkedBtn : uncheckedBtn}
               alt="check-icon"
               width={30}
               height={30}
@@ -66,7 +66,7 @@ export default function SearchResult() {
       </div>
 
       <SearchResultItem
-        profileImage={Images.gigProfileImage}
+        profileImage={gigProfileImage}
         gigRole="Instrumentalist"
         gigCompany="Marlian Music"
         startPrice="2000"
@@ -76,7 +76,7 @@ export default function SearchResult() {
         handleLike={() => {}}
       />
       <SearchResultItem
-        profileImage={Images.gigProfileImage}
+        profileImage={gigProfileImage}
         gigRole="Instrumentalist"
         gigCompany="Marlian Music"
         startPrice="2000"
@@ -86,7 +86,7 @@ export default function SearchResult() {
         handleLike={() => {}}
       />
       <SearchResultItem
-        profileImage={Images.gigProfileImage}
+        profileImage={gigProfileImage}
         gigRole="Instrumentalist"
         gigCompany="Marlian Music"
         startPrice="2000"

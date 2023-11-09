@@ -4,7 +4,12 @@ import FAQs from "./FAQs";
 import { Switch } from "@material-tailwind/react";
 import { useState } from "react";
 import Image from "next/image";
-import { Images } from "@/shared/components/Images";
+import {
+  settingsEmailIcon,
+  settingsLocationIcon,
+  settingsPhoneIcon,
+  logoutIcon,
+} from "@/image";
 import Button from "@material-tailwind/react";
 
 export default function SettingsBox() {
@@ -113,17 +118,17 @@ export default function SettingsBox() {
             </p>
             <div className="flex my-[3rem]">
               <Contact
-                image="dashboard/settings-email.svg"
+                image={settingsEmailIcon}
                 title="Email"
                 text="contact@jubalglobal.com"
               />
               <Contact
-                image="dashboard/settings-phone.svg"
+                image={settingsPhoneIcon}
                 title="Phone"
                 text="+234 812 345 6789"
               />
               <Contact
-                image="dashboard/settings-location.svg"
+                image={settingsLocationIcon}
                 title="Office"
                 text="1437 Sanusi Fafunwa St, Victoria Island 106104, Lagos."
               />
@@ -327,7 +332,7 @@ export default function SettingsBox() {
             </h1>
             <div className="flex items-center">
               <Image
-                src={Images.logoutIcon}
+                src={logoutIcon}
                 alt="logout icon"
                 height="40"
                 width="40"

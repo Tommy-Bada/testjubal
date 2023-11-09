@@ -7,6 +7,7 @@ import SignupLeft from "@/features/Auth/components/SignupLeft";
 import SignUpForm from "@/features/Auth/components/SignUpForm";
 import EmailVerificationModal from "@/features/Auth/components/EmailVerificationModal";
 import { useState } from "react";
+import { secondHeroBackground } from "@/image";
 
 export default function Signin() {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +21,7 @@ export default function Signin() {
       </Head>
       <Header />
       <div
-        style={{ background: "url(/Herobg2.png)" }}
+        style={{ background: `url(${secondHeroBackground}` }}
         className="p-[2rem] lg:flex lg:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <SignupLeft />

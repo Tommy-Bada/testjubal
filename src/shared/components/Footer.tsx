@@ -1,4 +1,15 @@
 import Image from "next/image";
+import {
+  jubalFooterLogo,
+  facebookLogo,
+  instagramLogo,
+  twitterLogo,
+  youtubeLogo,
+  linkedinLogo,
+  locationIcon,
+  phoneIcon,
+  emailIcon,
+} from "@/image";
 
 export default function Footer() {
   //
@@ -8,7 +19,7 @@ export default function Footer() {
       <div className="lg:w-[50%] lg:mr-[5rem]">
         <div>
           <Image
-            src="/footerLogo.png"
+            src={jubalFooterLogo}
             alt="jubal logo"
             width="174"
             height="62"
@@ -22,7 +33,7 @@ export default function Footer() {
         <div className="flex items-center">
           <div>
             <Image
-              src="/facebook.svg"
+              src={facebookLogo}
               alt="facebook icon"
               width="30"
               height="30"
@@ -31,7 +42,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/instagram.svg"
+              src={instagramLogo}
               alt="instagram icon"
               width="30"
               height="30"
@@ -40,7 +51,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/twitter.svg"
+              src={twitterLogo}
               alt="twitter icon"
               width="30"
               height="30"
@@ -49,7 +60,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/youtube.svg"
+              src={youtubeLogo}
               alt="youtube icon"
               width="30"
               height="30"
@@ -58,7 +69,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/linkedin.svg"
+              src={linkedinLogo}
               alt="linkedin icon"
               width="30"
               height="30"
@@ -141,7 +152,7 @@ export default function Footer() {
           <ul>
             <li className="flex my-[2rem] items-start">
               <Image
-                src="/location.svg"
+                src={locationIcon}
                 alt="location icon"
                 width="30"
                 height="30"
@@ -153,7 +164,7 @@ export default function Footer() {
             </li>
             <li className="flex mb-[2rem] items-start">
               <Image
-                src="/phone.svg"
+                src={phoneIcon}
                 alt="phone icon"
                 width="30"
                 height="30"
@@ -165,7 +176,7 @@ export default function Footer() {
             </li>
             <li className="flex mb-[2rem] items-start">
               <Image
-                src="/email.svg"
+                src={emailIcon}
                 alt="email icon"
                 width="30"
                 height="30"

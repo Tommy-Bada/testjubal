@@ -4,13 +4,14 @@ import Subscribe from "@/shared/components/Subscribe";
 import Footer from "@/shared/components/Footer";
 import ForgotPasswordForm from "@/features/Auth/components/ForgotPasswordForm";
 import LoginLeft from "@/features/Auth/components/LoginLeft";
+import { loginHero } from "@/image";
 
 export default function ForgotPassword() {
   return (
     <div>
       <Header />
       <div
-        style={{ background: "url(/loginHero.png)" }}
+        style={{ background: `url(${loginHero}` }}
         className="pl-[2rem] pr-[4rem] py-[2rem] lg:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <LoginLeft />

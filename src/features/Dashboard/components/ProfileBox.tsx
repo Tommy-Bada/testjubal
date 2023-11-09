@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ProfileHeader from "./ProfileHeader";
 import { useFormik } from "formik";
 import InputField from "@/shared/components/InputField";

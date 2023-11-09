@@ -10,6 +10,7 @@ import { CountryDropdown } from "react-country-region-selector";
 import SelectField from "../../../shared/components/SelectField";
 import InputField from "../../../shared/components/InputField";
 import PasswordField from "../../../shared/components/PasswordField";
+import { googleSignupIcon, facebookSignupIcon } from "@/image";
 
 export default function SignUpForm({ handleSignUp }: any) {
   const [selectedValue, setSelectedValue] = useState<string>("");
@@ -180,12 +181,12 @@ export default function SignUpForm({ handleSignUp }: any) {
       </form>
       <FormSeperator />
       <FacebookGoogleBtn
-        iconSrc="/siwFacebook.svg"
+        iconSrc={facebookSignupIcon}
         alt="facebook icon"
         buttonText="Sign Up with Facebook"
       />
       <FacebookGoogleBtn
-        iconSrc="/siwGoogle.svg"
+        iconSrc={googleSignupIcon}
         alt="google icon"
         buttonText="Sign Up with Google"
       />

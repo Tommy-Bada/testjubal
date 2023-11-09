@@ -1,5 +1,6 @@
 import GigItem from "./GigItem";
 import { useState } from "react";
+import { placeholderImage } from "@/image";
 
 type Gigs = {
   profileImage: string;
@@ -13,7 +14,7 @@ type Gigs = {
 export default function GigBox() {
   const [gigs, setGigs] = useState<Gigs[]>([
     {
-      profileImage: "dashboard/placeholder.svg",
+      profileImage: placeholderImage,
       title: "Lead Sound Designer",
       name: "Hexagon Music",
       startPrice: "5000",
@@ -22,7 +23,7 @@ export default function GigBox() {
       isLiked: false,
     },
     {
-      profileImage: "dashboard/placeholder.svg",
+      profileImage: placeholderImage,
       title: "Lead Producer",
       name: "Hexagon Music",
       startPrice: "5000",
@@ -31,7 +32,7 @@ export default function GigBox() {
       isLiked: false,
     },
     {
-      profileImage: "dashboard/placeholder.svg",
+      profileImage: placeholderImage,
       title: "Lead Director",
       name: "Hexagon Music",
       startPrice: "5000",
@@ -40,7 +41,7 @@ export default function GigBox() {
       isLiked: false,
     },
     {
-      profileImage: "dashboard/placeholder.svg",
+      profileImage: placeholderImage,
       title: "Lead Pianist",
       name: "Hexagon Music",
       startPrice: "5000",
@@ -49,7 +50,7 @@ export default function GigBox() {
       isLiked: false,
     },
     {
-      profileImage: "dashboard/placeholder.svg",
+      profileImage: placeholderImage,
       title: "Lead Singer",
       name: "Hexagon Music",
       startPrice: "5000",

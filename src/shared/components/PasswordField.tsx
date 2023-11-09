@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { ChangeEvent, FocusEvent } from "react";
 import { useState } from "react";
+import { eyeIcon } from "@/image";
 
 interface PasswordInputProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -48,7 +49,7 @@ const PasswordField: React.FC<PasswordInputProps> = ({
           value={value}
         />
         <Image
-          src="/eye.svg"
+          src={eyeIcon}
           alt="eye icon"
           height="24"
           width="24"

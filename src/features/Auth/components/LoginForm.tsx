@@ -9,6 +9,7 @@ import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
 import InputField from "../../../shared/components/InputField";
 import PasswordField from "../../../shared/components/PasswordField";
+import { googleSignupIcon, facebookSignupIcon } from "@/image";
 
 export default function LoginForm() {
   const formik = useFormik({
@@ -93,12 +94,12 @@ export default function LoginForm() {
         </div>
         <FormSeperator />
         <FacebookGoogleBtn
-          iconSrc="/siwFacebook.svg"
+          iconSrc={facebookSignupIcon}
           alt="facebook icon"
           buttonText="Log in with Facebook"
         />
         <FacebookGoogleBtn
-          iconSrc="/siwGoogle.svg"
+          iconSrc={googleSignupIcon}
           alt="google icon"
           buttonText="Log in with Google"
         />

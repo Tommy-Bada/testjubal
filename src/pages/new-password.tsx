@@ -6,6 +6,7 @@ import NewPasswordForm from "@/features/Auth/components/NewPasswordForm";
 import LoginLeft from "@/features/Auth/components/LoginLeft";
 import SuccessModal from "@/features/Auth/components/SuccessModal";
 import { useState } from "react";
+import { loginHero } from "@/image";
 
 export default function CreateNewPassword() {
   const [showModal, setShowModal] = useState(false);
@@ -16,7 +17,7 @@ export default function CreateNewPassword() {
     <div>
       <Header />
       <div
-        style={{ background: "url(/loginHero.png)" }}
+        style={{ background: `url(${loginHero}` }}
         className="pl-[2rem] pr-[4rem] py-[2rem] lg:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <LoginLeft />
