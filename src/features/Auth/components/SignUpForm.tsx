@@ -15,6 +15,7 @@ import { config } from "@/config";
 import SelectField from "@/shared/components/SelectField";
 import InputField from "@/shared/components/InputField";
 import PasswordField from "@/shared/components/PasswordField";
+import { facebookSignupIcon, googleSignupIcon } from "@/image";
 export default function SignUpForm({ setShowModal }: any) {
   const router = useRouter();
   const [, dispatch] = useContext<any>(AppContext);
@@ -193,13 +194,13 @@ export default function SignUpForm({ setShowModal }: any) {
       </form>
       <FormSeperator />
       <FacebookGoogleBtn
-        iconSrc="/siwFacebook.svg"
+        iconSrc={facebookSignupIcon}
         alt="facebook icon"
         buttonText="Sign Up with Facebook"
         onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}
       />
       <FacebookGoogleBtn
-        iconSrc="/siwGoogle.svg"
+        iconSrc={googleSignupIcon}
         alt="google icon"
         buttonText="Sign Up with Google"
         onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}

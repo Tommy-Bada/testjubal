@@ -12,6 +12,7 @@ import { useSignup } from "@/hooks/auth.hooks";
 import { useRouter } from "next/router";
 import { useCheckLogin } from "@/hooks/app.hooks";
 import { parseCookies } from "nookies";
+import { secondHeroBackground } from "@/image";
 
 export interface IFormValues {
   email: string;
@@ -43,7 +44,7 @@ export default function Signup() {
       </Head>
       <Header />
       <div
-        style={{ background: "url(/Herobg2.png)" }}
+        style={{ background: `url(${secondHeroBackground}` }}
         className="p-[2rem] lg:flex lg:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <SignupLeft />

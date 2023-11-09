@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { successIcon } from "@/image";
 import { MouseEventHandler } from "react";
 import { Button } from "@material-tailwind/react";
 import Link from "next/link";
@@ -24,7 +25,7 @@ export default function SuccessModal({
       <div className="bg-white w-[80%] sm:w-[60%] lg:w-[60rem] p-[2rem] rounded-[2rem] lg:p-[3rem] ">
         <div className="flex justify-center items-center">
           <Image
-            src="/success.svg"
+            src={successIcon}
             alt="success icon"
             width="100"
             height="100"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { placeholderImage, dropDownIcon } from "@/image";
 import Transaction from "./Transaction";
 import { config } from "@/config";
 import { ImageIcons } from "@/shared/components/ImageIcons";

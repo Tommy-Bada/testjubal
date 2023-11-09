@@ -4,7 +4,16 @@ import FAQs from "./FAQs";
 import { Switch } from "@material-tailwind/react";
 import { useState } from "react";
 import Image from "next/image";
+<<<<<<< HEAD
 import { ImageIcons } from "@/shared/components/ImageIcons";
+=======
+import {
+  settingsEmailIcon,
+  settingsLocationIcon,
+  settingsPhoneIcon,
+  logoutIcon,
+} from "@/image";
+>>>>>>> 715000f27ed646488bb90ebe41a56bde9128213f
 import Button from "@material-tailwind/react";
 
 export default function SettingsBox() {
@@ -113,17 +122,17 @@ export default function SettingsBox() {
             </p>
             <div className="flex my-[3rem]">
               <Contact
-                image="dashboard/settings-email.svg"
+                image={settingsEmailIcon}
                 title="Email"
                 text="contact@jubalglobal.com"
               />
               <Contact
-                image="dashboard/settings-phone.svg"
+                image={settingsPhoneIcon}
                 title="Phone"
                 text="+234 812 345 6789"
               />
               <Contact
-                image="dashboard/settings-location.svg"
+                image={settingsLocationIcon}
                 title="Office"
                 text="1437 Sanusi Fafunwa St, Victoria Island 106104, Lagos."
               />
@@ -308,13 +317,6 @@ export default function SettingsBox() {
                   placeholder="Please Enter Your Account Number"
                 />
               </div>
-
-              {/* <Button
-              variant="filled"
-              className="bg-jubalDark  w-[60%] text-[1.6rem] normal-case"
-            >
-              Proceed
-            </Button> */}
             </form>
           </div>
         )}

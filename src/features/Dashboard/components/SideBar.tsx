@@ -2,6 +2,21 @@ import Image from "next/image";
 import SideBarItem from "./SideBarItem";
 import { useRouter } from "next/router";
 import { ImageIcons } from "@/shared/components/ImageIcons";
+import {
+  logo,
+  dashboardIcon,
+  activeDashboardIcon,
+  briefcaseIcon,
+  briefcaseActiveIcon,
+  bankCheckIcon,
+  activeBankCheckIcon,
+  cardIcon,
+  activeCardIcon,
+  dashboardMessageIcon,
+  activeDashboardEmailIcon,
+  settingsIcon,
+  activeSettingsIcon,
+} from "@/image";
 
 export default function SideBar() {
   const router = useRouter();
@@ -50,8 +65,8 @@ export default function SideBar() {
         </div>
         <div>
           <SideBarItem
-            image={ImageIcons.dashboardEmailIcon}
-            activeImage={ImageIcons.activeDashboardEmailIcon}
+            image={ImageIcons.settingsIcon}
+            activeImage={ImageIcons.activeSettingsIcon}
             text="Settings"
             link={"/talent/dashboard/settings"}
             active={router.pathname === "/settings"}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { arrowDownIcon } from "@/image";
 
 interface NewestToOldestFilterBtnProps {
   handleFilter: () => void;
@@ -13,12 +14,7 @@ export default function NewestToOldestFilterBtn({
       onClick={handleFilter}
     >
       <p className="text-[1.6rem] text-jubalViolet p-[1rem]">Newest</p>
-      <Image
-        src="/dashboard/arrow-down.svg"
-        alt="arrow icon"
-        width="20"
-        height="20"
-      />
+      <Image src={arrowDownIcon} alt="arrow icon" width="20" height="20" />
     </div>
   );
 }

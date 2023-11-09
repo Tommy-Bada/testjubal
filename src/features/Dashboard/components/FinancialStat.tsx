@@ -1,6 +1,7 @@
 import { config } from "@/config";
 import Image from "next/image";
 import { ImageIcons } from "@/shared/components/ImageIcons";
+import { noTransactionIcon } from "@/image";
 export default function FinancialStat() {
   return (
     <div className="p-[2rem]">

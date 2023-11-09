@@ -3,9 +3,10 @@ import { Switch } from "@material-tailwind/react";
 import NewestToOldestFilterBtn from "./buttons/NewestToOldestFilterBtn";
 import { useState } from "react";
 import Image from "next/image";
-import { Images } from "@/shared/components/ImageIcons";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import PrevBtn from "./buttons/PrevBtn";
 import NextBtn from "./buttons/NextBtn";
+import { checkedBtn, uncheckedBtn, gigProfileImage } from "@/image";
 
 export default function SearchResult() {
   const [isChecked, setIsChecked] = useState(false);
@@ -13,10 +14,10 @@ export default function SearchResult() {
     <div className="bg-jubalDashboardBackground p-[2rem] rounded-[2rem]">
       <div className="flex justify-between items-center mb-[2rem]">
         <p className="text-[2rem] font-[700] text-jubalNav">Showing 34 jobs</p>
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <div className="flex items-center mr-[5rem]">
             <Image
-              src={isChecked ? Images.checkedBtn : Images.uncheckedBtn}
+              src={isChecked ? checkedBtn : uncheckedBtn}
               alt="check-icon"
               width={30}
               height={30}
@@ -34,7 +35,7 @@ export default function SearchResult() {
               crossOrigin={undefined}
               ripple={true}
               id="custom-switch-component-details"
-              className="h-full w-full checked:bg-jubalViolet"
+              className="w-full h-full checked:bg-jubalViolet"
               containerProps={{
                 className: "w-12 h-6 ",
               }}
@@ -51,7 +52,7 @@ export default function SearchResult() {
               crossOrigin={undefined}
               ripple={true}
               id="custom-switch-component-salary"
-              className="h-full w-full checked:bg-jubalViolet"
+              className="w-full h-full checked:bg-jubalViolet"
               containerProps={{
                 className: "w-12 h-6 ",
               }}
@@ -66,7 +67,7 @@ export default function SearchResult() {
       </div>
 
       <SearchResultItem
-        profileImage={Images.gigProfileImage}
+        profileImage={gigProfileImage}
         gigRole="Instrumentalist"
         gigCompany="Marlian Music"
         startPrice="2000"
@@ -76,7 +77,7 @@ export default function SearchResult() {
         handleLike={() => {}}
       />
       <SearchResultItem
-        profileImage={Images.gigProfileImage}
+        profileImage={gigProfileImage}
         gigRole="Instrumentalist"
         gigCompany="Marlian Music"
         startPrice="2000"
@@ -86,7 +87,7 @@ export default function SearchResult() {
         handleLike={() => {}}
       />
       <SearchResultItem
-        profileImage={Images.gigProfileImage}
+        profileImage={gigProfileImage}
         gigRole="Instrumentalist"
         gigCompany="Marlian Music"
         startPrice="2000"

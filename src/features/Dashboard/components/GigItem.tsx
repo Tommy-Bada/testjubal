@@ -1,4 +1,10 @@
 import Image from "next/image";
+import {
+  heartIcon,
+  likedHeartIcon,
+  payIcon,
+  dashboardLocationIcon,
+} from "@/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import { config } from "@/config";
@@ -29,7 +35,7 @@ export default function GigItem({
       <div className="flex items-start justify-between ">
         <div className="flex items-center">
           <Image
-            src={config.siteBaseUrl+"/"+profileImage}
+            src={`${profileImage}`}
             alt={`${profileImage} icon`}
             width="40"
             height="40"
@@ -66,7 +72,7 @@ export default function GigItem({
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
-            src={ImageIcons.locationIcon}
+            src={ImageIcons.dashboardLocationIcon}
             alt="Location Icon"
             width="14"
             height="20"

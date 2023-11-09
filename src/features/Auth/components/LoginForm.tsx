@@ -12,6 +12,8 @@ import { useLogin } from "@/hooks/auth.hooks";
 import { config } from "@/config";
 import InputField from "@/shared/components/InputField";
 import PasswordField from "@/shared/components/PasswordField";
+import { facebookSignupIcon, googleSignupIcon } from "@/image";
+
 
 
 
@@ -110,7 +112,7 @@ export default function LoginForm() {
         </div>
         <FormSeperator />
         <FacebookGoogleBtn
-          iconSrc="/siwFacebook.svg"
+          iconSrc={facebookSignupIcon}
           alt="facebook icon"
           buttonText="Log in with Facebook"
           onClick={() =>
@@ -118,7 +120,7 @@ export default function LoginForm() {
           }
         />
         <FacebookGoogleBtn
-          iconSrc="/siwGoogle.svg"
+          iconSrc={googleSignupIcon}
           alt="google icon"
           buttonText="Log in with Google"
           onClick={() =>

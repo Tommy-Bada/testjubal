@@ -2,6 +2,7 @@ import { config } from "@/config";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { ImageIcons } from "@/shared/components/ImageIcons";
+import { swapIcon, searchIcon, newProfile, notificationIcon } from "@/image";
 
 export default function TalentHeader() {
   const router = useRouter();
@@ -36,17 +37,12 @@ export default function TalentHeader() {
             placeholder="Search"
             className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none"
           />
-          <Image
-            src={"/dashboard/search.svg"}
-            alt="Search Icon"
-            width="20"
-            height="20"
-          />
+          <Image src={searchIcon} alt="Search Icon" width="20" height="20" />
         </div>
         <div className="flex items-center justify-en">
           <div className="flex justify-center items-center mr-[2rem] ">
             <Image
-              src={"/dashboard/profile-new.svg"}
+              src={newProfile}
               alt="User Icon"
               width="44"
               height="44"
@@ -55,7 +51,7 @@ export default function TalentHeader() {
           </div>
           <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center">
             <Image
-              src={"/dashboard/notification.svg"}
+              src={notificationIcon}
               alt="Notification Icon"
               width="20"
               height="20"

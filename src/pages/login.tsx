@@ -7,6 +7,7 @@ import LoginForm from "@/features/Auth/components/LoginForm";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useCheckLogin } from "@/hooks/app.hooks";
+import { loginHero } from "@/image";
 
 export default function Login() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function Login() {
     <div>
       <Header />
       <div
-        style={{ background: "url(/loginHero.png)" }}
+        style={{ background: `url(${loginHero}` }}
         className="pl-[2rem] pr-[4rem] py-[2rem] lg:flex sm:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <LoginLeft />

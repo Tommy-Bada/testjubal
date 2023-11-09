@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { logo } from "@/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import Link from "next/link";
@@ -13,7 +14,7 @@ function Header() {
       <header className="flex justify-between items-center py-[2rem] sm:p-[3rem] lg:px-[5rem] px-[2rem] relative  bg-white z-20 ">
         <div>
           <Image
-            src="/Logo.png"
+            src={logo}
             alt="jubal logo"
             width="170"
             height="54"

@@ -2,6 +2,7 @@ import { config } from "@/config";
 import ToDoListItem from "./ToDoListItem";
 import Image from "next/image";
 import { ImageIcons } from "@/shared/components/ImageIcons";
+import { toDoListIcon } from "@/image";
 
 type ToDoListProps = {
   handleAddNewTask: () => void;

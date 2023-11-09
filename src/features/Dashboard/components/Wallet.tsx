@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ImageIcons } from "@/shared/components/ImageIcons";
+import { bankMoneyIcon, addFundsIcon, removeFundsIcon } from "@/image";
 
 export default function Wallet() {
   return (

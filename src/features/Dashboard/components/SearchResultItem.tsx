@@ -1,5 +1,11 @@
 import Image from "next/image";
 import { ImageIcons } from "@/shared/components/ImageIcons";
+import {
+  icSalaryIcon,
+  ilocationIcon,
+  heartIcon,
+  likedHeartIcon,
+} from "@/image";
 import { Button } from "@material-tailwind/react";
 
 interface SearchResultItemProps {
@@ -46,7 +52,7 @@ export default function SearchResultItem({
       </div>
       <div className="flex items-center justify-between">
         <Image
-          src={ImageIcons.ilocation}
+          src={ImageIcons.ilocationIcon}
           alt="Profile Image"
           height="45"
           width="45"
@@ -65,7 +71,11 @@ export default function SearchResultItem({
         </Button>
         <div onClick={handleLike}>
           <Image
+<<<<<<< HEAD
             src={`${isLiked ? ImageIcons.likedHeartIcon : ImageIcons.heartIcon}`}
+=======
+            src={`${isLiked ? likedHeartIcon : heartIcon}`}
+>>>>>>> 715000f27ed646488bb90ebe41a56bde9128213f
             alt="Like Icon"
             width="30"
             height="30"

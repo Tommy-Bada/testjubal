@@ -2,6 +2,7 @@ import { config } from "@/config";
 import Image from "next/image";
 import { ImageIcons } from "@/shared/components/ImageIcons";
 
+import { tomiwaImage, cameraIcon } from "@/image";
 export default function ProfileHeader() {
   return (
     <div className="flex items-center ">

@@ -3,6 +3,7 @@ import NotificationItem from "./NotificationItem";
 import Image from "next/image";
 import { ImageIcons } from "@/shared/components/ImageIcons";
 
+import { notificationIcon } from "@/image";
 
 export default function NotificationBox() {
   return (
