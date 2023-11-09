@@ -155,6 +155,7 @@ export const ImageIcons: ImagesProps = {
   uncheckedBtn,
   lanIcon,
   cashIcon,
-  listBoxIcon
+  listBoxIcon,
+  dashboardMessageIcon
 };
 
