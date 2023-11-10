@@ -27,47 +27,37 @@ import { ToastContainer } from "react-toastify";
 import { Inter } from "@next/font/google";
 
 import dynamic from "next/dynamic";
-// import AppThemeProvider from "@/lib/providers/AppThemeProvider";
-// import AppQueryProvider from "@/lib/providers/AppQueryProvider";
-
-// import { AuthProvider } from '@/lib/auth.context';
-
-// import { PublicRoute } from '@/lib/route-protection';
-// import { ToastProvider } from '@/lib/hooks/useToast';
-
-// const PrivateRoute = dynamic(() => import('../lib/route-protection'), {
-//   ssr: false,
-// });
 const inter = Inter({ subsets: ["latin"] });
-export default function App({ Component, pageProps }: AppProps) {
-  // const displayComponent = () => {
-  //   if (['/', '/login', '/forgot-password'].includes(appProps.router.pathname))
-  //     return (
-  //       <PublicRoute>
-  //         <Component {...pageProps} />
-  //       </PublicRoute>
-  //     );
 
-  //   return (
-  //     <PrivateRoute>
-  //       <Component {...pageProps} />
-  //     </PrivateRoute>
-  //   );
-  // };
+import React from "react";
+import { NextComponentType } from "next";
+import { ThemeProvider } from "@mui/material/styles";
+import { QueryClientProvider, Hydrate, QueryClient } from "react-query";
+import AppProvider from "@/context/app.context";
 
-  // return (
-  //   <AuthProvider>
-  //     <AppQueryProvider>
-  //       <AppThemeProvider>
-  //         <ToastProvider>{displayComponent()}</ToastProvider>
-  //         <ToastContainer pauseOnFocusLoss draggable pauseOnHover />
-  //       </AppThemeProvider>
-  //     </AppQueryProvider>
-  //   </AuthProvider>
-  // );
+type CustomAppProps = AppProps & {
+  Component: NextComponentType & { auth?: boolean };
+};
+
+function MyApp({ Component, pageProps }: CustomAppProps) {
+  const [queryClient] = React.useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 1000 * 20,
+          },
+        },
+      })
+  );
+
   return (
-    <div>
-      <Component {...pageProps} />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
+        <Component {...pageProps} />
+      </AppProvider>
+    </QueryClientProvider>
   );
 }
+
+export default MyApp;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { logo } from "@/image";
 import { Button } from "@material-tailwind/react";
 import { useState } from "react";
 import Link from "next/link";
@@ -13,7 +14,7 @@ function Header() {
       <header className="flex justify-between items-center py-[2rem] sm:p-[3rem] lg:px-[5rem] px-[2rem] relative  bg-white z-20 ">
         <div>
           <Image
-            src="/Logo.png"
+            src={logo}
             alt="jubal logo"
             width="170"
             height="54"
@@ -44,7 +45,7 @@ function Header() {
             </Button>
           </Link>
         </div>
-        <div className="lg:hidden block" onClick={handleMobileMenu}>
+        <div className="block lg:hidden" onClick={handleMobileMenu}>
           <div className="w-[3rem] h-[2px] bg-jubalDark mb-[0.6rem]"></div>
           <div
             className={` h-[2px] bg-jubalDark mb-[0.6rem] transition-all duration-300 ease-out ${

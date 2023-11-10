@@ -1,14 +1,23 @@
 import Image from "next/image";
+import {
+  jubalFooterLogo,
+  facebookLogo,
+  instagramLogo,
+  twitterLogo,
+  youtubeLogo,
+  linkedinLogo,
+  locationIcon,
+  phoneIcon,
+  emailIcon,
+} from "@/image";
 
 export default function Footer() {
-  //
-
   return (
     <footer className=" w-full bg-jubalDark text-white sm:p-[3rem] lg:flex p-[2rem] text-[1.2rem] lg:p-[5rem]">
       <div className="lg:w-[50%] lg:mr-[5rem]">
         <div>
           <Image
-            src="/footerLogo.png"
+            src={jubalFooterLogo}
             alt="jubal logo"
             width="174"
             height="62"
@@ -22,7 +31,7 @@ export default function Footer() {
         <div className="flex items-center">
           <div>
             <Image
-              src="/facebook.svg"
+              src={facebookLogo}
               alt="facebook icon"
               width="30"
               height="30"
@@ -31,7 +40,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/instagram.svg"
+              src={instagramLogo}
               alt="instagram icon"
               width="30"
               height="30"
@@ -40,7 +49,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/twitter.svg"
+              src={twitterLogo}
               alt="twitter icon"
               width="30"
               height="30"
@@ -49,7 +58,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/youtube.svg"
+              src={youtubeLogo}
               alt="youtube icon"
               width="30"
               height="30"
@@ -58,7 +67,7 @@ export default function Footer() {
           </div>
           <div>
             <Image
-              src="/linkedin.svg"
+              src={linkedinLogo}
               alt="linkedin icon"
               width="30"
               height="30"
@@ -71,16 +80,16 @@ export default function Footer() {
         <div className="my-[2rem] lg:my-0">
           <h3 className=" font-bold text-[1.8rem]">Jubal</h3>
           <ul>
-            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Why Jubal
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Post a job
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Find a job
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Job Alert
             </li>
           </ul>
@@ -90,22 +99,22 @@ export default function Footer() {
             Resources
           </h3>
           <ul>
-            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white ">
+            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white ">
               Privacy
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Help Center
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Browse Music Pros
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Guides
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Partner
             </li>
-            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Directories
             </li>
           </ul>
@@ -113,23 +122,23 @@ export default function Footer() {
         <div className="my-[2rem] lg:my-0">
           <h3 className="text-[1.6rem] font-bold lg:text-[1.8rem]">Company</h3>
           <ul>
-            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="my-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               About Us
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Contact Us
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Products
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               {" "}
               Login
             </li>
-            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className="mb-[1rem] text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               Sign Up
             </li>
-            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterText hover:text-white">
+            <li className=" text-[1.4rem] lg:text-[1.6rem] text-jubalFooterGrey hover:text-white">
               FAQ
             </li>
           </ul>
@@ -141,37 +150,37 @@ export default function Footer() {
           <ul>
             <li className="flex my-[2rem] items-start">
               <Image
-                src="/location.svg"
+                src={locationIcon}
                 alt="location icon"
                 width="30"
                 height="30"
                 className="w-[2rem] mr-[1rem]"
               />
-              <span className="text-[1.4rem] text-jubalFooterText hover:text-white">
+              <span className="text-[1.4rem] text-jubalFooterGrey hover:text-white">
                 832 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </span>
             </li>
             <li className="flex mb-[2rem] items-start">
               <Image
-                src="/phone.svg"
+                src={phoneIcon}
                 alt="phone icon"
                 width="30"
                 height="30"
                 className="w-[2rem] mr-[1rem]"
               />
-              <span className="text-[1.4rem] text-jubalFooterText hover:text-white">
+              <span className="text-[1.4rem] text-jubalFooterGrey hover:text-white">
                 +234 345 123 5566
               </span>
             </li>
             <li className="flex mb-[2rem] items-start">
               <Image
-                src="/email.svg"
+                src={emailIcon}
                 alt="email icon"
                 width="30"
                 height="30"
                 className="w-[2rem] mr-[1rem]"
               />
-              <span className="text-[1.4rem] text-jubalFooterText hover:text-white">
+              <span className="text-[1.4rem] text-jubalFooterGrey hover:text-white">
                 support@thejubal.com
               </span>
             </li>

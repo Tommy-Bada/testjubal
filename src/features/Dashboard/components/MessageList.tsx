@@ -1,5 +1,8 @@
 import Image from "next/image";
+import { searchIcon, placeholderImage } from "@/image";
 import MessageItem from "./MessageItem";
+import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 
 export default function MessageList() {
   return (
@@ -11,7 +14,7 @@ export default function MessageList() {
           className="text-[1.6rem] w-[90%] active:outline-none hover:outline-none outline-none bg-jubalDashboardBackground"
         />
         <Image
-          src="dashboard/search.svg"
+          src={ImageIcons.searchIcon}
           alt="Search Icon"
           width="20"
           height="20"
@@ -19,26 +22,25 @@ export default function MessageList() {
       </div>
       <div className="mt-[3rem]">
         <MessageItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           name="Killian James"
           textOrTyping="Hello"
           time="10:00 PM"
         />
         <hr className="mt-[1rem] mb-[3rem]" />
         <MessageItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           name="Killian James"
           textOrTyping="Hello"
           time="10:00 PM"
         />
         <hr className="mt-[1rem] mb-[3rem]" />
         <MessageItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           name="Killian James"
           textOrTyping="Hello"
           time="10:00 PM"
         />
-        {/* <hr className="mt-[1rem] mb-[2rem]" /> */}
       </div>
     </div>
   );

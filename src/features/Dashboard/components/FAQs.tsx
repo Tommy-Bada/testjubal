@@ -7,8 +7,8 @@ interface FAQsProps {
 export default function FAQs({ number, question, answer }: FAQsProps) {
   return (
     <div>
-      <p className="text-[1.6rem] text-jubalFormText font-[700]">{`${number}. ${question}?`}</p>
-      <p className="text-[1.6rem] mt-[1rem] text-[#727A86]">{answer}</p>
+      <p className="text-[1.6rem] text-jubalGrey font-[700]">{`${number}. ${question}?`}</p>
+      <p className="text-[1.6rem] mt-[1rem] text-jubalFAQGrey">{answer}</p>
     </div>
   );
 }

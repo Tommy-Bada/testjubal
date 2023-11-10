@@ -1,8 +1,10 @@
-import Image from "next/image";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 import React from "react";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface TransactionProps {
-  profileImage: string;
+  profileImage: StaticImageData;
   title: string;
   type: string;
   amount: string;
@@ -22,14 +24,14 @@ export default function Transaction({
         <Image src={profileImage} alt="" width="36" height="36" />
         <div className="ml-[1rem]">
           <p className="text-[1.6rem] font-[700] text-jubalNav">{title}</p>
-          <p className="text-[1.2rem] text-jubalFormText my-[1rem]">{type}</p>
+          <p className="text-[1.2rem] text-jubalGrey my-[1rem]">{type}</p>
           <p className="text-[1.2rem] text-jubalViolet">See Details</p>
         </div>
       </div>
       <div>
         <div className="flex mb-[2rem]">
           <Image
-            src="dashboard/pay.svg"
+            src={ImageIcons.payIcon}
             alt="Currency Icon"
             width="22"
             height="16"

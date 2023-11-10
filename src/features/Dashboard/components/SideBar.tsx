@@ -1,58 +1,74 @@
 import Image from "next/image";
 import SideBarItem from "./SideBarItem";
 import { useRouter } from "next/router";
+import { ImageIcons } from "@/shared/components/ImageIcons";
+import {
+  logo,
+  dashboardIcon,
+  activeDashboardIcon,
+  briefcaseIcon,
+  briefcaseActiveIcon,
+  bankCheckIcon,
+  activeBankCheckIcon,
+  cardIcon,
+  activeCardIcon,
+  dashboardMessageIcon,
+  activeDashboardEmailIcon,
+  settingsIcon,
+  activeSettingsIcon,
+} from "@/image";
 
 export default function SideBar() {
   const router = useRouter();
   return (
     <div className="w-[max-content] bg-white h-[94%] px-[2rem] py-[2rem] fixed  rounded-[2rem] mr-[2rem]">
       <div className="w-[10rem] mx-[auto] my-[2rem]">
-        <Image src="Logo.png" alt="Jubal Logo" width="100" height="50" />
+        <Image src={ImageIcons.logo} alt="Jubal Logo" width="100" height="50" />
       </div>
       <div className="py-[2rem] px-[3rem]  bg-jubalDashboardBackground rounded-[2rem] h-[86%] flex flex-col justify-between">
         <div>
           <SideBarItem
-            image="dashboard/dashboard.svg"
-            activeImage="dashboard/dashboard-active.svg"
+            image={ImageIcons.dashboardIcon}
+            activeImage={ImageIcons.activeDashboardIcon}
             text="Dashboard"
-            link="/dashboard"
+            link={"/talent/dashboard/"}
             active={router.pathname === "/dashboard"}
           />
           <SideBarItem
-            image="dashboard/briefcase.svg"
-            activeImage="dashboard/briefcase-active.svg"
+            image={ImageIcons.briefcaseIcon}
+            activeImage={ImageIcons.briefcaseActiveIcon}
             text="My Manager"
-            link="/manager"
+            link={"/talent/dashboard/manager"}
             active={router.pathname === "/manager"}
           />
           <SideBarItem
-            image="dashboard/bank-check.svg"
-            activeImage="dashboard/bank-check-active.svg"
+            image={ImageIcons.bankCheckIcon}
+            activeImage={ImageIcons.activeBankCheckIcon}
             text="My Bank"
-            link="/bank"
+            link={"/talent/dashboard/bank"}
             active={router.pathname === "/bank"}
           />
           <SideBarItem
-            image="dashboard/card.svg"
-            activeImage="dashboard/card-active.svg"
+            image={ImageIcons.dashboardCardIcon}
+            activeImage={ImageIcons.activeCardIcon}
             text="My Profile"
-            link="/profile"
+            link={"/talent/dashboard/profile"}
             active={router.pathname === "/profile"}
           />
           <SideBarItem
-            image="dashboard/email.svg"
-            activeImage="dashboard/email-active.svg"
+            image={ImageIcons.dashboardMessageIcon}
+            activeImage={ImageIcons.activeDashboardEmailIcon}
             text="My Message"
-            link="/message"
+            link={"/talent/dashboard/message"}
             active={router.pathname === "/message"}
           />
         </div>
         <div>
           <SideBarItem
-            image="dashboard/cogs.svg"
-            activeImage="dashboard/cogs-active.svg"
+            image={ImageIcons.settingsIcon}
+            activeImage={ImageIcons.activeSettingsIcon}
             text="Settings"
-            link="/settings"
+            link={"/talent/dashboard/settings"}
             active={router.pathname === "/settings"}
           />
         </div>

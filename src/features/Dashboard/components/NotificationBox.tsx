@@ -1,5 +1,9 @@
+import { config } from "@/config";
 import NotificationItem from "./NotificationItem";
 import Image from "next/image";
+import { ImageIcons } from "@/shared/components/ImageIcons";
+
+import { notificationIcon } from "@/image";
 
 export default function NotificationBox() {
   return (
@@ -7,7 +11,7 @@ export default function NotificationBox() {
       <div className="flex items-center ">
         <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center ">
           <Image
-            src="dashboard/notification.svg"
+            src={ImageIcons.notificationIcon}
             alt="Notification Icon"
             width="20"
             height="20"

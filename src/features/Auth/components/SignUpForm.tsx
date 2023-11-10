@@ -1,32 +1,46 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@material-tailwind/react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
-import ReactFlagsSelect from "react-flags-select";
 import { CountryDropdown } from "react-country-region-selector";
+import { useRouter } from "next/router";
+import { AppContext } from "@/context/app.context";
+import { useSignup } from "@/hooks/auth.hooks";
+import { IFormValues } from "@/pages/signup";
+import { config } from "@/config";
+import SelectField from "@/shared/components/SelectField";
+import InputField from "@/shared/components/InputField";
+import PasswordField from "@/shared/components/PasswordField";
+import { facebookSignupIcon, googleSignupIcon } from "@/image";
+export default function SignUpForm({ setShowModal }: any) {
+  const router = useRouter();
+  const [, dispatch] = useContext<any>(AppContext);
 
-export default function SignUpForm({ handleSignUp }: any) {
-  useEffect(() => {
-    // Trigger an initial validation check when the component mounts
-    formik.validateForm();
-  }, []);
-  // const [selected, setSelected] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const { mutate: signup, isLoading, error } = useSignup();
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  const handleSubmit = (values: IFormValues) => {
+    signup(values);
+    setShowModal(true);
   };
+ 
+  const [selectedValue, setSelectedValue] = useState<string>("");
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(e.target.value);
+    formik.setFieldValue("serviceType", selectedValue);
+  };
+
   const formik = useFormik({
     initialValues: {
       serviceType: "",
       name: "",
       email: "",
       phone: "",
+      contact: "",
       country: "",
       password: "",
       confirmPassword: "",
@@ -51,96 +65,79 @@ export default function SignUpForm({ handleSignUp }: any) {
         .required("Confirm password is required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
     },
   });
 
   return (
-    <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-0 sm:p-[3rem] sm:mt-[3rem]">
+    <div className="bg-white rounded-2xl p-[2rem] text-jubalGrey my-[3rem] sm:my-0 sm:p-[3rem] sm:mt-[3rem]">
       <h2 className="text-[2.4rem] font-[700]">Sign Up with Jubal</h2>
       <form onSubmit={formik.handleSubmit} className="mt-[3rem]">
-        <div className="mb-[2rem] ">
-          <label className="text-[1.6rem]">Select Your Service</label>
-          <select
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            id="serviceType"
-            name="serviceType"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.serviceType}
-          >
-            <option value="">--Select Your Service--</option>
-            <option value="Looking for Talents">Looking for Talents</option>
-            <option value="Looking for Jobs">
-              Looking for Music Related jobs
-            </option>
-          </select>
-          {formik.touched.serviceType && formik.errors.serviceType ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.serviceType}
-            </div>
-          ) : null}
-        </div>
-        <div className="mb-[2rem]">
-          <label className="text-[1.6rem]" htmlFor="name">
-            Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            placeholder="Please Enter Your Name"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-          />
-          {formik.touched.name && formik.errors.name ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.name}
-            </div>
-          ) : null}
-        </div>
-        <div className="mb-[2rem] ">
-          <label className="text-[1.6rem]" htmlFor="email">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            placeholder="example@thejubal.com"
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.email}
-            </div>
-          ) : null}
-        </div>
-        <div className="mb-[2rem]">
-          <label className="text-[1.6rem]" htmlFor="phone">
-            Phone Number
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="text"
-            className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-            placeholder="909123456"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.phone}
-          />
-          {formik.touched.phone && formik.errors.phone ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.phone}
-            </div>
-          ) : null}
-        </div>
+        <SelectField
+          label="Select Your Service"
+          name="ServiceType"
+          options={[
+            { value: "", label: "--Select Your Service--" },
+            { value: "Looking for Talents", label: "Looking for Talents" },
+            {
+              value: "Looking for Jobs",
+              label: "Looking for Music Related jobs",
+            },
+          ]}
+          value={selectedValue}
+          onChange={handleSelectChange}
+          onBlur={formik.handleBlur}
+          error={
+            formik.touched.serviceType && formik.errors.serviceType
+              ? formik.errors.serviceType
+              : null
+          }
+        />
+
+        <InputField
+          label="Name"
+          name="name"
+          type="text"
+          placeholder="Please Enter Your Name"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.name}
+          error={
+            formik.touched.name && formik.errors.name
+              ? formik.errors.name
+              : null
+          }
+        />
+        <InputField
+          label="Email"
+          name="email"
+          type="email"
+          placeholder="example@thejubal.com"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.email}
+          error={
+            formik.touched.email && formik.errors.email
+              ? formik.errors.email
+              : null
+          }
+        />
+
+        <InputField
+          label="Phone Number"
+          name="phone"
+          type="text"
+          placeholder="909123456"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.phone}
+          error={
+            formik.touched.phone && formik.errors.phone
+              ? formik.errors.phone
+              : null
+          }
+        />
+
         <div className="mb-[2rem] ">
           <label className="text-[1.6rem]" htmlFor="country">
             Country
@@ -151,86 +148,45 @@ export default function SignUpForm({ handleSignUp }: any) {
             value={formik.values.country}
             onChange={(_, e) => formik.handleChange(e)}
             onBlur={formik.handleBlur}
-            // className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
           />
-          {/* <ReactFlagsSelect
-            id="country"
-            selected={selected}
-            searchable={true}
-            onSelect={(code) => {
-              formik.setFieldValue("country", code); // Update the country field in formik.values
-              setSelected(code); // Update the selected state as well
-            }} */}
-          {/* /> */}
           {formik.touched.country && formik.errors.country ? (
             <div className="text-[1.3rem] text-red-700">
               {formik.errors.country}
             </div>
           ) : null}
         </div>
-        <div className="mb-[2rem] ">
-          <label className="text-[1.6rem]" htmlFor="password">
-            Password
-          </label>
-          <div className="flex px-[1.4rem] py-[1rem] w-[100%] border-jubalFormBorder border-[2px] rounded-lg   mt-[1rem]">
-            <input
-              id="password"
-              name="password"
-              type={showPassword ? "text" : "password"}
-              className=" w-[100%]  text-[1.6rem] focus:outline-none"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-            />
-            <Image
-              src="/eye.svg"
-              alt="eye icon"
-              height="24"
-              width="24"
-              onClick={togglePasswordVisibility}
-            />
-          </div>
-          {formik.touched.password && formik.errors.password ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.password}
-            </div>
-          ) : null}
-        </div>
-        <div className="mb-[2rem] ">
-          <label className="text-[1.6rem]" htmlFor="confirmPassword">
-            Confirm Password
-          </label>
-          <div className="flex px-[1.4rem] py-[1rem] w-[100%] border-jubalFormBorder border-[2px] rounded-lg   mt-[1rem]">
-            <input
-              id="confirmPassword"
-              name="confirmPassword"
-              type={showPassword ? "text" : "password"}
-              className=" w-[100%]  text-[1.6rem] focus:outline-none"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.confirmPassword}
-            />
-            <Image
-              src="/eye.svg"
-              alt="eye icon"
-              height="24"
-              width="24"
-              onClick={togglePasswordVisibility}
-            />
-          </div>
-          {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-            <div className="text-[1.3rem] text-red-700">
-              {formik.errors.confirmPassword}
-            </div>
-          ) : null}
-        </div>
+        <PasswordField
+          label="Password"
+          name="password"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.password}
+          error={
+            formik.touched.password && formik.errors.password
+              ? formik.errors.password
+              : null
+          }
+        />
+
+        <PasswordField
+          label="Confirm Password"
+          name="confirmPassword"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.confirmPassword}
+          error={
+            formik.touched.confirmPassword && formik.errors.confirmPassword
+              ? formik.errors.confirmPassword
+              : null
+          }
+        />
+
         <Button
           variant="filled"
           className={`${
-            formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
+            formik.isValid ? "bg-jubalViolet" : "bg-jubalFooterGrey"
           } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
-          onClick={formik.isValid ? handleSignUp : null}
-          type="submit"
+          onClick={() => formik.handleSubmit()}
           disabled={!formik.isValid}
         >
           Sign Up
@@ -238,14 +194,16 @@ export default function SignUpForm({ handleSignUp }: any) {
       </form>
       <FormSeperator />
       <FacebookGoogleBtn
-        iconSrc="/siwFacebook.svg"
+        iconSrc={facebookSignupIcon}
         alt="facebook icon"
         buttonText="Sign Up with Facebook"
+        onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}
       />
       <FacebookGoogleBtn
-        iconSrc="/siwGoogle.svg"
+        iconSrc={googleSignupIcon}
         alt="google icon"
         buttonText="Sign Up with Google"
+        onClick={() => router.push(config.apiBaseUrl+"/api/v1/auth/google")}
       />
       <p className="text-center my-[2rem] text-[1.6rem]">
         If you already have an account{" "}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { MouseEventHandler } from "react";
+import { cancelBtn, emailVerication } from "@/image";
 
 interface EmailVerificationModalProps {
   isVisible: boolean;
@@ -11,11 +12,11 @@ export default function EmailVerificationModal({
 }: EmailVerificationModalProps & { handleRemoveModal: MouseEventHandler }) {
   if (!isVisible) return null;
   return (
-    <div className="bg-white fixed inset-0 bg-opacity-50 flex justify-center items-center">
+    <div className=" bg-jubalModalBackgroundColor fixed inset-0 bg-opacity-70 flex justify-center items-center">
       <div className="bg-white w-[80%] sm:w-[60%] lg:w-[60rem] p-[2rem] rounded-[2rem] lg:p-[3rem] ">
         <div className="flex justify-end" onClick={handleRemoveModal}>
           <Image
-            src="/cancel.svg"
+            src={cancelBtn}
             alt="cancel icon"
             width="30"
             height="30"
@@ -24,7 +25,7 @@ export default function EmailVerificationModal({
         </div>
         <div className="flex justify-center items-center">
           <Image
-            src="/email-verification.png"
+            src={emailVerication}
             alt="email verification icon"
             width="100"
             height="100"

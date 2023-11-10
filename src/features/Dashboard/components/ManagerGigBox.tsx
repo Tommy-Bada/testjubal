@@ -1,9 +1,12 @@
 import ManagerGigItem from "./ManagerGigItem";
+import NewestToOldestFilterBtn from "./buttons/NewestToOldestFilterBtn";
+import Image from "next/image";
+import { placeholderImage } from "@/image";
 
 export default function ManagerGigBox() {
   return (
     <div className="bg-white w-[62%] p-[2.4rem] rounded-[2rem]">
-      <div className=" flex justify-between">
+      <div className="flex items-center justify-between ">
         <div className="flex">
           <p className="text-[1.6rem] text-jubalViolet p-[1rem]">
             Available Gigs
@@ -13,13 +16,11 @@ export default function ManagerGigBox() {
           </p>
           <p className="text-[1.6rem] text-jubalViolet p-[1rem]">Gig History</p>
         </div>
-        <div>
-          <p className="text-[1.6rem] text-jubalViolet p-[1rem]">Newest</p>
-        </div>
+        <NewestToOldestFilterBtn handleFilter={() => {}} />
       </div>
       <div className="overflow-y-auto h-[80vh] bg-jubalDashboardBackground p-[2rem] rounded-[2rem] mt-[2rem]">
         <ManagerGigItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="Lead Sound Designer"
           name="Hexagon Music"
           startPrice="5000"
@@ -29,7 +30,7 @@ export default function ManagerGigBox() {
           btnColor="#0F973D"
         />
         <ManagerGigItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="Lead Sound Designer"
           name="Hexxxagon Music"
           startPrice="5000"
@@ -39,7 +40,7 @@ export default function ManagerGigBox() {
           btnColor="#00798F"
         />
         <ManagerGigItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="Lead Sound Designer"
           name="Hexagon Music"
           startPrice="5000"
@@ -49,7 +50,7 @@ export default function ManagerGigBox() {
           btnColor="#F3A218"
         />
         <ManagerGigItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="Lead Sound Designer"
           name="Hexagon Music"
           startPrice="5000"
@@ -59,7 +60,7 @@ export default function ManagerGigBox() {
           btnColor="#0F973D"
         />
         <ManagerGigItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="Lead Sound Designer"
           name="Hexxxagon Music"
           startPrice="5000"
@@ -69,7 +70,7 @@ export default function ManagerGigBox() {
           btnColor="#00798F"
         />
         <ManagerGigItem
-          profileImage="dashboard/placeholder.svg"
+          profileImage={placeholderImage}
           title="Lead Sound Designer"
           name="Hexagon Music"
           startPrice="5000"

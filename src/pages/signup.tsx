@@ -6,13 +6,36 @@ import Footer from "@/shared/components/Footer";
 import SignupLeft from "@/features/Auth/components/SignupLeft";
 import SignUpForm from "@/features/Auth/components/SignUpForm";
 import EmailVerificationModal from "@/features/Auth/components/EmailVerificationModal";
-import { useState } from "react";
+import {useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useCheckLogin } from "@/hooks/app.hooks";
+import { secondHeroBackground } from "@/image";
 
-export default function Signin() {
-  const [showModal, setShowModal] = useState(false);
-  const handleSignUp = () => {
-    setShowModal(true);
-  };
+export interface IFormValues {
+  email: string;
+  password: string;
+  serviceType: string;
+  name: string;
+  contact: string;
+  country: string;
+}
+
+export default function Signup() {
+  const router = useRouter();
+  const isLogged = useCheckLogin();
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isLogged) {
+      router.push("/talent/dashboard");
+    }
+  }, [isLogged, router]);
+
+  function clearModal() {
+    setShowModal(false);
+    router.push("talent/dashboard");
+  }
+
   return (
     <div>
       <Head>
@@ -20,16 +43,16 @@ export default function Signin() {
       </Head>
       <Header />
       <div
-        style={{ background: "url(/Herobg2.png)" }}
+        style={{ background: `url(${secondHeroBackground}` }}
         className="p-[2rem] lg:flex lg:justify-between sm:items-center sm:px-[5rem] sm:py-[8rem]"
       >
         <SignupLeft />
-        <SignUpForm handleSignUp={handleSignUp} />
+        <SignUpForm setShowModal={setShowModal} />
       </div>
       <Divisor />
       <EmailVerificationModal
         isVisible={showModal}
-        handleRemoveModal={() => setShowModal(false)}
+        handleRemoveModal={clearModal}
       />
       <Subscribe />
       <Footer />

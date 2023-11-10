@@ -1,24 +1,31 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
-import { Button } from "@material-tailwind/react";
-import Image from "next/image";
+import { Button, Input } from "@material-tailwind/react";
 import { Switch } from "@material-tailwind/react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import FacebookGoogleBtn from "./FacebookGoogleBtn";
 import FormSeperator from "./FormSeperator";
+import { useRouter } from "next/router";
+import { useLogin } from "@/hooks/auth.hooks";
+import { config } from "@/config";
+import InputField from "@/shared/components/InputField";
+import PasswordField from "@/shared/components/PasswordField";
+import { facebookSignupIcon, googleSignupIcon } from "@/image";
 
+interface IFormValues {
+  email: string;
+  password: string;
+}
 export default function LoginForm() {
-  useEffect(() => {
-    // Trigger an initial validation check when the component mounts
-    formik.validateForm();
-  }, []);
-  const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  const { mutate: login, isLoading, error } = useLogin();
+
+  const handleSubmit = (values: IFormValues) => {
+    login({ email: values.email, password: values.password });
   };
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -31,72 +38,47 @@ export default function LoginForm() {
       password: Yup.string().required("Password is required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      handleSubmit(values);
     },
   });
 
   return (
-    <div
-      className="bg-gradient-to-r from-[#3F2883] to-[#2DA5A4] rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]"
-      suppressHydrationWarning
-    >
-      <div className="bg-white rounded-2xl p-[2rem] text-jubalFormText my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
-        <h2 className="text-[2.4rem] font-[700]">Welcome Back!</h2>
-        <form className="mt-[2rem]">
-          <div className="mb-[2rem] ">
-            <label className="text-[1.6rem]" htmlFor="email">
-              Email
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-              className="px-[1.4rem] py-[1rem] w-[100%] rounded-lg border-[2px] border-jubalFormBorder mt-[1rem] text-[1.6rem]"
-              placeholder="example@thejubal.com"
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="text-[1.3rem] text-red-700">
-                {formik.errors.email}
-              </div>
-            ) : null}
-          </div>
-          <div className="mb-[2rem] ">
-            <label className="text-[1.6rem]" htmlFor="password">
-              Password
-            </label>
-            <div className="flex px-[1.4rem] py-[1rem] w-[100%] border-jubalFormBorder border-[2px] rounded-lg   mt-[1rem]">
-              <input
-                id="password"
-                name="password"
-                type={showPassword ? "text" : "password"}
-                className=" w-[100%]  text-[1.6rem] focus:outline-none"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.password}
-              />
-              <Image
-                src="/eye.svg"
-                alt="eye icon"
-                height="24"
-                width="24"
-                onClick={togglePasswordVisibility}
-              />
-            </div>
-            {formik.touched.password && formik.errors.password ? (
-              <div className="text-[1.3rem] text-red-700">
-                {formik.errors.password}
-              </div>
-            ) : null}
-          </div>
+    <div className="bg-gradient-to-r from-jubalGradientBlue to-jubalGradientGreen rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]">
+      <div className="bg-white rounded-2xl p-[2rem] text-jubalGrey my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
+        <h2 className="text-[2.3rem] font-[700]">Welcome Back!</h2>
+        <form className="mt-[2rem] " onSubmit={formik.handleSubmit}>
+          <InputField
+            label="Email"
+            name="email"
+            type="email"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            placeholder="example@thejubal.com"
+            error={
+              formik.touched.email && formik.errors.email
+                ? formik.errors.email
+                : null
+            }
+          />
+          <PasswordField
+            label="Password"
+            name="password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            error={
+              formik.touched.password && formik.errors.password
+                ? formik.errors.password
+                : null
+            }
+          />
           <Button
             className={`${
-              formik.isValid ? "bg-jubalViolet" : "bg-jubalPreSignUp"
+              formik.isValid ? "bg-jubalViolet" : "bg-jubalFooterGrey"
             } w-[100%] normal-case text-[1.6rem] py-[1.2rem]`}
-            type="submit"
             disabled={!formik.isValid}
+            onClick={() => formik.handleSubmit()}
           >
             Login
           </Button>
@@ -108,10 +90,9 @@ export default function LoginForm() {
               label="Remember Me"
               ripple={true}
               id="custom-switch-component"
-              className="h-full w-full checked:bg-jubalViolet"
+              className="w-full h-full checked:bg-jubalViolet"
               labelProps={{
-                className:
-                  "text-[1.6rem] ml-[1rem] text-jubalFormText font-[400]",
+                className: "text-[1.6rem] ml-[1rem] text-jubalGrey font-[400]",
               }}
               containerProps={{
                 className: "w-12 h-6",
@@ -127,14 +108,18 @@ export default function LoginForm() {
         </div>
         <FormSeperator />
         <FacebookGoogleBtn
-          iconSrc="/siwFacebook.svg"
+          iconSrc={facebookSignupIcon}
           alt="facebook icon"
           buttonText="Log in with Facebook"
+          onClick={() =>
+            router.push(config.apiBaseUrl + "/api/v1/auth/facebook")
+          }
         />
         <FacebookGoogleBtn
-          iconSrc="/siwGoogle.svg"
+          iconSrc={googleSignupIcon}
           alt="google icon"
           buttonText="Log in with Google"
+          onClick={() => router.push(config.apiBaseUrl + "/api/v1/auth/google")}
         />
         <p className="text-center my-[2rem] text-[1.6rem]">
           If you don&apos;t have an account{" "}

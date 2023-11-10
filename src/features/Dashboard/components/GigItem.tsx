@@ -1,5 +1,14 @@
 import Image from "next/image";
+import {
+  heartIcon,
+  likedHeartIcon,
+  payIcon,
+  dashboardLocationIcon,
+} from "@/image";
 import { Button } from "@material-tailwind/react";
+import { useState } from "react";
+import { config } from "@/config";
+import { ImageIcons } from "@/shared/components/ImageIcons";
 interface GigItemProps {
   profileImage: string;
   title: string;
@@ -7,6 +16,8 @@ interface GigItemProps {
   startPrice: string;
   endPrice: string;
   location: string;
+  isLiked: boolean;
+  handleLike: () => void;
 }
 
 export default function GigItem({
@@ -16,13 +27,15 @@ export default function GigItem({
   startPrice,
   endPrice,
   location,
+  isLiked,
+  handleLike,
 }: GigItemProps) {
   return (
     <div className="bg-white p-[2rem] rounded-[3rem] my-[1.5rem]">
-      <div className="flex justify-between items-start ">
+      <div className="flex items-start justify-between ">
         <div className="flex items-center">
           <Image
-            src={`/${profileImage}`}
+            src={`${profileImage}`}
             alt={`${profileImage} icon`}
             width="40"
             height="40"
@@ -32,9 +45,11 @@ export default function GigItem({
             <p className="text-[1.3rem] mt-[1rem]">{name}</p>
           </div>
         </div>
-        <div>
+        <div onClick={handleLike}>
           <Image
-            src="dashboard/heart.svg"
+            src={
+              isLiked ?  ImageIcons.likedHeartIcon: ImageIcons.heartIcon
+            }
             alt="Like Icon"
             width="30"
             height="30"
@@ -44,7 +59,7 @@ export default function GigItem({
       <hr className="my-[1rem]" />
       <div className="flex mb-[1rem] ">
         <Image
-          src="dashboard/pay.svg"
+          src={ImageIcons.payIcon}
           alt="Currency Icon"
           width="22"
           height="16"
@@ -57,7 +72,7 @@ export default function GigItem({
       <div className="flex justify-between">
         <div className="flex items-center">
           <Image
-            src="dashboard/location.svg"
+            src={ImageIcons.dashboardLocationIcon}
             alt="Location Icon"
             width="14"
             height="20"
