@@ -13,9 +13,6 @@ import InputField from "@/shared/components/InputField";
 import PasswordField from "@/shared/components/PasswordField";
 import { facebookSignupIcon, googleSignupIcon } from "@/image";
 
-
-
-
 interface IFormValues {
   email: string;
   password: string;
@@ -48,7 +45,7 @@ export default function LoginForm() {
   return (
     <div className="bg-gradient-to-r from-jubalGradientBlue to-jubalGradientGreen rounded-2xl mt-[5rem] sm:my-0 sm:w-[80%] lg:w-[40%]">
       <div className="bg-white rounded-2xl p-[2rem] text-jubalGrey my-[3rem] sm:my-[6rem] lg:my-0 lg:p-[3rem] lg:w-[100%] relative -right-8 -top-8 sm:-right-12 sm:-top-12 z-0">
-        <h2 className="text-[2.4rem] font-[700]">Welcome Back!</h2>
+        <h2 className="text-[2.3rem] font-[700]">Welcome Back!</h2>
         <form className="mt-[2rem] " onSubmit={formik.handleSubmit}>
           <InputField
             label="Email"
@@ -115,16 +112,14 @@ export default function LoginForm() {
           alt="facebook icon"
           buttonText="Log in with Facebook"
           onClick={() =>
-            router.push(config.apiBaseUrl+"/api/v1/auth/facebook")
+            router.push(config.apiBaseUrl + "/api/v1/auth/facebook")
           }
         />
         <FacebookGoogleBtn
           iconSrc={googleSignupIcon}
           alt="google icon"
           buttonText="Log in with Google"
-          onClick={() =>
-            router.push(config.apiBaseUrl+"/api/v1/auth/google")
-          }
+          onClick={() => router.push(config.apiBaseUrl + "/api/v1/auth/google")}
         />
         <p className="text-center my-[2rem] text-[1.6rem]">
           If you don&apos;t have an account{" "}
