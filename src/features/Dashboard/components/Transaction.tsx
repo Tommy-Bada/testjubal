@@ -1,8 +1,7 @@
-import { config } from "@/config";
 import { ImageIcons } from "@/shared/components/ImageIcons";
-import Image, { StaticImageData } from "next/image";
 import React from "react";
-import { payIcon } from "@/image";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface TransactionProps {
   profileImage: StaticImageData;

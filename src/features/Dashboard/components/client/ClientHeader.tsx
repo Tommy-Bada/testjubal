@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { UserSwitchProps } from "@/pages/client/dashboard";
 import { useRouter } from "next/router";
-import { config } from "@/config";
 import { ImageIcons } from "@/shared/components/ImageIcons";
 
 export default function ClientHeader() {

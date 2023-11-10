@@ -11,7 +11,7 @@ export default function NotificationBox() {
       <div className="flex items-center ">
         <div className=" rounded-[50%] bg-white w-[5rem] h-[5rem] flex justify-center items-center ">
           <Image
-            src={ImageIcons.NotificationItem}
+            src={ImageIcons.notificationIcon}
             alt="Notification Icon"
             width="20"
             height="20"

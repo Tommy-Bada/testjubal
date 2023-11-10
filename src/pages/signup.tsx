@@ -23,7 +23,7 @@ export interface IFormValues {
 export default function Signup() {
   const router = useRouter();
   const isLogged = useCheckLogin();
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (isLogged) {

@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { Button } from "@material-tailwind/react";
 import Link from "next/link";
-import { config } from "@/config";
 import { ImageIcons } from "@/shared/components/ImageIcons";
 interface GigItemProps {
   profileImage: string | StaticImageData;
